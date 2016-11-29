@@ -4,8 +4,9 @@
   <title>Ale Nomad App</title>
   <%= csrf_meta_tags %>
 
-  <%= stylesheet_link_tag 'application' %>
-  <%= javascript_include_tag *webpack_asset_paths('application', extension: 'js') %>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <%= javascript_include_tag 'application'%>
+
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,5 +21,8 @@
   <!-- Content goes here. -->
   <div id="aleNomad">Hello World!</div>
   <!-- Scripts go here. -->
+    <%= javascript_include_tag *webpack_asset_paths("application") %>
 </body>
+
+
 </html>

@@ -4,6 +4,14 @@ class BeerSerializer < ActiveModel::Serializer
 
 
   def beer_label
-  Refile.attachment_url(object, :image, :fit, 800, 800, format: "png")
-end
+    Refile.attachment_url(object, :image, :fit, 800, 800, format: "jpeg")
+  end
+
+
+
+
+
+
+
+  
 end
