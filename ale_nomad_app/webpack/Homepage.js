@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router'
+import { Carousel } from 'react-bootstrap'
 import Modal from 'react-modal'
 import Header from './Header'
-import Carousel from './Carousel'
+import Filter from './Filter'
+import carouselInstance from './carouselInstance'
 import Footer from './Footer'
 
 // TODO: add alt.js functionality
@@ -24,9 +26,13 @@ class Homepage extends React.Component {
     render(){
         return (
             <div>
-                <Header />
+                <header>
+                    <Header />
+                </header>
                 <main className="mainMargin">
-                <Carousel />
+                    <div className="container">
+                        <Filter />
+                    </div>
                 </main>
                 <Footer />
             </div>
