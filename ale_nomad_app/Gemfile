@@ -32,7 +32,8 @@ gem "refile", require: "refile/rails", github: 'refile/refile'
 gem "refile-mini_magick"
 gem 'refile-postgres', '~> 1.4'
 gem 'untappd'
-
+gem 'brewery_db'
+gem 'pg_search'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

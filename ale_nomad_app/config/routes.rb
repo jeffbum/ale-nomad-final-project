@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
 root 'beers#static'
+get '/find_beer' => 'beers#static'
+get '/find_brew' => 'beers#static'
 
 
 
 scope '/api' do
+  get '/search/:name' => 'beers#search'
   resources :beers
 
 
