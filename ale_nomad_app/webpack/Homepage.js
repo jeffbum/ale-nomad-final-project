@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Modal from 'react-modal'
+import Header from './Header'
+import Carousel from './Carousel'
+import Footer from './Footer'
 
 // TODO: add alt.js functionality
 // TODO: layout page
@@ -20,7 +23,13 @@ class Homepage extends React.Component {
 
     render(){
         return (
-            <div>Jeff Made This!</div>
+            <div>
+                <Header />
+                <main className="mainMargin">
+                <Carousel />
+                </main>
+                <Footer />
+            </div>
         )
     }
 }
