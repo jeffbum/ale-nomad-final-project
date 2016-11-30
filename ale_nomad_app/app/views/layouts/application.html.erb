@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%# TODO: put Ale Nomad img in to title tag for a nice little touch %>
   <title>Ale Nomad App</title>
   <%= csrf_meta_tags %>
 
@@ -21,7 +22,7 @@
 </head>
 <body>
   <!-- Content goes here. -->
-  <div id="aleNomad">Hello World!</div>
+  <div id="aleNomad"></div>
   <!-- Scripts go here. -->
 
     <%= javascript_include_tag *webpack_asset_paths("application") %>
