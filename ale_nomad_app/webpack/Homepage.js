@@ -12,6 +12,7 @@ import Footer from './Footer'
 class Homepage extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {}
     }
     componentDidMount() {
 
