@@ -10,4 +10,4 @@ class BeerActions {
   // }
 }
 
-export default alt.createActions(BeerActions);
+export default alt.createActions(BeerActions)
