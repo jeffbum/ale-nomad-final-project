@@ -19,31 +19,31 @@ const Filter = (props) => (
               <h3>Location</h3>
               <div className="radio">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" />
+                  <input type="radio" name="location" id="optionsRadios1" value="option1" />
                   5 miles
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" />
+                  <input type="radio" name="location" id="optionsRadios2" value="option2" />
                   10 miles
                 </label>
               </div>
               <div className="radio disabled">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" />
+                  <input type="radio" name="location" id="optionsRadios3" value="option3" />
                   15 miles
                 </label>
               </div>
               <div className="radio disabled">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" />
+                  <input type="radio" name="location" id="optionsRadios3" value="option3" />
                   20 miles
                 </label>
               </div>
               <div className="radio disabled">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" />
+                  <input type="radio" name="location" id="optionsRadios3" value="option3" />
                   25 miles
                 </label>
               </div>
@@ -52,19 +52,19 @@ const Filter = (props) => (
               <h3>Style</h3>
               <div className="radio">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" />
+                  <input type="radio" name="style" id="optionsRadios1" value="option1" />
                   IPA
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" />
+                  <input type="radio" name="style" id="optionsRadios2" value="option2" />
                   Stout
                 </label>
               </div>
               <div className="radio disabled">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" />
+                  <input type="radio" name="style" id="optionsRadios3" value="option3" />
                   Amber Ale
                 </label>
               </div>
@@ -73,31 +73,31 @@ const Filter = (props) => (
               <h3>ABV</h3>
               <div className="radio">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" />
+                  <input type="radio" name="abv" id="optionsRadios1" value="option1" />
                   Less than 4%
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" />
+                  <input type="radio" name="abv" id="optionsRadios2" value="option2" />
                   4 - 6%
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" />
+                  <input type="radio" name="abv" id="optionsRadios2" value="option2" />
                   6 - 8%
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" />
+                  <input type="radio" name="abv" id="optionsRadios2" value="option2" />
                   8 - 10%
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" />
+                  <input type="radio" name="abv" id="optionsRadios2" value="option2" />
                   Greater than 10%
                 </label>
               </div>
