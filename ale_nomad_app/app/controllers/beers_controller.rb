@@ -8,8 +8,8 @@ class BeersController < ApplicationController
     #Static Method for FrontEnd Team
 
     def index
-      # @beer = Beer.all
-      # render json: @beer
+      @beer = Beer.all
+      render json: @beer
     end
     #Displays all beer
 
@@ -18,7 +18,7 @@ class BeersController < ApplicationController
         render json: @beer
     end
 
-    
+
 
     def search
       @beers = Untappd::Beer.search(params[:name])
@@ -30,7 +30,6 @@ class BeersController < ApplicationController
       render json: @beers
     end
 
-
-
+    
 
 end

@@ -5,35 +5,38 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+brewery_db = BreweryDB::Client.new do |config|
+  config.api_key = ENV['breweryapikey']
+end
 
+feedback = brewery_db.locations.all(locality: 'Indianapolis', offset: 50)
 
-# feedback = brewery_db.locations.all(locality: 'Indianapolis')
-#
-# brewery_db = BreweryDB::Client.new do |config|
-#   config.api_key = ENV['brewery_api_key']
-# end
-#
-#
-#
-# feedback.each do |x|
-#   brew = Brewery.create!(
-#   brewerydb_id: x.brewery.id,
-#   name: x.brewery.name,
-#   status: x.brewery.status,
-#   website: x.brewery.website
-#   )
-#   brewery_db.brewery(brewery.brewerydb_id).beers.each do |beer|
-#     if beer.style
-#       category = Category.find_by(
-#         name: beer.style.name,
-#         description: beer.style.description
-#       )
-#     else
-#       category = nil
-#     end
-#
-#     brewery.beers.create!(
-#     name: beer.name,
-#     abv: beer.style.abv,
-#     category: category
-#     )
+feedback.each do |x|
+  brew = Brew.create!(
+  brewerydb_id: x.brewery.id,
+  name: x.brewery.name,
+  status: x.brewery.status,
+  website: x.brewery.website
+  )
+  brewery_db.brewery(brew.brewerydb_id).beers.each do |beer|
+    if beer.style
+      category = Category.find_or_create_by(
+        name: beer.style.category.name,
+        description: beer.style.category.description
+      )
+    else
+      category = nil
+    end
+
+    brew.beers.create!(
+    beer_name: beer.name,
+    beer_abv: beer.abv,
+    beer_ibu: beer.ibu,
+    category: category,
+    beer_description: beer.description,
+    beer_label: beer.labels,
+    available: beer.available&.name,
+    year: beer.year
+    )
+  end
+end
