@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :categories
+  resources :brews
 root 'beers#static'
 get '/find_beer' => 'beers#static'
 get '/find_brew' => 'beers#static'

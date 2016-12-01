@@ -21,10 +21,14 @@
 
 </head>
 <body>
+  nav here
+  <% unless current_page?('/find_beer') || current_page?('/find_brew') %>
+  carousel here
+  <% end %>
   <!-- Content goes here. -->
   <div id="aleNomad"></div>
   <!-- Scripts go here. -->
-
+  footer here
     <%= javascript_include_tag *webpack_asset_paths("application") %>
 </body>
 
