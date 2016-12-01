@@ -5,8 +5,9 @@ import ReactDOM from 'react-dom'
 import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router'
 
 // alt.js imports
-import MyStore from './stores/BeerStore'
-import MyActions from './actions/BeerActions'
+import alt from './lib/alt'
+import BeerStore from './stores/BeerStore'
+import BeerActions from './actions/BeerActions'
 
 //component imports
 import App from './App'

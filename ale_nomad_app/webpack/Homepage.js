@@ -7,9 +7,9 @@ import Filter from './Filter'
 
 
 //alt imports
-
-import MyStore from './stores/BeerStore'
-import MyActions from './actions/BeerActions'
+import alt from './lib/alt'
+import BeerStore from './stores/BeerStore'
+import BeerActions from './actions/BeerActions'
 
 // TODO: add alt.js functionality
 // TODO: layout page
