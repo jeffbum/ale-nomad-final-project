@@ -1,11 +1,16 @@
+
+//react imports
 import React from 'react'
 import { Link } from 'react-router'
-import { Carousel } from 'react-bootstrap'
 import Modal from 'react-modal'
 import Header from './Header'
 import Filter from './Filter'
-import carouselInstance from './carouselInstance'
 import Footer from './Footer'
+
+//alt imports 
+
+import MyStore from './stores/BeerStore'
+import MyActions from './actions/BeerActions'
 
 // TODO: add alt.js functionality
 // TODO: layout page
@@ -14,7 +19,9 @@ import Footer from './Footer'
 class Homepage extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = {
+
+        }
     }
     componentDidMount() {
 

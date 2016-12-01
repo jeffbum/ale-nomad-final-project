@@ -1,11 +1,14 @@
 console.log('Looking for a developer? Visit our "About Us" page!')
-
+//react imports
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router'
-// space if we want to add redux/alt.js
 
+// alt.js imports
+import MyStore from './stores/BeerStore'
+import MyActions from './actions/BeerActions'
 
+//component imports
 import App from './App'
 import Homepage from './Homepage'
 import FindBeer from './FindBeer'
