@@ -19,6 +19,11 @@
 img {
     width: 100%;
 }
+body {
+  background-image: url("/img/cheap_diagonal_fabric.png");
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
 /*Margins*/
 .logInButton {

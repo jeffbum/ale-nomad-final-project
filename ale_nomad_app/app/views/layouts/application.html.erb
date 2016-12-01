@@ -21,14 +21,77 @@
 
 </head>
 <body>
-  nav here
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Ale Nomad</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/find_beer">Find Beers<span class="sr-only"></span></a></li>
+          <li><a href="/find_brew">Find Breweries<span class="sr-only"></span></a></li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+          <button class="btn btn-primary logInButton" type="submit">Log In</button>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <% unless current_page?('/find_beer') || current_page?('/find_brew') %>
-  carousel here
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+          <div id="featuredPhotos" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#featuredPhotos" data-slide-to="0" class="active"></li>
+              <li data-target="#featuredPhotos" data-slide-to="1"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <a href="/find_beer">
+                  <img src="img/beer.jpg"class="img-responsive" width="100%" alt="">
+                </a>
+              </div>
+              <div class="item">
+                <a href="/find_beer">
+                  <img src="img/brewery.jpeg" width="100%" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
   <% end %>
   <!-- Content goes here. -->
-  <div id="aleNomad"></div>
+  <div id="aleNomad">
+
+  </div>
   <!-- Scripts go here. -->
-  footer here
+  <footer class="footerMargin">
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
+            <ul class="nav navbar-nav">
+              <li><a href="about.html">Creators</a></li>
+              <li><a href="beers.html">Find Beers</a></li>
+              <li><a href="breweries.html">Find Breweries</a></li>
+              <p class="navbar-text">Est. November 2016</p>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </footer>
     <%= javascript_include_tag *webpack_asset_paths("application") %>
 </body>
 
