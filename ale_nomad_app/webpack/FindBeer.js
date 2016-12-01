@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Modal from 'react-modal'
+import Filter from './Filter'
 
 
 class FindBeer extends React.Component {
@@ -17,7 +18,9 @@ class FindBeer extends React.Component {
 
     render(){
         return (
-            <div>Jeff was the shizzz!</div>
+            <div>
+                <Filter />
+            </div>
         )
     }
 }
