@@ -34,7 +34,7 @@ feedback.each do |x|
     beer_ibu: beer.ibu,
     category: category,
     beer_description: beer.description,
-    beer_label: beer.labels,
+    remote_beer_label_url: beer.labels.large,
     available: beer.available&.name,
     year: beer.year
     )
