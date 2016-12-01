@@ -3,9 +3,11 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Modal from 'react-modal'
-import Header from './Header'
 import Filter from './Filter'
+<<<<<<< HEAD
 import Footer from './Footer'
+=======
+>>>>>>> 8c80dc2d7056d2fbe32e534ad1432ded31d89341
 
 //alt imports 
 
@@ -34,15 +36,11 @@ class Homepage extends React.Component {
     render(){
         return (
             <div>
-                <header>
-                    <Header />
-                </header>
                 <main className="mainMargin">
                     <div className="container">
                         <Filter />
                     </div>
                 </main>
-                <Footer />
             </div>
         )
     }
