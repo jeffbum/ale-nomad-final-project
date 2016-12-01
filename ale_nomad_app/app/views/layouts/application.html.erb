@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%# TODO: put Ale Nomad img in to title tag for a nice little touch %>
   <title>Ale Nomad App</title>
   <%= csrf_meta_tags %>
 
@@ -13,17 +14,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Stylesheets go here. -->
 
-  <script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch"></script>
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-   <script src="http://localhost:3808/webpack-dev-server.js"></script>
+    <script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="http://localhost:3808/webpack-dev-server.js"></script>
 
 </head>
 <body>
+  nav here
+  <% unless current_page?('/find_beer') || current_page?('/find_brew') %>
+  carousel here
+  <% end %>
   <!-- Content goes here. -->
-  <div id="aleNomad">Hello World!</div>
+  <div id="aleNomad"></div>
   <!-- Scripts go here. -->
-
+  footer here
     <%= javascript_include_tag *webpack_asset_paths("application") %>
 </body>
 
