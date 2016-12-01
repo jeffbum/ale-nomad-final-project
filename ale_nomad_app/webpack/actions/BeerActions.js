@@ -7,7 +7,7 @@ class BeerActions {
   // setList(list) {
   //   //return is the same thing as dispatch
   //   return list;
-  }
+  // }
 }
 
 export default alt.createActions(BeerActions);
