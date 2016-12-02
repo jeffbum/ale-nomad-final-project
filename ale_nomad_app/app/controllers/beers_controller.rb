@@ -42,4 +42,14 @@ class BeersController < ApplicationController
     end
 
 
+    def fake
+      brewery_db = BreweryDB::Client.new do |config|
+        config.api_key = ENV['breweryapikey']
+      end
+
+      feedback = brewery_db.locations.all(locality: 'Indianapolis', offset: 50)
+      render json: feedback
+    end
+
+
 end
