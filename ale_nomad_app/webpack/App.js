@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
+import alt from './lib/alt'
+
 
 class App extends React.Component {
     constructor(props) {
