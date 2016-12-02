@@ -10,7 +10,7 @@ get '/find_brew' => 'beers#static'
 
 scope '/api' do
   # get '/search/:name' => 'beers#search'
-  get '/filter' => 'categories#filter'
+  get '/filter' => 'beers#filter'
   resources :beers
 
 
