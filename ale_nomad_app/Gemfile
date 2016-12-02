@@ -27,7 +27,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
-
+gem "socialization"
 gem 'sinatra', github: 'sinatra/sinatra'
 gem "refile", require: "refile/rails", github: 'refile/refile'
 gem "refile-mini_magick"
