@@ -49,13 +49,28 @@ class Filter extends React.Component {
     // console.log(twoValues[1])
   }
   getIbu(){
+    if ( this.state.ibu === null) {
+      fetch('/api/filter?filter[beer_ibu_gteq]=' + '0' + '&filter[beer_ibu_lt]=' + '2500' )
+      .then(response => response.json())
+      .then(response => {
+      console.log(response)
+    })
+  }
+    else{
     var splitComma = this.state.ibu.split(',')
     fetch('/api/filter?filter[beer_ibu_gteq]=' + splitComma[0] + '&filter[beer_ibu_lt]=' + splitComma[1] )
     .then(response => response.json())
     .then(response => {
     console.log(response)
   })
+  }
 }
+
+// beerFilter(){
+//   this.getIbu(),
+//   // this.getAbv(),
+//   this.getBeer()
+// }
 
 
 render(){
@@ -66,7 +81,7 @@ render(){
             <div className="input-group">
               <input type="text" className="form-control" placeholder="Search for..." />
               <span className="input-group-btn">
-                <button className="btn btn-primary" type="button" onClick={this.getBeer}>Search</button>
+                <button className="btn btn-primary" type="button" onClick={this.beerFilter}>Search</button>
               </span>
             </div>
           </div>
@@ -145,7 +160,7 @@ render(){
                 </label>
               </div>
               <span className="input-group-btn">
-                <button className="btn btn-primary" type="button" onClick={this.getBeer}>Search</button>
+                <button className="btn btn-primary" type="button" onClick={this.getBeer, this.getAbv, this.getIbu}>Search</button>
               </span>
             </div>
             <div className="col-xs-3">
