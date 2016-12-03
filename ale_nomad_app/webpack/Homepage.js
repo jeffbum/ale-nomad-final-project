@@ -3,7 +3,6 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Modal from 'react-modal'
-import Filter from './Filter'
 
 
 //alt imports
@@ -35,7 +34,6 @@ class Homepage extends React.Component {
             <div>
                 <main className="mainMargin">
                     <div className="container">
-                        <Filter />
                     </div>
                 </main>
             </div>
