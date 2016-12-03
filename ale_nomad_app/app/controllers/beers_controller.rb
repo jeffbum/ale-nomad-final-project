@@ -8,27 +8,29 @@ class BeersController < ApplicationController
     #Static Method for FrontEnd Team
 
     def index
-      @beer = Beer.all
-      render json: @beer
+      @beers = Beer.all
+      render json: @beers
     end
     #Displays all beer
 
     def show
+      @beer.Beer.find_by(params[:id])
+      render json: @beer
+    end
+
+    def untapshow
       @beer = Untappd::Beer.info(params[:id], :offset => 100)
         render json: @beer
     end
 
 
 
-    def search
+    def untapsearch
       @beers = Untappd::Beer.search(params[:name])
         render json: @beers
     end
 
-    def trending
-      @beers = Untappd::Beer.trending
-      render json: @beers
-    end
+
 
     def filter
       @beers = Beer.all
@@ -46,10 +48,9 @@ class BeersController < ApplicationController
       brewery_db = BreweryDB::Client.new do |config|
         config.api_key = ENV['breweryapikey']
       end
-
       feedback = brewery_db.locations.all(locality: 'Indianapolis', offset: 50)
       render json: feedback
     end
-
+    # used to test seed results in Postman
 
 end
