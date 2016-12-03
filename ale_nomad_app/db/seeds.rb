@@ -16,7 +16,15 @@ feedback.each do |x|
   brewerydb_id: x.brewery.id,
   name: x.brewery.name,
   status: x.brewery.status,
-  website: x.brewery.website
+  website: x.brewery.website,
+  lat: x.latitude,
+  lng: x.longitude,
+  hours_of_operation: x.hours_of_operation,
+  phone: x.phone,
+  street_address: x.street_address,
+  postal_code: x.postal_code,
+  established: x.brewery.established,
+  images: x.brewery.images.try(:square_large)
   )
   brewery_db.brewery(brew.brewerydb_id).beers.each do |beer|
     if beer.style
