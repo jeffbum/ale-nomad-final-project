@@ -5,20 +5,24 @@ class BeerStore {
   constructor() {
     this.state = {
         // TODO: state properties we want to set.
+        beers: [],
+        style: '',
+        ibu: '',
+        abv: ''
     };
 
     this.bindListeners({
         // updateList: MyActions.setList
+        updateBeers: BeerActions.beerList
 
         //method: [filename].method  <-- normal setup for listeners
     });
   }
 
-  updateList (list) {
+  updateBeers (beers) {
       // es6 shorthand property (if same name like below)
       //set state with local state up top.
-      this.setState({
-      });
+      this.setState({ beers })
   }
 
 }
