@@ -1,7 +1,6 @@
 class BeersController < ApplicationController
 
-    def create
-    end
+    acts_as_mappable
 
     def static
     end
