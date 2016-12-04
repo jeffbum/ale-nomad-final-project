@@ -14,7 +14,7 @@ class BeersController < ApplicationController
     #Displays all beer
 
     def show
-      @beer.Beer.find_by(params[:id])
+      @beer = Beer.find(params[:id])
       render json: @beer
     end
 
