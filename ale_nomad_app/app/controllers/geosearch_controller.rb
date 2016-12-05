@@ -3,9 +3,9 @@ class GeosearchController < ApplicationController
 
 
   def distance
-    @somewhere = params[:address]
+    @address = params[:address]
     @range =params[:range]
-    @within_distance = Location.within(@range, :origin => @somewhere)
+    @within_distance = Brew.within(@range, :origin => @address)
     render json: @within_distance
   end
 

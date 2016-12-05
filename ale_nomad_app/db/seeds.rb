@@ -24,7 +24,7 @@ feedback.each do |x|
   street_address: x.street_address,
   postal_code: x.postal_code,
   established: x.brewery.established,
-  images: x.brewery.images.try(:square_large)
+  images: x.brewery.images.try(:large)
   )
   brewery_db.brewery(brew.brewerydb_id).beers.each do |beer|
     if beer.style
