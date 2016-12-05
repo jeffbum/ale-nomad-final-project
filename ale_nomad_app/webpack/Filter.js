@@ -4,21 +4,43 @@ import { Link } from 'react-router'
 // import BeerStore from './stores/BeerStore'
 // import BeerActions from './actions/BeerActions'
 
+
 class Filter extends React.Component {
   constructor(props){
     super(props)
     this.state = {
       beers: [],
       style: '',
-      abv: '',
-      ibu: ''
+      abv: '0,20',
+      ibu: '0,2500'
     }
     this.styleHandler = this.styleHandler.bind(this)
+    // this.beerFilter = this.beerFilter.bind(this)
     this.getBeer = this.getBeer.bind(this)
-    this.getAbv = this.getAbv.bind(this)
+    this.getABV = this.getAbv.bind(this)
     this.getIbu = this.getIbu.bind(this)
 
   }
+  componentDidMount(){
+    this.state.style = '',
+    this.state.abv = '0,20',
+    this.state.ibu = '0,2500'
+  }
+
+  componentWillUnmount() {
+
+  }
+
+  // beerFilter(){
+  //   var splitValue = this.state.abv.split(',')
+  //   var splitComma = this.state.ibu.split(',')
+  //   fetch('/api/filter?filter[beer_name_cont]=' + this.state.style + '/api/filter?filter[beer_ibu_gteq]=' + splitValue[0] + '&filter[beer_abv_lt]=' + splitValue[1] +  '/api/filter?filter[beer_ibu_gteq]=' + splitComma[0] + '&filter[beer_ibu_lt]=' + splitComma[1])
+  //   .then(response => response.json())
+  //   .then(response => {
+  //   console.log(response)
+  // }),
+  // this.styleHandler()
+  // }
 
   styleHandler(e){
     this.setState({
@@ -26,7 +48,10 @@ class Filter extends React.Component {
       ibu: e.target.value,
       abv: e.target.value
     })
+    // this.beerFilter()
   }
+
+//old method, trying to combine into one function.
   getBeer(){
     fetch('/api/filter?filter[beer_name_cont]=' + this.state.style)
     .then(response => response.json())
@@ -40,14 +65,23 @@ class Filter extends React.Component {
     })
   }
   getAbv(){
+    if ( this.state.abv === null) {
+      fetch('/api/filter?filter[beer_abv_gteq]=' + '0' + '&filter[beer_abv_lt]=' + '20' )
+      .then(response => response.json())
+      .then(response => {
+      console.log(response)
+    })
+  }
+  else{
     var splitValue = this.state.abv.split(',')
-    fetch('/api/filter?filter[beer_ibu_gteq]=' + splitValue[0] + '&filter[beer_abv_lt]=' + splitValue[1] )
+    fetch('/api/filter?filter[beer_abv_gteq]=' + splitValue[0] + '&filter[beer_abv_lt]=' + splitValue[1] )
     .then(response => response.json())
     .then(response => {
       console.log(response)
     })
     // console.log(twoValues[1])
   }
+}
   getIbu(){
     if ( this.state.ibu === null) {
       fetch('/api/filter?filter[beer_ibu_gteq]=' + '0' + '&filter[beer_ibu_lt]=' + '2500' )
@@ -62,18 +96,30 @@ class Filter extends React.Component {
     .then(response => response.json())
     .then(response => {
     console.log(response)
-  })
+    })
   }
 }
 
-// beerFilter(){
-//   this.getIbu(),
-//   // this.getAbv(),
-//   this.getBeer()
-// }
-
-
 render(){
+  var Beers = this.state.beers.map((beer, i) =>{
+    return <Link to={'/api/show/beer?id=' + beer.id} key={i}>
+      <div className="row">
+        <div className="col-xs-12">
+          <img className="userPic" src={beer.beer_label=== null? './img/placeholder.png' : (beer.beer_label)} alt="Beer Profile Pic" />
+          <span className="beerName">{beer.beer_name}</span>
+          <span className="time">{beer.brew.name}</span>
+        </div>
+        <div className="row">
+          <div className="col-xs-8 col-xs-offset-2">
+            <p className="post-body">
+              {beer.beer_description}
+            </p>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </Link>
+  })
   return(
     <div>
         <div className="row">
@@ -81,48 +127,20 @@ render(){
             <div className="input-group">
               <input type="text" className="form-control" placeholder="Search for..." />
               <span className="input-group-btn">
-                <button className="btn btn-primary" type="button" onClick={this.beerFilter}>Search</button>
+                <button className="btn btn-primary" type="button" onClick={this.getBeer}>Search</button>
               </span>
             </div>
           </div>
         </div>
         <div className="row">
-          {/* <form className="" action="" method="post"> */}
-            {/* <div className=" col-xs-offset-2 col-xs-3">
-              <h3>Location</h3>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="location" id="optionsRadios1" value="less5" onChange={this.handleFilterChange} />
-                  5 miles
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="location" id="optionsRadios2" value="less10" onChange={this.handleFilterChange}/>
-                  10 miles
-                </label>
-              </div>
-              <div className="radio disabled">
-                <label>
-                  <input type="radio" name="location" id="optionsRadios3" value="less15" onChange={this.handleFilterChange} />
-                  15 miles
-                </label>
-              </div>
-              <div className="radio disabled">
-                <label>
-                  <input type="radio" name="location" id="optionsRadios3" value="less20" onChange={this.handleFilterChange} />
-                  20 miles
-                </label>
-              </div>
-              <div className="radio disabled">
-                <label>
-                  <input type="radio" name="location" id="optionsRadios3" value="less25" onChange={this.handleFilterChange}/>
-                  25 miles
-                </label>
-              </div>
-            </div> */}
             <div className="col-xs-3">
               <h3>Style</h3>
+              <div className="radio">
+                <label>
+                  <input type="radio" name="style"  value="" onClick={this.styleHandler} defaultChecked/>
+                  Any Style
+                </label>
+              </div>
               <div className="radio">
                 <label>
                   <input type="radio" name="style"  value="IPA" onClick={this.styleHandler}/>
@@ -160,11 +178,17 @@ render(){
                 </label>
               </div>
               <span className="input-group-btn">
-                <button className="btn btn-primary" type="button" onClick={this.getBeer, this.getAbv, this.getIbu}>Search</button>
+                <button className="btn btn-primary" type="button" onClick={this.getBeer}>Search</button>
               </span>
             </div>
             <div className="col-xs-3">
               <h3>ABV</h3>
+              <div className="radio">
+                <label>
+                  <input type="radio" name="abv" id="optionsRadios1" value="0,20" onChange={this.styleHandler} defaultChecked/>
+                  Any ABV
+                </label>
+              </div>
               <div className="radio">
                 <label>
                   <input type="radio" name="abv" id="optionsRadios1" value="0,4" onChange={this.styleHandler}/>
@@ -203,6 +227,12 @@ render(){
               <h3>IBU</h3>
               <div className="radio">
                 <label>
+                  <input type="radio" name="ibu" value="0,2500" onChange={this.styleHandler} defaultChecked/>
+                  Any IBU
+                </label>
+              </div>
+              <div className="radio">
+                <label>
                   <input type="radio" name="ibu" value="0,40" onChange={this.styleHandler}/>
                   Less than 40
                 </label>
@@ -236,6 +266,8 @@ render(){
               </span>
             </div>
         </div>
+        <div>{Beers}</div>
+
     </div>
 )
 
