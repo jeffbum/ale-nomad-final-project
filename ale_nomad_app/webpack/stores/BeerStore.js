@@ -5,7 +5,10 @@ class BeerStore {
   constructor() {
     this.state = {
         // TODO: state properties we want to set.
-        beers: []
+        beers: [],
+        style: '',
+        ibu: '',
+        abv: ''
     };
 
     this.bindListeners({
