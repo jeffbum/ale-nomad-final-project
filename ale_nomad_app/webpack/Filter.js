@@ -88,7 +88,7 @@ class Filter extends React.Component {
 
 render(){
   var Beers = this.state.beers.map((beer, i) =>{
-    return <Link to={'/api/show/beer?id=' + beer.id} data={beer} key={i}>
+    return <Link to={'beer/' + beer.id} data={beer} key={i}>
       <div className="row">
         <div className="col-xs-12">
           <img className="userPic" src={beer.beer_label=== null? 'http://unsplash.it/200/200?random' : (beer.beer_label)} alt="Beer Profile Pic" />
