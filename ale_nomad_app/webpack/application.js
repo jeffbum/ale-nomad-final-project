@@ -17,7 +17,7 @@ import FindBrewery from './FindBrewery'
 import Header from './Header'
 import Footer from './Footer'
 import Filter from './Filter'
-import FilterResults from './FilterResults'
+import BeerResult from './BeerResult'
 
 
 // TODO: create const path to figure in api token.
@@ -37,6 +37,7 @@ ReactDOM.render(
         <Route path={path} component={App} >
             <IndexRoute component={Homepage} />
             <Route path='find_beer' component={FindBeer} />
+            <Route path='api/show/beer' component={BeerResult} />
             <Route path='find_brew' component={FindBrewery} />
         </Route>
     </Router>
