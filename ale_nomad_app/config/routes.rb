@@ -9,6 +9,7 @@ get '/find_ibu' => 'beers#static'
 scope '/api' do
   get '/show/beer' => 'beers#show'
   get '/show/brew' => 'brews#show'
+  get '/show/location' => 'geosearch#distance'
   # get '/search/:name' => 'beers#search'
   get '/filter' => 'beers#filter'
   get '/fake' => 'beers#fake'
