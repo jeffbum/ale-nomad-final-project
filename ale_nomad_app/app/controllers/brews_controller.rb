@@ -1,6 +1,5 @@
 class BrewsController < ApplicationController
 
-      acts_as_mappable
 
       def static
       end

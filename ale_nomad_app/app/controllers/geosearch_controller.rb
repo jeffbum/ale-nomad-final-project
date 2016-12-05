@@ -1,0 +1,2 @@
+class GeosearchController < ApplicationController
+end

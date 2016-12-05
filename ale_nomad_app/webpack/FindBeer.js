@@ -11,7 +11,6 @@ class FindBeer extends React.Component {
         super(props)
     }
     componentDidMount() {
-
     }
 
     componentWillUnmount() {
