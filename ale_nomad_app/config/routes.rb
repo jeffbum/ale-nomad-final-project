@@ -23,7 +23,7 @@ end
 
 
 
-
+get '/:beer(/:random)' => 'beers#static'
 
 
 
