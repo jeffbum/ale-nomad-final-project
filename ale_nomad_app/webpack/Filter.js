@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import BeerResult from './BeerResult'
 // import alt from './lib/alt'
 // import BeerStore from './stores/BeerStore'
 // import BeerActions from './actions/BeerActions'
@@ -22,25 +23,13 @@ class Filter extends React.Component {
 
   }
   componentDidMount(){
-    this.state.style = '',
-    this.state.abv = '0,20',
-    this.state.ibu = '0,2500'
+    // this.getBeer()
   }
 
   componentWillUnmount() {
 
   }
 
-  // beerFilter(){
-  //   var splitValue = this.state.abv.split(',')
-  //   var splitComma = this.state.ibu.split(',')
-  //   fetch('/api/filter?filter[beer_name_cont]=' + this.state.style + '/api/filter?filter[beer_ibu_gteq]=' + splitValue[0] + '&filter[beer_abv_lt]=' + splitValue[1] +  '/api/filter?filter[beer_ibu_gteq]=' + splitComma[0] + '&filter[beer_ibu_lt]=' + splitComma[1])
-  //   .then(response => response.json())
-  //   .then(response => {
-  //   console.log(response)
-  // }),
-  // this.styleHandler()
-  // }
 
   styleHandler(e){
     this.setState({
@@ -55,57 +44,54 @@ class Filter extends React.Component {
   getBeer(){
     fetch('/api/filter?filter[beer_name_cont]=' + this.state.style)
     .then(response => response.json())
-    // .then(response => {
-    //     this.setState({
-    //       beers: response.beers,
-    //     })
-    // })
-    .then(response => {
-      console.log(response)
-    })
+
+    .then(response => this.setState({beers: response.beers}))
+     console.log(response.beers)
   }
+
+
   getAbv(){
     if ( this.state.abv === null) {
       fetch('/api/filter?filter[beer_abv_gteq]=' + '0' + '&filter[beer_abv_lt]=' + '20' )
       .then(response => response.json())
       .then(response => {
       console.log(response)
-    })
-  }
-  else{
-    var splitValue = this.state.abv.split(',')
-    fetch('/api/filter?filter[beer_abv_gteq]=' + splitValue[0] + '&filter[beer_abv_lt]=' + splitValue[1] )
-    .then(response => response.json())
-    .then(response => {
-      console.log(response)
-    })
-    // console.log(twoValues[1])
-  }
+      })
+    }
+    else{
+      var splitValue = this.state.abv.split(',')
+      fetch('/api/filter?filter[beer_abv_gteq]=' + splitValue[0] + '&filter[beer_abv_lt]=' + splitValue[1] )
+      .then(response => response.json())
+      .then(response => {
+        console.log(response)
+      })
+      // console.log(twoValues[1])
+    }
 }
+
+
   getIbu(){
     if ( this.state.ibu === null) {
       fetch('/api/filter?filter[beer_ibu_gteq]=' + '0' + '&filter[beer_ibu_lt]=' + '2500' )
       .then(response => response.json())
-      .then(response => {
-      console.log(response)
-    })
-  }
+      .then(response => this.setState({beers: response.beers}))
+       console.log(response.beers)
+    }
     else{
     var splitComma = this.state.ibu.split(',')
     fetch('/api/filter?filter[beer_ibu_gteq]=' + splitComma[0] + '&filter[beer_ibu_lt]=' + splitComma[1] )
     .then(response => response.json())
-    .then(response => {
-    console.log(response)
-    })
-  }
+    .then(response => this.setState({beers: response.beers}))
+     console.log(response.beers)
+    }
 }
 
 render(){
   var Beers = this.state.beers.map((beer, i) =>{
-    return <Link to={'/api/show/beer?id=' + beer.id} key={i}>
+    return <Link to={'/api/show/beer?id=' + beer.id} data={beer} key={i}>
       <div className="row">
         <div className="col-xs-12">
-          <img className="userPic" src={beer.beer_label=== null? './img/placeholder.png' : (beer.beer_label)} alt="Beer Profile Pic" />
+          <img className="userPic" src={beer.beer_label=== null? 'http://unsplash.it/200/200?random' : (beer.beer_label)} alt="Beer Profile Pic" />
           <span className="beerName">{beer.beer_name}</span>
           <span className="time">{beer.brew.name}</span>
         </div>
