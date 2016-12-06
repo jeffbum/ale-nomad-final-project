@@ -10,11 +10,15 @@ scope '/api' do
   get '/show/beer' => 'beers#show'
   get '/show/brew' => 'brews#show'
   get '/show/location' => 'geosearch#distance'
+  post '/signup'=> 'users#sign_up'
+  post '/login' => 'users#log_in'
+  post '/users/:id/unfollow' => 'users#follow'
+  get '/all' => 'users#all'
+
   # get '/search/:name' => 'beers#search'
   get '/filter' => 'beers#filter'
   get '/fake' => 'beers#fake'
   resources :beers
-
   resources :users
 
   resources :categories
@@ -25,6 +29,7 @@ end
 
 
 get '/:beer(/:random)' => 'beers#static'
+
 
 
 

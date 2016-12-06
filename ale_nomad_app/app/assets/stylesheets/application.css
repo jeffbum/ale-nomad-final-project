@@ -25,6 +25,10 @@ body {
   padding-bottom: 50px;
 }
 
+.testBorder {
+  border: 1px solid red;
+}
+
 /*Margins*/
 .logInButton {
   margin-top: 8px;
@@ -43,8 +47,6 @@ body {
   padding-left: 0;
   padding-right: 0;
 }
-
-
 
 /*Carousel Text Sizing*/
 .carousel-content-beer {
@@ -143,6 +145,7 @@ body {
   overflow: hidden;
 }
 .cardImage {
-  width: 100%;
-  height: auto;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
 }

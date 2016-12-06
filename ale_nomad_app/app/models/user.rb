@@ -4,15 +4,16 @@ class User < ApplicationRecord
   acts_as_follower
   acts_as_followable
   has_secure_token :api_token
-  attachment :image
+  attachment :picture
 
+  has_many :reviews
 
-validates :email,
-        presence: true,
-        uniqueness: true
+  validates :username, presence: true
 
-validates :email,
-          format: /\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b/
+  validates :email,
+    presence: true,
+    uniqueness: true,
+    format: /\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b/
 
 
 end

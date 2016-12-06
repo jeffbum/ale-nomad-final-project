@@ -13,7 +13,7 @@ class BrewsController < ApplicationController
 
       def show
         @brew = Brew.find(params[:id])
-          render json: @brew
+        render json: @brew
       end
 
 
