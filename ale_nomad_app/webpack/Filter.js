@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import BeerResult from './BeerResult'
-// import alt from './lib/alt'
-// import BeerStore from './stores/BeerStore'
-// import BeerActions from './actions/BeerActions'
 
+
+// TODO: comment code so others can read it.
 
 class Filter extends React.Component {
   constructor(props){
@@ -23,14 +22,8 @@ class Filter extends React.Component {
     // this.getIbu = this.getIbu.bind(this)
 
   }
-  componentDidMount(){
-  }
 
-  componentWillUnmount() {
-
-  }
-
-
+  // TODO: explain why I split into three handlers from one.
   styleHandler(e){
     this.setState({
       style: e.target.value
@@ -48,55 +41,18 @@ class Filter extends React.Component {
     })
   }
 
-//old method, trying to combine into one function.
+// TODO: explain the split Value and splitComma variables and why they were necessary
   getBeer(){
     var splitValue = this.state.abv.split(',')
     var splitComma = this.state.ibu.split(',')
 
-    fetch('/api/filter?filter[beer_name_cont]=' + this.state.style + '/api/filter?filter[beer_abv_gteq]=' + splitValue[0] + '&filter[beer_abv_lt]=' + splitValue[1] + '/api/filter?filter[beer_ibu_gteq]=' + splitComma[0] + '&filter[beer_ibu_lt]=' + splitComma[1])
-
+    fetch('/api/filter?filter[beer_name_cont]=' + this.state.style + '&filter[beer_abv_gteq]=' + splitValue[0] + '&filter[beer_abv_lt]=' + splitValue[1] + '&filter[beer_ibu_gteq]=' + splitComma[0] + '&filter[beer_ibu_lt]=' + splitComma[1])
 
     .then(response => response.json())
-
     .then(response => this.setState({beers: response.beers}))
-    // .then(whatever => console.log(response.beers))
-
-
-    // fetch('/api/filter?filter[beer_name_cont]=' + this.state.style)
-    // .then(response => response.json())
-    //
-    // .then(response => this.setState({beers: response.beers}))
-    //  console.log(response.beers)
+    .then(response => {console.log(this.state.beers)})
   }
 
-
-  getAbv(){
-
-      var splitValue = this.state.abv.split(',')
-      fetch('/api/filter?filter[beer_abv_gteq]=' + splitValue[0] + '&filter[beer_abv_lt]=' + splitValue[1] )
-      .then(response => response.json())
-      .then(response => this.setState({beers: response.beers}))
-      .then(whatever => console.log(response.beers))
-      // console.log(twoValues[1])
-    }
-
-
-
-  getIbu(){
-    if ( this.state.ibu === '') {
-      fetch('/api/filter?filter[beer_ibu_gteq]=' + '0' + '&filter[beer_ibu_lt]=' + '2500' )
-      .then(response => response.json())
-      .then(response => this.setState({beers: response.beers}))
-       console.log(response.beers)
-    }
-    else{
-    var splitComma = this.state.ibu.split(',')
-    fetch('/api/filter?filter[beer_ibu_gteq]=' + splitComma[0] + '&filter[beer_ibu_lt]=' + splitComma[1] )
-    .then(response => response.json())
-    .then(response => this.setState({beers: response.beers}))
-     console.log(response.beers)
-    }
-}
 
 render(){
   console.log(this.state.beers)
@@ -114,7 +70,10 @@ render(){
       </div>
     </Link>
   })
-  return (
+
+  // FIXME: change buttons to where there is just a search button & ONE large button for the filters.
+  // TODO: restyle the search results layout
+  return(
     <div>
         <div className="row">
           <div className="col-xs-offset-2 col-xs-8">
@@ -171,9 +130,9 @@ render(){
                   Sour
                 </label>
               </div>
-              <span className="input-group-btn">
+              {/* <span className="input-group-btn">
                 <button className="btn btn-primary" type="button" onClick={this.getBeer}>Search</button>
-              </span>
+              </span> */}
             </div>
             <div className="col-xs-3">
               <h3>ABV</h3>
@@ -213,9 +172,9 @@ render(){
                   Greater than 10%
                 </label>
               </div>
-              <span className="input-group-btn">
+              {/* <span className="input-group-btn">
                 <button className="btn btn-primary" type="button" onClick={this.getAbv}>Search</button>
-              </span>
+              </span> */}
             </div>
             <div className="col-xs-3">
               <h3>IBU</h3>
@@ -255,9 +214,9 @@ render(){
                   Greater than 100
                 </label>
               </div>
-              <span className="input-group-btn">
+              {/* <span className="input-group-btn">
                 <button className="btn btn-primary" type="button" onClick={this.getIbu}>Search</button>
-              </span>
+              </span> */}
             </div>
         </div>
         <div>{Beers}</div>
