@@ -39,7 +39,7 @@ class BeerResult extends React.Component {
             </div>
         </div>
         }
-    }
+}
 
 
 export default BeerResult
