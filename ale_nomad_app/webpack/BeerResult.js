@@ -9,7 +9,6 @@ class BeerResult extends React.Component {
         this.state = {
             beerDetails: [],
             brewDetails: [],
-
         }
     }
 
@@ -32,10 +31,11 @@ class BeerResult extends React.Component {
 
     render(){
         console.log(this.state.brewDetails)
+        console.log(this.state.beerDetails)
         return <div className="container">
             <div className="row">
                 <div>{this.state.beerDetails.beer_name}</div>
-                <div>{this.state.brewDetails.hours_of_operation}</div>
+                <div>{this.state.brewDetails.established}</div>
             </div>
         </div>
         }
