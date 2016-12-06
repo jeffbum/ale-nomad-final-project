@@ -35,7 +35,7 @@ class Homepage extends React.Component {
             <div>
                 <main className="mainMargin">
                     <div className="container">
-                        <Filter />
+                        
                     </div>
                 </main>
             </div>
