@@ -8,7 +8,8 @@ class BeerResult extends React.Component {
         super(props)
         this.state = {
             beerDetails: [],
-            brewDetails: []
+            brewDetails: [],
+
         }
     }
 
@@ -26,20 +27,27 @@ class BeerResult extends React.Component {
             })
             .then(response => response.json())
             .then(response =>
-                this.setState({beerDetails: response.beer})
+                this.setState({
+                    beerDetails: response.beer,
+                    brewDetails: response.beer.brew
+                })
             )
+            // .then(response =>{
+            //     console.log(response)
+            // })
+
             // .then(response =>
             //     this.setState({brewDetails: response.brew})
             // )
-            .then(whatever => console.log(this.state))
     }
 
 
     render(){
+        console.log(this.state.brewDetails)
         return <div className="container">
             <div className="row">
                 <div>{this.state.beerDetails.beer_name}</div>
-                {/* <div>{this.state.beerDetails}</div> */}
+                <div>{this.state.brewDetails.hours_of_operation}</div>
             </div>
         </div>
     }
