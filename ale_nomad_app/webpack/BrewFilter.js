@@ -13,17 +13,27 @@ class BrewFilter extends React.Component {
       brews: [],
       searchInput: '',
       location: '',
-      // style: '',
+      style: '',
     }
+    this.searchHandler = this.searchHandler.bind(this)
+    this.locationHandler = this.locationHandler.bind(this)
     this.styleHandler = this.styleHandler.bind(this)
     this.getBrew = this.getBrew.bind(this)
   }
 
-  styleHandler(e){
+  searchHandler(e){
     this.setState({
       searchInput: e.target.value,
+    })
+  }
+  locationHandler(e){
+    this.setState({
       location: e.target.value,
-      // style: e.target.value
+    })
+  }
+  styleHandler(e){
+    this.setState({
+      style: e.target.value,
     })
   }
 
@@ -36,31 +46,32 @@ class BrewFilter extends React.Component {
   }
 
 render(){
-  // var Brews = this.state.brews.map((brew, i) => {
+  var Brews = this.state.brews.map((brew, i) => {
+      return <div>Hello World</div>
   //   return <Link to={'/api/show/brew?id=' + brew.id} data={brew} key={i}>
-  //     <div className="row">
-  //       <div className="col-xs-12">
-  //         <img className="userPic" src={beer.beer_label=== null? 'http://unsplash.it/200/200?random' : (beer.beer_label)} alt="Beer Profile Pic" />
-  //         <span className="beerName">{beer.beer_name}</span>
-  //         <span className="time">{beer.brew.name}</span>
-  //       </div>
-  //       <div className="row">
-  //         <div className="col-xs-8 col-xs-offset-2">
-  //           <p className="post-body">
-  //             {beer.beer_description}
-  //           </p>
-  //         </div>
-  //       </div>
-  //       <hr />
-  //     </div>
-  //   </Link>
-  // })
+  // //     <div className="row">
+  // //       <div className="col-xs-12">
+  // //         <img className="userPic" src={beer.beer_label=== null? 'http://unsplash.it/200/200?random' : (beer.beer_label)} alt="Beer Profile Pic" />
+  // //         <span className="beerName">{beer.beer_name}</span>
+  // //         <span className="time">{beer.brew.name}</span>
+  // //       </div>
+  // //       <div className="row">
+  // //         <div className="col-xs-8 col-xs-offset-2">
+  // //           <p className="post-body">
+  // //             {beer.beer_description}
+  // //           </p>
+  // //         </div>
+  // //       </div>
+  // //       <hr />
+  // //     </div>
+  // //   </Link>
+  })
   return(
     <div>
         <div className="row">
           <div className="col-xs-offset-2 col-xs-8">
             <div className="input-group">
-              <input name="searchInput" type="text" className="form-control" placeholder="Search for..." onChange={this.styleHandler}/>
+              <input name="searchInput" type="text" className="form-control" placeholder="Search for..." onChange={this.searchHandler}/>
               {/* <span className="input-group-btn">
                 <button className="btn btn-primary" type="button" onClick={this.getBeer}>Search</button>
               </span> */}
@@ -72,37 +83,37 @@ render(){
               <h3>Location</h3>
               <div className="radio">
                 <label>
-                  <input type="radio" name="location"  value="" onClick={this.styleHandler} defaultChecked/>
+                  <input type="radio" name="location"  value="" onClick={this.locationHandler} defaultChecked/>
                   Any Location
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="location"  value="1" onClick={this.styleHandler}/>
+                  <input type="radio" name="location"  value="1" onClick={this.locationHandler}/>
                   1 Mile
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="location"  value="5" onClick={this.styleHandler} />
+                  <input type="radio" name="location"  value="5" onClick={this.locationHandler} />
                   5 Miles
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="location"  value="10" onClick={this.styleHandler}/>
+                  <input type="radio" name="location"  value="10" onClick={this.locationHandler}/>
                   10 Miles
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="location"  value="15" onClick={this.styleHandler}/>
+                  <input type="radio" name="location"  value="15" onClick={this.locationHandler}/>
                   15 Miles
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="style"  value="20" onClick={this.styleHandler}/>
+                  <input type="radio" name="style"  value="20" onClick={this.locationHandler}/>
                   20 Miles
                 </label>
               </div>
