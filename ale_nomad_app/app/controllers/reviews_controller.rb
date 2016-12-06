@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:rating_score, :user_id)
+    params.require(:post).permit(:rating, :user_id)
   end
 
 end

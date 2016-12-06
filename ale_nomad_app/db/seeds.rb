@@ -12,6 +12,7 @@ end
 feedback = brewery_db.locations.all(locality: 'Indianapolis', offset: 50)
 
 feedback.each do |x|
+  puts x.brewery.images.large
   brew = Brew.create!(
   brewerydb_id: x.brewery.id,
   name: x.brewery.name,
@@ -24,7 +25,7 @@ feedback.each do |x|
   street_address: x.street_address,
   postal_code: x.postal_code,
   established: x.brewery.established,
-  images: x.brewery.images.try(:large)
+  remote_images_url: x.brewery.images.try(:large)
   )
   brewery_db.brewery(brew.brewerydb_id).beers.each do |beer|
     if beer.style

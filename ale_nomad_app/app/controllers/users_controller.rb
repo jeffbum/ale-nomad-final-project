@@ -5,45 +5,44 @@ class UsersController < ApplicationController
     render json: @user, scope: current_user, scope_name: :current_user
   end
 
-  def signin
+  def log_in
     @user = User.find_by(email: params[:email]).try(:authenticate, params[:password])
       if @user.present?
-        render json: @user
+        render json: @user, serializer: LoginSerializer
       else
         render json: ["User not found"]
       end
   end
+  # Login method_sending to LoginSerializer
 
-
-  def create
+  def sign_up
     @user = User.new(user_params)
       if @user.save
-        render json: @user
+        UserEmailMailer.send_signup_email(@user).deliver
+        render json: @user, serializer: LoginSerializer
       else
         render json: @user.errors.full_messages
       end
   end
-
-
+  # Signip method_sending to LoginSerializer
 
   def follow
     current_user.toggle_follow!(User.find(params[:id]))
     render json: current_user
   end
 
-
-
   def followees
     @followees = current_user.followees(User)
     render json: @followees
   end
 
-
+  def rating
+end
 
   private
 
    def user_params
-     params.permit(:email, :password, :avatar, :name)
+     params.permit(:email, :password, :picture, :name)
    end
 
 
