@@ -89,24 +89,19 @@ class Filter extends React.Component {
 render(){
   var Beers = this.state.beers.map((beer, i) =>{
     return <Link to={'beer/' + beer.id} data={beer} key={i}>
-      <div className="row">
-        <div className="col-xs-12">
-          <img className="userPic" src={beer.beer_label=== null? 'http://unsplash.it/200/200?random' : (beer.beer_label)} alt="Beer Profile Pic" />
-          <span className="beerName">{beer.beer_name}</span>
-          <span className="time">{beer.brew.name}</span>
+      <div className="row testBorder">
+        <div className="col-sm-4">
+            <img className="cardImage" src={beer.beer_label=== null? '/img/beer.jpg' : (beer.beer_label)} alt="Beer Profile Pic" />
+            <span className="beerName"><b>{beer.beer_name}</b></span>
+            <span className="time"><b>{beer.brew.name}</b></span>
+              <p className="post-body">
+                {beer.beer_description}
+              </p>
         </div>
-        <div className="row">
-          <div className="col-xs-8 col-xs-offset-2">
-            <p className="post-body">
-              {beer.beer_description}
-            </p>
-          </div>
-        </div>
-        <hr />
       </div>
     </Link>
   })
-  return(
+  return (
     <div>
         <div className="row">
           <div className="col-xs-offset-2 col-xs-8">
@@ -255,8 +250,7 @@ render(){
         <div>{Beers}</div>
 
     </div>
-)
-
-}
+    )
+  }
 }
 export default Filter
