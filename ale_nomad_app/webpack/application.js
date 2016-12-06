@@ -18,6 +18,8 @@ import Header from './Header'
 import Footer from './Footer'
 import Filter from './Filter'
 import BeerResult from './BeerResult'
+// import BrewFilter from './BrewFilter'
+// import BrewResult from './BrewResult'
 
 
 // TODO: create const path to figure in api token.
@@ -37,8 +39,9 @@ ReactDOM.render(
         <Route path={path} component={App} >
             <IndexRoute component={Homepage} />
             <Route path='find_beer' component={FindBeer} />
-            <Route path='beer/:beer_id' component={BeerResult} />
+                <Route path='beer/:beer_id' component={BeerResult} />
             <Route path='find_brew' component={FindBrewery} />
+                {/* <Route path='beer/:beer_id' component={BrewResult} /> */}
         </Route>
     </Router>
     , document.getElementById('aleNomad')
