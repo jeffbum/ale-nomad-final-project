@@ -46,25 +46,26 @@ class BrewFilter extends React.Component {
   }
 
 render(){
-  // var Brews = this.state.brews.map((brew, i) => {
+  var Brews = this.state.brews.map((brew, i) => {
+      return <div>Hello World</div>
   //   return <Link to={'/api/show/brew?id=' + brew.id} data={brew} key={i}>
-  //     <div className="row">
-  //       <div className="col-xs-12">
-  //         <img className="userPic" src={beer.beer_label=== null? 'http://unsplash.it/200/200?random' : (beer.beer_label)} alt="Beer Profile Pic" />
-  //         <span className="beerName">{beer.beer_name}</span>
-  //         <span className="time">{beer.brew.name}</span>
-  //       </div>
-  //       <div className="row">
-  //         <div className="col-xs-8 col-xs-offset-2">
-  //           <p className="post-body">
-  //             {beer.beer_description}
-  //           </p>
-  //         </div>
-  //       </div>
-  //       <hr />
-  //     </div>
-  //   </Link>
-  // })
+  // //     <div className="row">
+  // //       <div className="col-xs-12">
+  // //         <img className="userPic" src={beer.beer_label=== null? 'http://unsplash.it/200/200?random' : (beer.beer_label)} alt="Beer Profile Pic" />
+  // //         <span className="beerName">{beer.beer_name}</span>
+  // //         <span className="time">{beer.brew.name}</span>
+  // //       </div>
+  // //       <div className="row">
+  // //         <div className="col-xs-8 col-xs-offset-2">
+  // //           <p className="post-body">
+  // //             {beer.beer_description}
+  // //           </p>
+  // //         </div>
+  // //       </div>
+  // //       <hr />
+  // //     </div>
+  // //   </Link>
+  })
   return(
     <div>
         <div className="row">
@@ -120,7 +121,7 @@ render(){
                   <button className="btn btn-primary" type="button" onClick={this.getBeer}>Search</button>
                 </span> */}
             </div>
-            <div className="col-xs-3">
+            {/* <div className="col-xs-3">
               <h3>Style</h3>
               <div className="radio">
                 <label>
@@ -161,7 +162,7 @@ render(){
               <span className="input-group-btn">
                 <button className="btn btn-primary" type="button" onClick={this.getAbv}>Search</button>
               </span>
-            </div>
+            </div> */}
             <div className="col-sm-12">
               <span className="input-group-btn">
                 <button className="btn btn-primary" type="button" onClick={this.getBrew}>Search</button>

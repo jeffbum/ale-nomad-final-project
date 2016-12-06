@@ -19,8 +19,8 @@ class Filter extends React.Component {
     this.abvHandler = this.abvHandler.bind(this)
     this.ibuHandler = this.ibuHandler.bind(this)
     this.getBeer = this.getBeer.bind(this)
-    this.getAbv = this.getAbv.bind(this)
-    this.getIbu = this.getIbu.bind(this)
+    // this.getAbv = this.getAbv.bind(this)
+    // this.getIbu = this.getIbu.bind(this)
 
   }
   componentDidMount(){
@@ -59,7 +59,7 @@ class Filter extends React.Component {
     .then(response => response.json())
 
     .then(response => this.setState({beers: response.beers}))
-    .then(whatever => console.log(response.beers))
+    // .then(whatever => console.log(response.beers))
 
 
     // fetch('/api/filter?filter[beer_name_cont]=' + this.state.style)
@@ -99,6 +99,7 @@ class Filter extends React.Component {
 }
 
 render(){
+  console.log(this.state.beers)
   var Beers = this.state.beers.map((beer, i) =>{
     return <Link to={'beer/' + beer.id} data={beer} key={i}>
       <div className="row testBorder">
