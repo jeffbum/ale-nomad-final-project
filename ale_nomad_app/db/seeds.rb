@@ -12,7 +12,6 @@ end
 feedback = brewery_db.locations.all(locality: 'Indianapolis', offset: 50)
 
 feedback.each do |x|
-  puts x.brewery.images.large
   brew = Brew.create!(
   brewerydb_id: x.brewery.id,
   name: x.brewery.name,
