@@ -16,14 +16,14 @@ class Filter extends React.Component {
       ibu: '0,2500'
     }
     this.styleHandler = this.styleHandler.bind(this)
-    // this.beerFilter = this.beerFilter.bind(this)
+    this.abvHandler = this.abvHandler.bind(this)
+    this.ibuHandler = this.ibuHandler.bind(this)
     this.getBeer = this.getBeer.bind(this)
-    this.getABV = this.getAbv.bind(this)
+    this.getAbv = this.getAbv.bind(this)
     this.getIbu = this.getIbu.bind(this)
 
   }
   componentDidMount(){
-    // this.getBeer()
   }
 
   componentWillUnmount() {
@@ -33,45 +33,57 @@ class Filter extends React.Component {
 
   styleHandler(e){
     this.setState({
-      style: e.target.value,
-      ibu: e.target.value,
+      style: e.target.value
+    })
+  }
+
+  ibuHandler(e){
+    this.setState({
+      ibu: e.target.value
+    })
+  }
+  abvHandler(e){
+    this.setState({
       abv: e.target.value
     })
-    // this.beerFilter()
   }
 
 //old method, trying to combine into one function.
   getBeer(){
-    fetch('/api/filter?filter[beer_name_cont]=' + this.state.style)
+    var splitValue = this.state.abv.split(',')
+    var splitComma = this.state.ibu.split(',')
+
+    fetch('/api/filter?filter[beer_name_cont]=' + this.state.style + '/api/filter?filter[beer_abv_gteq]=' + splitValue[0] + '&filter[beer_abv_lt]=' + splitValue[1] + '/api/filter?filter[beer_ibu_gteq]=' + splitComma[0] + '&filter[beer_ibu_lt]=' + splitComma[1])
+
+
     .then(response => response.json())
 
     .then(response => this.setState({beers: response.beers}))
-     console.log(response.beers)
+    .then(whatever => console.log(response.beers))
+
+
+    // fetch('/api/filter?filter[beer_name_cont]=' + this.state.style)
+    // .then(response => response.json())
+    //
+    // .then(response => this.setState({beers: response.beers}))
+    //  console.log(response.beers)
   }
 
 
   getAbv(){
-    if ( this.state.abv === null) {
-      fetch('/api/filter?filter[beer_abv_gteq]=' + '0' + '&filter[beer_abv_lt]=' + '20' )
-      .then(response => response.json())
-      .then(response => {
-      console.log(response)
-      })
-    }
-    else{
+
       var splitValue = this.state.abv.split(',')
       fetch('/api/filter?filter[beer_abv_gteq]=' + splitValue[0] + '&filter[beer_abv_lt]=' + splitValue[1] )
       .then(response => response.json())
-      .then(response => {
-        console.log(response)
-      })
+      .then(response => this.setState({beers: response.beers}))
+      .then(whatever => console.log(response.beers))
       // console.log(twoValues[1])
     }
-}
+
 
 
   getIbu(){
-    if ( this.state.ibu === null) {
+    if ( this.state.ibu === '') {
       fetch('/api/filter?filter[beer_ibu_gteq]=' + '0' + '&filter[beer_ibu_lt]=' + '2500' )
       .then(response => response.json())
       .then(response => this.setState({beers: response.beers}))
@@ -166,37 +178,37 @@ render(){
               <h3>ABV</h3>
               <div className="radio">
                 <label>
-                  <input type="radio" name="abv" id="optionsRadios1" value="0,20" onChange={this.styleHandler} defaultChecked/>
+                  <input type="radio" name="abv" id="optionsRadios1" value="0,20" onChange={this.abvHandler} defaultChecked/>
                   Any ABV
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="abv" id="optionsRadios1" value="0,4" onChange={this.styleHandler}/>
+                  <input type="radio" name="abv" id="optionsRadios1" value="0,4" onChange={this.abvHandler}/>
                   Less than 4%
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="abv" id="optionsRadios2" value="4,6" onChange={this.styleHandler}/>
+                  <input type="radio" name="abv" id="optionsRadios2" value="4,6" onChange={this.abvHandler}/>
                   4 - 6%
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="abv" id="optionsRadios2" value="6,8" onChange={this.styleHandler}/>
+                  <input type="radio" name="abv" id="optionsRadios2" value="6,8" onChange={this.abvHandler}/>
                   6 - 8%
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="abv" id="optionsRadios2" value="8,10" onChange={this.styleHandler}/>
+                  <input type="radio" name="abv" id="optionsRadios2" value="8,10" onChange={this.abvHandler}/>
                   8 - 10%
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="abv" id="optionsRadios2" value="10,20" onChange={this.styleHandler}/>
+                  <input type="radio" name="abv" id="optionsRadios2" value="10,20" onChange={this.abvHandler}/>
                   Greater than 10%
                 </label>
               </div>
@@ -208,37 +220,37 @@ render(){
               <h3>IBU</h3>
               <div className="radio">
                 <label>
-                  <input type="radio" name="ibu" value="0,2500" onChange={this.styleHandler} defaultChecked/>
+                  <input type="radio" name="ibu" value="0,2500" onChange={this.ibuHandler} defaultChecked/>
                   Any IBU
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="ibu" value="0,40" onChange={this.styleHandler}/>
+                  <input type="radio" name="ibu" value="0,40" onChange={this.ibuHandler}/>
                   Less than 40
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="ibu" value="40,60" onChange={this.styleHandler}/>
+                  <input type="radio" name="ibu" value="40,60" onChange={this.ibuHandler}/>
                   40-60
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="ibu" value="60,80" onChange={this.styleHandler}/>
+                  <input type="radio" name="ibu" value="60,80" onChange={this.ibuHandler}/>
                   60-80
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="ibu" value="80,100" onChange={this.styleHandler}/>
+                  <input type="radio" name="ibu" value="80,100" onChange={this.ibuHandler}/>
                   80-100
                 </label>
               </div>
               <div className="radio">
                 <label>
-                  <input type="radio" name="ibu" value="100,2500" onChange={this.styleHandler}/>
+                  <input type="radio" name="ibu" value="100,2500" onChange={this.ibuHandler}/>
                   Greater than 100
                 </label>
               </div>
