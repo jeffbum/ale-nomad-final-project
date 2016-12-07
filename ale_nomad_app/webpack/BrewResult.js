@@ -12,7 +12,8 @@ class BrewResult extends React.Component {
     }
     componentDidMount(){
         // console.log(this.props.routeParams)
-        fetch('/api/show/brew?id=' + this.props.routeParams.brew_id {
+        fetch('/api/show/brew?id=' + this.props.routeParams.brew_id, {
+
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
