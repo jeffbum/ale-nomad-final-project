@@ -4,11 +4,13 @@ class User < ApplicationRecord
   acts_as_follower
   acts_as_followable
   has_secure_token :api_token
-  attachment :picture
+  attachment :images
 
   has_many :reviews
+  has_many :drinks
+  has_many :beers, through: :drinks
 
-  validates :username, presence: true
+  validates :name, presence: true
 
   validates :email,
     presence: true,
