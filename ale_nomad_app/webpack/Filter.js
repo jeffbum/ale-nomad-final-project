@@ -18,6 +18,7 @@ class Filter extends React.Component {
     this.abvHandler = this.abvHandler.bind(this)
     this.ibuHandler = this.ibuHandler.bind(this)
     this.getBeer = this.getBeer.bind(this)
+    this.searchResult = this.searchResult.bind(this)
     // this.getAbv = this.getAbv.bind(this)
     // this.getIbu = this.getIbu.bind(this)
 
@@ -52,6 +53,15 @@ class Filter extends React.Component {
     .then(response => this.setState({beers: response.beers}))
     .then(response => {console.log(this.state.beers)})
   }
+  searchResult() {
+      fetch('/api/filter?filter[beer_name_cont]=' + this.state.style)
+      .then(response => response.json())
+      .then(response => this.setState({beers: response.beers}))
+      // this.setState({
+      //   beers: ''
+      // })
+      // .then(response => {console.log(this.state.beers)})
+  }
 
 
 render(){
@@ -72,13 +82,14 @@ render(){
   })
   return (
     <div>
+<<<<<<< HEAD
       <div className="row text-center testMargin">
         <p className="searchHeaders">Search by Beer Name or Styles</p>
         <div className="col-xs-offset-2 col-xs-8 testMargin">
           <div className="input-group">
-            <input type="text" className="form-control" placeholder="Search for..." />
+            <input type="text" className="form-control" placeholder="Search for..."  onChange={this.styleHandler} />
             <div className="input-group-btn">
-              <button className="btn signInButton" type="button" onClick={this.getBeer}>Search</button>
+              <button className="btn signInButton" type="button" onClick={this.searchResult}>Search</button>
             </div>
           </div>
         </div>
