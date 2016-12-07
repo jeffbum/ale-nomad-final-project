@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
-
-  before_action :require_login, only: [:my_reviews]
+  before_action :require_login, only: [:my_reviews, :follow, :followees]
 
   def all
     @user = User.all
