@@ -82,7 +82,6 @@ render(){
   })
   return (
     <div>
-<<<<<<< HEAD
       <div className="row text-center testMargin">
         <p className="searchHeaders">Search by Beer Name or Styles</p>
         <div className="col-xs-offset-2 col-xs-8 testMargin">
