@@ -68,169 +68,135 @@ render(){
   console.log(this.state.beers)
   var Beers = this.state.beers.map((beer, i) =>{
     return <Link to={'beer/' + beer.id} data={beer} key={i}>
-      <div className="row testBorder">
-        <div className="col-sm-4">
-            <img className="cardImage" src={beer.beer_label=== null? '/img/beer.jpg' : (beer.beer_label)} alt="Beer Profile Pic" />
-            <span className="beerName"><b>{beer.beer_name}</b></span>
-            <span className="time"><b>{beer.brew.name}</b></span>
-              <p className="post-body">
+      <div className="col-sm-3 cardWrap">
+        <div className="col-sm-12">
+            <img height="200" width="200" className="cardImage" src={beer.beer_label=== null? '/img/beer.jpg' : (beer.beer_label)} alt="Beer Profile Pic" />
+            <p className="beerName"><b>{beer.beer_name}</b></p>
+            <p className="time"><b>{beer.brew.name}</b></p>
+              <div className="post-body runithOver">
                 {beer.beer_description}
-              </p>
+              </div>
         </div>
       </div>
     </Link>
   })
-
-  // FIXME: change buttons to where there is just a search button & ONE large button for the filters.
-  // TODO: restyle the search results layout
-  return(
+  return (
     <div>
-        <div className="row">
-          <div className="col-xs-offset-2 col-xs-8">
-            <div className="input-group">
-              <input type="text" className="form-control" placeholder="Search for..." onChange={this.styleHandler} />
-              <span className="input-group-btn">
-                <button className="btn btn-primary" type="button" onClick={this.searchResult}>Search</button>
-              </span>
+      <div className="row text-center testMargin">
+        <p className="searchHeaders">Search by Beer Name or Styles</p>
+        <div className="col-xs-offset-2 col-xs-8 testMargin">
+          <div className="input-group">
+            <input type="text" className="form-control" placeholder="Search for..."  onChange={this.styleHandler} />
+            <div className="input-group-btn">
+              <button className="btn signInButton" type="button" onClick={this.searchResult}>Search</button>
             </div>
           </div>
         </div>
-        <div className="row">
-            <div className="col-xs-3">
-              <h3>Style</h3>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="style"  value="" onClick={this.styleHandler} defaultChecked/>
-                  Any Style
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="style"  value="IPA" onClick={this.styleHandler}/>
-                  IPA
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="style"  value="Stout" onClick={this.styleHandler} />
-                  Stout
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="style"  value="Amber" onClick={this.styleHandler}/>
-                  Amber Ale
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="style"  value="Lager" onClick={this.styleHandler}/>
-                  Lager
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="style"  value="Pilsner" onClick={this.styleHandler}/>
-                  Pilsner
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="style"  value="Sour" onClick={this.styleHandler}/>
-                  Sour
-                </label>
-              </div>
-              {/* <span className="input-group-btn">
-                <button className="btn btn-primary" type="button" onClick={this.getBeer}>Search</button>
-              </span> */}
-            </div>
-            <div className="col-xs-3">
-              <h3>ABV</h3>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="abv" id="optionsRadios1" value="0,20" onChange={this.abvHandler} defaultChecked/>
-                  Any ABV
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="abv" id="optionsRadios1" value="0,4" onChange={this.abvHandler}/>
-                  Less than 4%
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="abv" id="optionsRadios2" value="4,6" onChange={this.abvHandler}/>
-                  4 - 6%
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="abv" id="optionsRadios2" value="6,8" onChange={this.abvHandler}/>
-                  6 - 8%
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="abv" id="optionsRadios2" value="8,10" onChange={this.abvHandler}/>
-                  8 - 10%
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="abv" id="optionsRadios2" value="10,20" onChange={this.abvHandler}/>
-                  Greater than 10%
-                </label>
-              </div>
-              {/* <span className="input-group-btn">
-                <button className="btn btn-primary" type="button" onClick={this.getAbv}>Search</button>
-              </span> */}
-            </div>
-            <div className="col-xs-3">
-              <h3>IBU</h3>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="ibu" value="0,2500" onChange={this.ibuHandler} defaultChecked/>
-                  Any IBU
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="ibu" value="0,40" onChange={this.ibuHandler}/>
-                  Less than 40
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="ibu" value="40,60" onChange={this.ibuHandler}/>
-                  40-60
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="ibu" value="60,80" onChange={this.ibuHandler}/>
-                  60-80
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="ibu" value="80,100" onChange={this.ibuHandler}/>
-                  80-100
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" name="ibu" value="100,2500" onChange={this.ibuHandler}/>
-                  Greater than 100
-                </label>
-              </div>
-              {/* <span className="input-group-btn">
-                <button className="btn btn-primary" type="button" onClick={this.getIbu}>Search</button>
-              </span> */}
-            </div>
+      </div>
+      {/* // TODO: Find a way to keep the row centered but not the radio buttons */}
+      <div className="row testMargin text-center">
+        <p className="searchHeaders">Filter by Style, ABV, or IBU</p>
+        <div className="col-xs-12">
+          <h3>Style</h3>
+          <label className="radio-inline">
+            <input type="radio" name="style"  value="" onClick={this.styleHandler} defaultChecked/>
+              Any Style
+          </label>
+          <label className="radio-inline">
+            <input type="radio" name="style"  value="IPA" onClick={this.styleHandler}/>
+              IPA
+          </label>
+          <label className="radio-inline">
+            <input type="radio" name="style"  value="Stout" onClick={this.styleHandler} />
+              Stout
+          </label>
+          <label className="radio-inline">
+              <input type="radio" name="style"  value="Amber" onClick={this.styleHandler}/>
+              Amber Ale
+          </label>
+          <label className="radio-inline">
+            <input type="radio" name="style"  value="Lager" onClick={this.styleHandler}/>
+              Lager
+          </label>
+          <label className="radio-inline">
+            <input type="radio" name="style"  value="Pilsner" onClick={this.styleHandler}/>
+              Pilsner
+          </label>
+          <label className="radio-inline">
+            <input type="radio" name="style"  value="Sour" onClick={this.styleHandler}/>
+              Sour
+          </label>
         </div>
-        <div>{Beers}</div>
-
+      </div>
+      <div className="row testMargin text-center">
+        <div className="col-xs-12">
+          <h3>ABV</h3>
+            <label className="radio-inline">
+              <input type="radio" name="abv" id="optionsRadios1" value="0,20" onChange={this.abvHandler} defaultChecked/>
+              Any ABV
+            </label>
+            <label className="radio-inline">
+              <input type="radio" name="abv" id="optionsRadios1" value="0,4" onChange={this.abvHandler}/>
+              Less than 4%
+            </label>
+            <label className="radio-inline">
+              <input type="radio" name="abv" id="optionsRadios2" value="4,6" onChange={this.abvHandler}/>
+              4 - 6%
+            </label>
+            <label className="radio-inline">
+              <input type="radio" name="abv" id="optionsRadios2" value="6,8" onChange={this.abvHandler}/>
+              6 - 8%
+            </label>
+            <label className="radio-inline">
+              <input type="radio" name="abv" id="optionsRadios2" value="8,10" onChange={this.abvHandler}/>
+              8 - 10%
+            </label>
+            <label className="radio-inline">
+              <input type="radio" name="abv" id="optionsRadios2" value="10,20" onChange={this.abvHandler}/>
+              Greater than 10%
+            </label>
+        </div>
+      </div>
+      <div className="row testMargin text-center">
+        <div className="col-xs-12">
+          <h3>IBU</h3>
+            <label className="radio-inline">
+              <input type="radio" name="ibu" value="0,2500" onChange={this.ibuHandler} defaultChecked/>
+              Any IBU
+            </label>
+            <label className="radio-inline">
+              <input type="radio" name="ibu" value="0,40" onChange={this.ibuHandler}/>
+              Less than 40
+            </label>
+            <label className="radio-inline">
+              <input type="radio" name="ibu" value="40,60" onChange={this.ibuHandler}/>
+              40-60
+            </label>
+          <label className="radio-inline">
+            <input type="radio" name="ibu" value="60,80" onChange={this.ibuHandler}/>
+            60-80
+          </label>
+          <label className="radio-inline">
+            <input type="radio" name="ibu" value="80,100" onChange={this.ibuHandler}/>
+            80-100
+          </label>
+          <label className="radio-inline">
+            <input type="radio" name="ibu" value="100,2500" onChange={this.ibuHandler}/>
+            Greater than 100
+          </label>
+        </div>
+      </div>
+      <div className="row text-center testMargin">
+        <div className='col-xs-offset-2 col-xs-8'>
+          <span className="input-group-btn">
+            <button className="btn btn-primary filterButton" type="button" onClick={this.getBeer}>Filter</button>
+          </span>
+        </div>
+      </div>
+      <p className="text-center testMargin searchHeaders">Results</p>
+      <div className="row">
+        {Beers}
+      </div>
     </div>
     )
   }
