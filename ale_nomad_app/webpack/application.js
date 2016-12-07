@@ -20,6 +20,8 @@ import Filter from './Filter'
 import BeerResult from './BeerResult'
 import BrewFilter from './BrewFilter'
 import BrewResult from './BrewResult'
+import Signup from './Signup'
+
 
 
 // TODO: create const path to figure in api token.
@@ -34,15 +36,14 @@ const path = window.location.href.includes('github') ? '/ale_nomad_app/' : '/'
 ReactDOM.render(
 
     // TODO: determing paths and component names (also, if we need more routes)
-
     <Router history={browserHistory}>
         <Route path={path} component={App} >
             <IndexRoute component={Homepage} />
+            <Route path='signup' component={Signup} />
             <Route path='find_beer' component={FindBeer} />
                 <Route path='beer/:beer_id' component={BeerResult} />
-                <Route path='brew/:brew_id' component={BrewResult} />
             <Route path='find_brew' component={FindBrewery} />
-                {/* <Route path='beer/:beer_id' component={BrewResult} /> */}
+                <Route path='brew/:brew_id' component={BrewResult} />
         </Route>
     </Router>
     , document.getElementById('aleNomad')

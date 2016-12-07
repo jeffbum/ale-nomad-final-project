@@ -3,6 +3,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Filter from './Filter'
+import Signup from './Signup'
 
 
 //alt imports
