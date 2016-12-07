@@ -11,20 +11,20 @@ class BrewResult extends React.Component {
         }
     }
     componentDidMount(){
-        console.log(this.props.routeParams)
-        // fetch('/api/show/brew?id=' + this.props.routeParams.id {
-        //         method: 'GET',
-        //         headers: {
-        //             'Content-Type': 'application/json'
-        //         }
-        //     })
-        //     .then(response => response.json())
-        //     .then(response =>
-        //         this.setState({
-        //             breweryDetails: response.brew,
-        //             beersDetails: response.brew.beers
-        //         })
-        //     )
+        // console.log(this.props.routeParams)
+        fetch('/api/show/brew?id=' + this.props.routeParams.brew_id, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(response =>
+                this.setState({
+                    breweryDetails: response.brew,
+                    beersDetails: response.brew.beers
+                })
+            )
     }
     render() {
         console.log(this.state.breweryDetails)
