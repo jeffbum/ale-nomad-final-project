@@ -1,5 +1,5 @@
 class BeerSerializer < ActiveModel::Serializer
-  attributes :id, :beer_name, :beer_label, :beer_abv, :beer_ibu, :beer_description, :bid, :beer_style, :rating_score
+  attributes :id, :beer_name, :beer_label, :beer_abv, :beer_ibu, :beer_description, :bid, :beer_style, :rating
 
   has_one :brew
   has_one :category

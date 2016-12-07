@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :email, :picture, :following
+  attributes :id, :name, :email, :images, :following
 
 def following
   if current_user
@@ -10,8 +10,8 @@ def following
 end
 
 
-def picture
-  Refile.attachment_url(object, :picture, :fit, 100, 100, format: "jpg")
+def images
+  Refile.attachment_url(object, :images, :fit, 100, 100, format: "jpg")
 end
 
 

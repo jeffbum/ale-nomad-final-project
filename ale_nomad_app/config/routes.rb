@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :drinks
 root 'beers#static'
 get '/find_beer' => 'beers#static'
 get '/find_brew' => 'beers#static'
@@ -7,6 +8,11 @@ get '/find_abv' => 'beers#static'
 get '/find_ibu' => 'beers#static'
 
 scope '/api' do
+  post '/users/:id/unfollow' => 'users#follow'
+  get '/all' => 'users#all'
+  post '/signup'=> 'users#sign_up'
+  post '/login' => 'users#sign_in'
+
   get '/show/beer' => 'beers#show'
   get '/show/brew' => 'brews#show'
   get '/show/location' => 'geosearch#distance'

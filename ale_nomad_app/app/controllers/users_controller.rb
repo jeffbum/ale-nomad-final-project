@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+
+  before_action :require_login, only: [:my_reviews]
+
   def all
     @user = User.all
     render json: @user, scope: current_user, scope_name: :current_user
@@ -36,13 +39,11 @@ class UsersController < ApplicationController
     render json: @followees
   end
 
-  def rating
-end
 
   private
 
    def user_params
-     params.permit(:email, :password, :picture, :name)
+     params.permit(:email, :password, :images, :name)
    end
 
 
