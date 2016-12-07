@@ -42,7 +42,6 @@ ReactDOM.render(
                 <Route path='beer/:beer_id' component={BeerResult} />
                 <Route path='brew/:brew_id' component={BrewResult} />
             <Route path='find_brew' component={FindBrewery} />
-                {/* <Route path='beer/:beer_id' component={BrewResult} /> */}
         </Route>
     </Router>
     , document.getElementById('aleNomad')

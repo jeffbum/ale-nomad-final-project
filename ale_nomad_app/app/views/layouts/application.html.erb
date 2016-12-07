@@ -4,11 +4,6 @@
   <%# TODO: put Ale Nomad img in to title tag for a nice little touch %>
   <title>Ale Nomad App</title>
   <%= csrf_meta_tags %>
-
-  <%= stylesheet_link_tag    'application', media: 'all'%>
-  <%= javascript_include_tag 'application'%>
-
-
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,15 +11,20 @@
 
     <script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Tillana" rel="stylesheet">
     <script src="http://localhost:3808/webpack-dev-server.js"></script>
+    <%= javascript_include_tag 'application'%>
+
+    <link href="https://fonts.googleapis.com/css?family=Tillana" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all'%>
 </head>
 <body>
     <header>
       <div class="container">
         <div class="row">
-          <div class="col-xs-11">
+          <div class="col-sm-2">
               <img src="/img/logoTwo.png" alt="Ale Nomad Logo">
+          </div>
+          <div class="col-sm-6 col-xs-9">
               <nav>
                 <ul>
                   <li><a href="/">Home</a></li>
@@ -34,7 +34,7 @@
                 </ul>
               </nav>
           </div>
-          <div class="col-xs-1 topRowButtons">
+          <div class="col-sm-4 col-xs-3 topRowButtons">
             <button class="btn btn-default signInButton pull-right" type="submit">Sign In</button>
           </div>
         </div>
@@ -63,7 +63,7 @@
     </div>
   </nav> -->
   <% unless current_page?('/find_beer') || current_page?('/find_brew') %>
-  <div class="container-fluid headerImage">
+  <div class="container-fluid headerImage testMargin">
     <div class="row headerRow">
       <div class="col-sm-6">
       </div>
