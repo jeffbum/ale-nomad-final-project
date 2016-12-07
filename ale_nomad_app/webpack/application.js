@@ -1,4 +1,4 @@
-console.log('Looking for a developer? Visit our "About Us" page!')
+console.log('Looking for a developer? Visit our "Meet the Developers" pages!')
 //react imports
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -14,8 +14,8 @@ import App from './App'
 import Homepage from './Homepage'
 import FindBeer from './FindBeer'
 import FindBrewery from './FindBrewery'
-import Header from './Header'
-import Footer from './Footer'
+// import Header from './Header'
+// import Footer from './Footer'
 import Filter from './Filter'
 import BeerResult from './BeerResult'
 import BrewFilter from './BrewFilter'
