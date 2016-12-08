@@ -50,21 +50,14 @@ render(){
   console.log(this.state.brews)
   var Brews = this.state.brews.map((brew, i) => {
     return <Link to={'brew/' + brew.id} data={brew} key={i}>
-        <div className="row">
+        <div className="col-sm-3 cardWrap">
           <div className="col-xs-12">
-            {/* <img className="userPic" src={brew.name=== null? 'http://unsplash.it/200/200?random' : (beer.beer_label)} alt="Beer Profile Pic" /> */}
-            <span className="beerName">{brew.name}</span>
-            <span className="time">{brew.hours_of_operation}</span>
-          </div>
-        <div className="row">
-          <div className="col-xs-8 col-xs-offset-2">
-            <p className="post-body">
-              {brew.website}
-            </p>
+            <img height="200" width="250" className="cardImage" src={brew.images=== null? '/img/beer.jpg' : (brew.images)} alt="Beer Profile Pic" />
+            <p className="beerName">Brewery: {brew.name}</p>
+            <p className="time">Phone: {brew.phone===null? 'No # listed' : (brew.phone)}</p>
+            <p className="time">Address: {brew.street_address}, {brew.postal_code}</p>
           </div>
         </div>
-        <hr />
-      </div>
      </Link>
   })
   return (
@@ -112,7 +105,8 @@ render(){
           </span>
         </div>
       </div>
-      <div>
+      <p className="text-center testMargin searchHeaders">Matches</p>
+      <div className="row">
         {Brews}
       </div>
     </div>
