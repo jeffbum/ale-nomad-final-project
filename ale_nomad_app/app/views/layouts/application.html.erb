@@ -34,7 +34,6 @@
                   <li><a href="/">Home</a></li>
                   <li><a href="/find_beer">Find Beers</a></li>
                   <li><a href="/find_brew">Find Breweries</a></li>
-                  <!-- <li><a href="#">Profile</a></li> -->
                 </ul>
               </nav>
           </div>
@@ -78,6 +77,7 @@
       </div>
     </div>
   </div>
+  <hr>
   <div class="container headerContainer">
     <div class="row">
       <div class="col-sm-12">
@@ -108,33 +108,41 @@
   </div>
   <!-- Scripts go here. -->
   <div class="container">
-    <div class="row">
-      <div class="footer">
-        <div class="col-sm-12 text-center">
-          <strong>The Developers</strong>
-          <p><a href="https://github.com/jeffbum">Jeff Bumgardner</a></p>
+    <div class="row footer text-center">
+      <div class="text-center">
+        <strong>The Developers</strong>
+      </div>
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="col-sm-4 text-center">
+            <p><a href="https://github.com/jeffbum">Jeff Bumgardner</a></p>
+              <div class="col-sm-2 col-sm-offset-1">
+                Test
+              </div>
+              <div class="col-sm-2">
+                Test
+              </div>
+          </div>
+          <div class="col-sm-4 text-center">
             <p><a href="https://github.com/briangmcmillan">Brian McMillan</a></p>
+            <div class="col-sm-2 col-sm-offset-1">
+              Test
+            </div>
+            <div class="col-sm-2">
+              Test
+            </div>
+          </div>
+          <div class="col-sm-4 text-center">
             <p><a href="https://github.com/Keilsmit">Keith Smith</a></p>
-        </div>
+            <div class="col-sm-2 col-sm-offset-1">
+              Test
+            </div>
+            <div class="col-sm-2">
+              Test
+            </div>
+          </div>
       </div>
     </div>
   </div>
-  <!-- <footer class="footerMargin">
-    <nav class="navbar navbar-inverse navbar-fixed-bottom">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-xs-12">
-            <ul class="nav navbar-nav">
-              <li><a href="about.html">Creators</a></li>
-              <li><a href="beers.html">Find Beers</a></li>
-              <li><a href="breweries.html">Find Breweries</a></li>
-              <p class="navbar-text">Est. November 2016</p>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </footer> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <%= javascript_include_tag *webpack_asset_paths("application") %>
 </body>

@@ -19,9 +19,6 @@ class Filter extends React.Component {
     this.ibuHandler = this.ibuHandler.bind(this)
     this.getBeer = this.getBeer.bind(this)
     this.searchResult = this.searchResult.bind(this)
-    // this.getAbv = this.getAbv.bind(this)
-    // this.getIbu = this.getIbu.bind(this)
-
   }
 
   // TODO: explain why I split into three handlers from one.
@@ -30,7 +27,6 @@ class Filter extends React.Component {
       style: e.target.value
     })
   }
-
   ibuHandler(e){
     this.setState({
       ibu: e.target.value
@@ -41,7 +37,6 @@ class Filter extends React.Component {
       abv: e.target.value
     })
   }
-
 // TODO: explain the split Value and splitComma variables and why they were necessary
   getBeer(){
     var splitValue = this.state.abv.split(',')
@@ -57,12 +52,7 @@ class Filter extends React.Component {
       fetch('/api/filter?filter[beer_name_cont]=' + this.state.style)
       .then(response => response.json())
       .then(response => this.setState({beers: response.beers}))
-      // this.setState({
-      //   beers: ''
-      // })
-      // .then(response => {console.log(this.state.beers)})
   }
-
 
 render(){
   console.log(this.state.beers)
@@ -75,9 +65,6 @@ render(){
             <p className="time">Brewery: <b>{beer.brew.name}</b></p>
             <p className="time">ABV: <b>{beer.beer_abv}</b></p>
             <p className="time">IBU: <b>{beer.beer_ibu}</b></p>
-              {/* <div className="post-body runithOver">
-                {beer.beer_description}
-              </div> */}
         </div>
       </div>
     </Link>
@@ -95,7 +82,6 @@ render(){
           </div>
         </div>
       </div>
-      {/* // TODO: Find a way to keep the row centered but not the radio buttons */}
       <div className="row testMargin text-center">
         <p className="searchHeaders">Filter by Style, ABV, or IBU</p>
         <div className="col-xs-12">
