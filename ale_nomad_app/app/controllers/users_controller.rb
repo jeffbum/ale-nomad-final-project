@@ -2,6 +2,13 @@ class UsersController < ApplicationController
 
   before_action :require_login, only: [:my_reviews, :follow, :followees]
 
+
+
+  def show
+    @user = User.find(params[:id])
+    render json: @user
+  end
+
   def all
     @user = User.all
     render json: @user, scope: current_user, scope_name: :current_user
