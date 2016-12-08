@@ -308,7 +308,7 @@ nav ul li a {
  .featuredCats {
    background-color: #eea45c;
    color: #644536;
-   height: 42vh;
+   height: 37vh;
    box-shadow: 4px 6px 20px grey;
    border-radius: 15%;
    display: flex;
@@ -399,34 +399,29 @@ nav ul li a {
    flex: 1;
    margin-top: 20px;
  }
-
  .pictures h3 {
    padding-left: 20px;
    flex: 1;
    color: white;
  }
-
  .pic1 {
    background-image: url('/img/craft.jpg');
  }
  .pic1:hover h3 {
    color: #DC8A3A;
  }
-
  .pic2 {
    background-image: url('/img/craft.jpg');
  }
  .pic2:hover h3 {
    color: #DC8A3A;
  }
-
  .pic3 {
    background-image: url('/img/craft.jpg');
  }
  .pic3:hover h3 {
    color: #DC8A3A;
  }
-
  .pic4 {
    background-image: url('/img/craft.jpg');
  }
@@ -438,127 +433,29 @@ nav ul li a {
 
 
 
+@media screen and (min-width: 992px) {
+  .featuredCats {
+    background-color: #eea45c;
+    color: #644536;
+    height: 34vh;
+    box-shadow: 4px 6px 20px grey;
+    border-radius: 15%;
+    display: flex;
+    flex-direction: column;;
+  }
+}
+
 
 
 
-
-/*Styling before new transfer*/
-/*.testBorder {
-  border: 1px solid red;
-}*/
-
-/*Margins*/
-/*.logInButton {
-  margin-top: 8px;
+@media screen and (min-width: 1200px) {
+  .featuredCats {
+    background-color: #eea45c;
+    color: #644536;
+    height: 31.5vh;
+    box-shadow: 4px 6px 20px grey;
+    border-radius: 15%;
+    display: flex;
+    flex-direction: column;;
+  }
 }
-.mainMargin {
-  margin-top: 51px;
-  margin-bottom: 50px;
-}
-.footerMargin {
-  margin-top: 50px;
-}
-.no_margin {
-  margin-bottom: -20px;
-}
-.no_padding {
-  padding-left: 0;
-  padding-right: 0;
-}*/
-
-/*Carousel Text Sizing*/
-/*.carousel-content-beer {
-  font-size: 10vw;
-  position: absolute;
-  bottom: 27%;
-  left: 37%;
-  z-index: 20;
-  color: white;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
-}
-.carousel-content-breweries {
-  font-size: 10vw;
-  position: absolute;
-  bottom: 27%;
-  left: 27%;
-  z-index: 20;
-  color: white;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
-}
-.carousel-content-about {
-  font-size: 10vw;
-  position: absolute;
-  bottom: 27%;
-  left: 36%;
-  z-index: 20;
-  color: white;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
-}
-.random-features {
-  font-size: 3vw;
-  position: absolute;
-  bottom: 40%;
-  left: 9%;
-  z-index: 20;
-  color: white;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
-}
-.all-features {
-  font-size: 1.5vw;
-  position: absolute;
-  bottom: 40%;
-  left: 9%;
-  z-index: 20;
-  color: white;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
-}*/
-
-/*Featured Beers and Breweries Picture Sizing*/
-/*.featCat {
-    width: 20vw;
-    height: 20vw;
-}
-.featBeer {
-    width: 20vw;
-    height: 20vw;
-}
-
-.zindex {
-  z-index: 1;
-}*/
-
-/*Mission CSS*/
-/*.card {
-  background: white;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-  height: 280px;
-  border-radius: 2px;
-  margin-bottom: 50px;
-}
-.wordWrap {
-  word-wrap: break-word;
-}*/
-
-/*Card CSS*/
-/*.ulStyle {
-
-}
-.liStyle {
-  margin: 0 1%;
-  float: left;
-  position: relative;
-  display: block;
-  text-align: center;
-}
-.cardStyle {
-  position: relative;
-  border-radius: 5%;
-  width: 98%;
-  height: auto;
-  overflow: hidden;
-}
-.cardImage {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-}*/
