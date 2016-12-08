@@ -26,7 +26,7 @@ class BeersController < ApplicationController
     end
 
     def instock
-      @beers = Untappd::Brewery.feed(params[:brewery_id])
+      @beers = Untappd::Beer.feed(params[:bid])
       render json: @beers
     end
 
