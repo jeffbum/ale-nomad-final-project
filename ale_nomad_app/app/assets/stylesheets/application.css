@@ -257,7 +257,7 @@ nav ul li a {
    float: left;
  }
  nav ul {
-   margin-top: 72px;
+   margin-top: 57px;
  }
  nav ul li {
    display: inline-block;
@@ -275,8 +275,8 @@ nav ul li a {
  }
  .topRowButtons button {
    float: left;
-   font-size: 25px;
-   margin-top: 65px;
+   font-size: 20px;
+   margin-top: 54px;
    background-image: url('/img/cheap_diagonal_fabric.png');
    color: #DC8A3A;
    border: 2px solid #DC8A3A;
@@ -289,7 +289,6 @@ nav ul li a {
  }
  /*Styling for the HomePage full width image below the header*/
  .homePageImage {
-   /*height: 400px;*/
    height: 60vh;
    background-image: url('/img/betterBanner.jpg');
    background-size: cover;
@@ -301,10 +300,15 @@ nav ul li a {
    padding-left: 15px;
    font-size: 3.7vh;
    font-weight: 500;
-   margin: 100px;
+   margin: 80px;
    color: #644536;
  }
  /*Styling for the FindBeers and FindBreweries cards on the HomePage*/
+ .featuredCatMargin {
+   margin-top: 80px;
+   margin-bottom: 80px;
+ }
+ /*Featured Beer/Brewery Search */
  .featuredCats {
    background-color: #eea45c;
    color: #644536;
@@ -314,26 +318,34 @@ nav ul li a {
    display: flex;
    flex-direction: column;;
  }
+ /*Featured Beer/Brewery Search when you hover over it */
  .featuredCats a {
    color: #644536;
-   background-color: white;
-   border: none;
- }
- .featuredCats a:hover {
-   color: white;
    background-color: #eea45c;
+   border: 2px solid #644536;
  }
+ /*Featured Beer/Brewery Search when you hover over it */
  .featuredCats:hover {
    box-shadow: 20px 20px 20px grey;
    background-color: #644536;
-   color: white;
+   color: #eea45c;
+ }
+ .featuredCats:hover a {
+   color: #eea45c;
+   background-color: #644536;
+   border: 2px solid #eea45c;
+ }
+ .featuredCats a:hover {
+   color: #644536;
+   background-color: #eea45c;
+   border: 2px solid #644536;
  }
  .featuredCatTitles {
    margin-top: 10px;
    margin-bottom: 20px;
    font-size: 30px;
  }
- .featuredCatDesc {
+ .featuredCatDescription {
    margin-bottom: 50px;
    font-size: 18px;
  }
