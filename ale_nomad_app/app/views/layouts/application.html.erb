@@ -2,8 +2,9 @@
 <html>
 <head>
   <%# TODO: put Ale Nomad img in to title tag for a nice little touch %>
-  <title>Ale Nomad </title>
+  <title>Ale Nomad</title>
   <%= csrf_meta_tags %>
+
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -64,8 +65,7 @@
         </ul>
       </div>
     </div>
-  </nav> -->
-  <% unless current_page?('/find_beer') || current_page?('/find_brew') || current_page?('/signup') %>
+  </nav> -->  <% unless current_page?('/find_beer') || current_page?('/find_brew') || current_page?('/signup') %>
   <div class="container-fluid headerImage testMargin">
     <div class="row headerRow">
       <div class="col-sm-6">
@@ -87,28 +87,16 @@
   </div>
   <hr>
   <div class="container">
-    <div class="row featuredCats">
-      <div class="col-xs-6 text-center">
-        Beer
-      </div>
-      <div class="col-xs-6 text-center">
-        Brewery
-      </div>
-    </div>
     <div class="row">
-      <div class="col-xs-6">
-        This is going to be a paragraph about what beer search can do for our users. Want to search beers by style. Click getting started. Want to search for a beer with a specific ABV or IBU. Click to get started.
+      <div class="col-xs-5 text-center featuredCats">
+        <p class="featuredCatTitles">Beer</p>
+        <p class="featuredCatDesc">This will be a paragraph about what beer search can do for our users. Want to search beers by style. Click getting started. Want to search for a beer with a specific ABV or IBU. Click to get started.</p>
+        <span><a href="/find_beer" class="btn btn-default" type="submit">Find A Beer!</a></span>
       </div>
-      <div class="col-xs-6">
-        This is going to be a paragraph about what brewery search can do for our users. Want to search beers by style. Click getting started. Want to search for a beer with a specific ABV or IBU. Click to get started.
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-6 text-center">
-        <button class="btn btn-default" type="submit">Find A Beer!</button>
-      </div>
-      <div class="col-xs-6 text-center">
-        <button class="btn btn-default" type="submit">Find A Brewery!</button>
+      <div class="col-xs-5 col-xs-offset-2 text-center featuredCats">
+        <p class="featuredCatTitles">Brewery</p>
+        <p class="featuredCatDesc">This will be a paragraph about what brewery search can do for our users. Want to search beers by style. Click getting started. Want to search for a beer with a specific ABV or IBU. Click to get started.</p>
+        <span><a href="/find_brew" class="btn btn-default" type="submit">Find A Brewery!</a></span>
       </div>
     </div>
   </div>
@@ -123,10 +111,10 @@
     <div class="row">
       <div class="footer">
         <div class="col-sm-12 text-center">
-          <strong>Meet the Developers</strong>
-            <p><a href="#">Brian McMillan</a></p>
-            <p><a href="#">Jeff Bumgardner</a></p>
-            <p><a href="#">Keith Smith</a></p>
+          <strong>The Developers</strong>
+          <p><a href="https://github.com/jeffbum">Jeff Bumgardner</a></p>
+            <p><a href="https://github.com/briangmcmillan">Brian McMillan</a></p>
+            <p><a href="https://github.com/Keilsmit">Keith Smith</a></p>
         </div>
       </div>
     </div>
