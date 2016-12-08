@@ -17,7 +17,7 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url("/img/cheap_diagonal_fabric.png");
+  background-image: url('/img/cheap_diagonal_fabric.png');
   padding-top: 0px;
   padding-bottom: 50px;
   font-family: 'Tillana', cursive;
@@ -57,14 +57,17 @@ nav ul li {
 nav ul li a {
   font-size: 25px;
 }
-.testMargin {
-  margin-top: 40px;
+.mobileImage {
+  margin: auto 0;
 }
+/*.mobileImage img {
+  height: 25vh;
+}*/
 .topRowButtons button {
   float: left;
   font-size: 25px;
   margin-top: 65px;
-  background-image: url('/img/cheap_diagonal_fabric.png');
+  /*background-image: url('/img/cheap_diagonal_fabric.png');*/
   color: #DC8A3A;
   border: 2px solid #DC8A3A;
 }
@@ -78,7 +81,7 @@ nav ul li a {
 .homePageImage {
   /*height: 400px;*/
   height: 60vh;
-  background-image: url('/img/betterBanner.jpg');
+  /*background-image: url('/img/betterBanner.jpg');*/
   background-size: cover;
   background-position: center;
 }
@@ -93,13 +96,7 @@ nav ul li a {
 }
 /*Styling for the FindBeers and FindBreweries cards on the HomePage*/
 .featuredCats {
-  background-color: #eea45c;
-  color: #644536;
-  height: 42vh;
-  box-shadow: 4px 6px 20px grey;
-  border-radius: 15%;
-  display: flex;
-  flex-direction: column;;
+
 }
 .featuredCats a {
   color: #644536;
@@ -222,9 +219,220 @@ nav ul li a {
 }
 
 @media screen and (min-width: 768px) {
-  .pictureRow {
+  /*.pictureRow {
     flex-direction: row;
-  }
+  }*/
+  * {
+   box-sizing: border-box;
+ }
+ body {
+   background-image: url("/img/cheap_diagonal_fabric.png");
+   padding-top: 0px;
+   padding-bottom: 50px;
+   font-family: 'Tillana', cursive;
+ }
+ a {
+   color: #DC8A3A;
+ }
+ a:hover {
+   text-decoration: none;
+   color: #644536;
+ }
+ li a {
+     color: #DC8A3A;
+ }
+ li a:hover {
+   text-decoration: none;
+   color: #644536;
+ }
+ header {
+   width: 100%;
+ }
+ header img {
+   float: left;
+   margin-top: 25px;
+   margin-left: 10px;
+ }
+ nav {
+   float: left;
+ }
+ nav ul {
+   margin-top: 72px;
+ }
+ nav ul li {
+   display: inline-block;
+   margin-left: 20px;
+ }
+ nav ul li a {
+   font-size: 25px;
+ }
+ /*.mobileRepeat img {
+   background-repeat: no-repeat;
+   background-size: cover;
+ }*/
+ .testMargin {
+   margin-top: 40px;
+ }
+ .topRowButtons button {
+   float: left;
+   font-size: 25px;
+   margin-top: 65px;
+   background-image: url('/img/cheap_diagonal_fabric.png');
+   color: #DC8A3A;
+   border: 2px solid #DC8A3A;
+ }
+ .topRowButtons button:hover {
+   background-image: url();
+   background-color: #DC8A3A;
+   color: white;
+   border: 2px solid #DC8A3A;
+ }
+ /*Styling for the HomePage full width image below the header*/
+ .homePageImage {
+   /*height: 400px;*/
+   height: 60vh;
+   background-image: url('/img/betterBanner.jpg');
+   background-size: cover;
+   background-position: center;
+ }
+ /*Styling for the text box below the HomePage full width image*/
+ .woahRadical {
+   border-left: 5px solid #DC8A3A;
+   padding-left: 15px;
+   font-size: 3.7vh;
+   font-weight: 500;
+   margin: 100px;
+   color: #644536;
+ }
+ /*Styling for the FindBeers and FindBreweries cards on the HomePage*/
+ .featuredCats {
+   background-color: #eea45c;
+   color: #644536;
+   height: 42vh;
+   box-shadow: 4px 6px 20px grey;
+   border-radius: 15%;
+   display: flex;
+   flex-direction: column;;
+ }
+ .featuredCats a {
+   color: #644536;
+   background-color: white;
+   border: none;
+ }
+ .featuredCats a:hover {
+   color: white;
+   background-color: #eea45c;
+ }
+ .featuredCats:hover {
+   box-shadow: 20px 20px 20px grey;
+   background-color: #644536;
+   color: white;
+ }
+ .featuredCatTitles {
+   margin-top: 10px;
+   margin-bottom: 20px;
+   font-size: 30px;
+ }
+ .featuredCatDesc {
+   margin-bottom: 50px;
+   font-size: 18px;
+ }
+
+ /*Styling for the find_beer and find_brewery page cards that will appear after filtering*/
+ .cardWrap {
+   background-color: white;
+   margin: 10px;
+   height: 430px;
+   box-shadow: 4px 6px 20px grey;
+   border-radius: 10%;
+ }
+ .cardWrap img {
+   border-radius: 100%;
+ }
+ .filterButton {
+   width: 400px;
+ }
+ /*Styling for the search or filter beer results description*/
+ .runithOver {
+   overflow: hidden;
+   position: relative;
+   line-height: 1.25em;
+   max-height: 120px;
+   text-align: justify;
+   margin-right: -1em;
+   padding-right: 1em;
+ }
+ .runithOver::before {
+   content: '...';
+   position: absolute;
+   right: 0;
+   bottom: 0;
+ }
+ .runithOver::after {
+   content: '';
+   position: absolute;
+   right: 0;
+   width: 1em;
+   height: 1em;
+   margin-top: 0.2em;
+ }
+ /*.mostPopularPosts {
+   color: #DC8A3A;
+   padding-top: 20px;
+   font-size: 30px;
+ }*/
+ .footer {
+   margin-top: 30px;
+   height: 30px;
+   width: 100%;
+ }
+ .pictureRow {
+   display: flex;
+   flex-direction: column;
+ }
+ .pictures {
+   /*display: flex;*/
+   align-items: flex-end;
+   height: 200px;
+   background-size: cover;
+   /*background-position: center;*/
+   flex: 1;
+   margin-top: 20px;
+ }
+
+ .pictures h3 {
+   padding-left: 20px;
+   flex: 1;
+   color: white;
+ }
+
+ .pic1 {
+   background-image: url('/img/craft.jpg');
+ }
+ .pic1:hover h3 {
+   color: #DC8A3A;
+ }
+
+ .pic2 {
+   background-image: url('/img/craft.jpg');
+ }
+ .pic2:hover h3 {
+   color: #DC8A3A;
+ }
+
+ .pic3 {
+   background-image: url('/img/craft.jpg');
+ }
+ .pic3:hover h3 {
+   color: #DC8A3A;
+ }
+
+ .pic4 {
+   background-image: url('/img/craft.jpg');
+ }
+ .pic4:hover h3 {
+   color: #DC8A3A;
+ }
 }
 
 
