@@ -38,13 +38,44 @@
               </nav>
           </div>
           <div class="col-sm-4 col-xs-3 topRowButtons">
-            <button class="btn btn-default signInButton pull-right" type="submit">Sign In</button>
+            <button class="btn btn-default signInButton pull-right"><a href="signup">Signup</a></button>
           </div>
         </div>
       </div>
     </header>
-  <% unless current_page?('/find_beer') || current_page?('/find_brew') %>
-  <div class="container-fluid homePageImage testMargin">
+  <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Ale Nomad</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/find_beer">Find Beers<span class="sr-only"></span></a></li>
+          <li><a href="/find_brew">Find Breweries<span class="sr-only"></span></a></li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+          <button class="btn btn-primary logInButton" type="submit">Log In</button>
+        </ul>
+      </div>
+    </div>
+  </nav> -->  <% unless current_page?('/find_beer') || current_page?('/find_brew') || current_page?('/signup') %>
+  <div class="container-fluid headerImage testMargin">
+    <div class="row headerRow">
+      <div class="col-sm-6">
+      </div>
+      <div class="col-sm-6 headerRightColumn">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center headerTitle">
+      </div>
+    </div>
   </div>
   <hr>
   <div class="container headerContainer">
