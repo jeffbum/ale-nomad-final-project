@@ -3,11 +3,10 @@ class BeersController < ApplicationController
 
     def static
     end
-    #Static Method for FrontEnd Team
 
     def index
-      @beers = Beer.all
-      render json: @beers
+      @beers = Beer.all.order(:beer_name).page params[:page]
+      render json: @beers, meta: pagination_dict(@beers)
     end
     #Displays all beer
 
@@ -17,18 +16,30 @@ class BeersController < ApplicationController
     end
 
     def untapshow
-      @beer = Untappd::Beer.info(params[:id], :offset => 100)
+      @beer = Untappd::Beer.info(params[:id])
         render json: @beer
     end
-
-
 
     def untapsearch
       @beers = Untappd::Beer.search(params[:name])
         render json: @beers
     end
 
+    def instock
+      @beers = Untappd::Brewery.feed(params[:brewery_id])
+      render json: @beers
+    end
 
+
+    def pagination_dict(object)
+      {
+        current_page: object.current_page,
+        next_page: object.next_page,
+        prev_page: object.prev_page, # use object.previous_page when using will_paginate
+        total_pages: object.total_pages,
+        total_count: object.total_count
+      }
+    end
 
     def filter
       @beers = Beer.all
@@ -40,7 +51,6 @@ class BeersController < ApplicationController
       @beers = @beers.to_a.uniq
       render json: @beers
     end
-
 
     def fake
       brewery_db = BreweryDB::Client.new do |config|
