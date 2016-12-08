@@ -10,7 +10,7 @@ class Signup extends React.Component {
             name: '',
             picture: ''
         }
-        this.mockResponse = this.mockResponse.bind(this)
+        // this.mockResponse = this.mockResponse.bind(this)
         this.signedUpHandler = this.signedUpHandler.bind(this)
         this.handleClick = this.handleClick.bind(this)
         this.signup = this.signup.bind(this)
@@ -24,18 +24,6 @@ class Signup extends React.Component {
 
     }
 
-    mockResponse() {
-        var response = {
-            user: {
-                id: 1,
-                name: 'Jeff',
-                email: 'jef@me.com',
-                images: '',
-                api_token: 'xxxxxxxxxxxxx'
-            }
-        }
-        this.signedUpHandler(response)
-    }
 
     signedUpHandler(response) {
         if (typeof response.user != 'undefined') {
@@ -64,13 +52,10 @@ class Signup extends React.Component {
 
     signup() {
         fetch('/api/signup?email=' + this.state.email + '&password=' + this.state.email + '&images_id=' + this.state.images + '&name=' + this.state.name, {
-                body: JSON.stringify({
-                    api_token: sessionStorage.getItem('ale-nomad-api-token'),
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
         })
         .then(function(response) {
           if(response.ok) {
@@ -83,33 +68,8 @@ class Signup extends React.Component {
         .catch(function(error) {
           console.log('There has been a problem with your fetch operation: ' + error.message)
         })
-    // else {
-    //     this.mockResponse()
-    // }
-        }
+    }
 
-    // signup(){
-    //     if (!this.state.mock) {
-    //         fetch('/api/signup?email=' + this.state.email + '&password=' + this.state.email + '&images_id=' this.state.picture + '&name=' + this.state.name, {
-    //             // body: this.state,
-    //             method: 'POST'
-    //         })
-    //         .then(function(response) {
-    //           if(response.ok) {
-    //             return response.json()
-    //           } else {
-    //             throw 'Network response was not ok.'
-    //           }
-    //         })
-    //         .then(this.signedUpHandler)
-    //         .catch(function(error) {
-    //           console.log('There has been a problem with your fetch operation: ' + error.message)
-    //         })
-    //     }
-    //     else {
-    //         this.mockResponse()
-    //     }
-    // }
 
     render() {
         return (
