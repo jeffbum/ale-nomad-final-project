@@ -30,7 +30,7 @@ class Signup extends React.Component {
                 id: 1,
                 name: 'Jeff',
                 email: 'jef@me.com',
-                picture: '',
+                images: '',
                 api_token: 'xxxxxxxxxxxxx'
             }
         }
@@ -46,8 +46,7 @@ class Signup extends React.Component {
                 user: response.user
             })
             // TODO: understand what was going on in the browserhistory push
-
-            // browserHistory.push
+            // browserHistory.push(sharedState().path + 'chirp')
         }
         else {
             response.forEach(function(error) {
@@ -63,32 +62,86 @@ class Signup extends React.Component {
         this.signup()
     }
 
-    signup(){
-        if (!this.state.mock) {
-            var data = new FormData()
-            data.append('email', this.state.email)
-            data.append('password', this.state.password)
-            data.append('name', this.state.name)
-            data.append('picture', this.state.picture)
-            fetch('', {
-                body: data,
-                method: 'POST'
-            })
-            .then(function(response) {
-              if(response.ok) {
-                return response.json()
-              } else {
-                throw 'Network response was not ok.'
-              }
-            })
-            .then(this.signedUpHandler)
-            .catch(function(error) {
-              console.log('There has been a problem with your fetch operation: ' + error.message)
-            })
+    signup() {
+        fetch('/api/signup?email=' + this.state.email + '&password=' + this.state.email + '&images_id=' + this.state.images + '&name=' + this.state.name, {
+                body: JSON.stringify({
+                    api_token: sessionStorage.getItem('ale-nomad-api-token'),
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+        })
+        .then(function(response) {
+          if(response.ok) {
+            return response.json()
+          } else {
+            throw 'Network response was not ok.'
+          }
+        })
+        .then(this.signedUpHandler)
+        .catch(function(error) {
+          console.log('There has been a problem with your fetch operation: ' + error.message)
+        })
+    // else {
+    //     this.mockResponse()
+    // }
         }
-        else {
-            this.mockResponse()
-        }
+
+    // signup(){
+    //     if (!this.state.mock) {
+    //         fetch('/api/signup?email=' + this.state.email + '&password=' + this.state.email + '&images_id=' this.state.picture + '&name=' + this.state.name, {
+    //             // body: this.state,
+    //             method: 'POST'
+    //         })
+    //         .then(function(response) {
+    //           if(response.ok) {
+    //             return response.json()
+    //           } else {
+    //             throw 'Network response was not ok.'
+    //           }
+    //         })
+    //         .then(this.signedUpHandler)
+    //         .catch(function(error) {
+    //           console.log('There has been a problem with your fetch operation: ' + error.message)
+    //         })
+    //     }
+    //     else {
+    //         this.mockResponse()
+    //     }
+    // }
+
+    render() {
+        return (
+            <div className="well">
+                    <h2>Sign Up</h2>
+                    <br/>
+                    <div id="errors"></div>
+                    <br/>
+                      <div className="form-group">
+                        <label htmlFor="name">Name</label>
+                        <input type="text" id="name" name="name" className="form-control" required value={this.state.name} onChange={(e) => this.setState({name:e.target.value})}/>
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="avatar">Avatar</label>
+                        <input type="file" id="picture" name="picture" className="form-control" required onChange={(e) => this.setState({picture:e.target.files[0]})}/>
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="email">Email</label>
+                        <input type="email" id="email" name="email" className="form-control" required value={this.state.email} onChange={(e) => this.setState({email:e.target.value})}/>
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="password">Password</label>
+                        <input type="password" id="password" name="password" className="form-control" required value={this.state.password} onChange={(e) => this.setState({password:e.target.value})}/>
+                      </div>
+                      <div className="form-group">
+                        <button id="signup" type="button" className="btn btn-success btn-block" onClick={this.handleClick}>Sign Up</button>
+                      </div>
+                      {/* <div className="form-group">
+                          <Link to={sharedState().path} className="btn btn-danger btn-block">Cancel </Link>
+                      </div> */}
+                </div>
+        )
     }
 }
 
