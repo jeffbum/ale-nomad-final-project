@@ -71,11 +71,13 @@ render(){
       <div className="col-sm-3 cardWrap">
         <div className="col-sm-12">
             <img height="200" width="200" className="cardImage" src={beer.beer_label=== null? '/img/beer.jpg' : (beer.beer_label)} alt="Beer Profile Pic" />
-            <p className="beerName"><b>{beer.beer_name}</b></p>
-            <p className="time"><b>{beer.brew.name}</b></p>
-              <div className="post-body runithOver">
+            <p className="beerName">Brew: <b>{beer.beer_name}</b></p>
+            <p className="time">Brewery: <b>{beer.brew.name}</b></p>
+            <p className="time">ABV: <b>{beer.beer_abv}</b></p>
+            <p className="time">IBU: <b>{beer.beer_ibu}</b></p>
+              {/* <div className="post-body runithOver">
                 {beer.beer_description}
-              </div>
+              </div> */}
         </div>
       </div>
     </Link>
