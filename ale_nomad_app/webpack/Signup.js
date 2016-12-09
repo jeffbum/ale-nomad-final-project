@@ -95,10 +95,10 @@ class Signup extends React.Component {
                         <input type="password" id="password" name="password" className="form-control" required value={this.state.password} onChange={(e) => this.setState({password:e.target.value})}/>
                       </div>
                       <div className="form-group">
-                        <button id="signup" type="button" className="btn btn-success btn-block" onClick={this.handleClick}>Sign Up</button>
+                        <Link to={'/userprofile'}><button id="signup" type="button" className="btn btn-success btn-block" onClick={this.handleClick}>Sign Up</button></Link>
                       </div>
                       {/* <div className="form-group">
-                          <Link to={sharedState().path} className="btn btn-danger btn-block">Cancel </Link>
+                          <Link to={'/profile'} className="btn btn-danger btn-block">Cancel </Link>
                       </div> */}
                 </div>
         )
