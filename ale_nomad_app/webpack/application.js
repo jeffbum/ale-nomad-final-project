@@ -22,6 +22,7 @@ import BrewFilter from './BrewFilter'
 import BrewResult from './BrewResult'
 import Signup from './Signup'
 import UserProfile from './UserProfile'
+import LoginPage from './LoginPage'
 
 
 
@@ -41,6 +42,7 @@ ReactDOM.render(
         <Route path={path} component={App} >
             <IndexRoute component={Homepage} />
             <Route path='signup' component={Signup} />
+                <Route path='login' component={LoginPage} />
                 <Route path='userprofile' component={UserProfile} />
             <Route path='find_beer' component={FindBeer} />
                 <Route path='beer/:beer_id' component={BeerResult} />

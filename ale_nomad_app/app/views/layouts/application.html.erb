@@ -43,9 +43,9 @@
           <div class="col-sm-8 ">
               <nav>
                 <ul>
-                  <li><a href="/">Home</a></li>
                   <li><a href="/find_beer">Find Beers</a></li>
                   <li><a href="/find_brew">Find Breweries</a></li>
+                  <li><a href="/login">Profile</a></li>
                 </ul>
               </nav>
           </div>
@@ -56,7 +56,7 @@
       </div>
     </header>
 <!-- SM Header End -->
-<% unless current_page?('/find_beer') || current_page?('/find_brew') || current_page?('/signup') %>
+<% unless current_page?('/find_beer') || current_page?('/find_brew') || current_page?('/signup') || current_page?('/login')%>
   <%# TODO: Remove this <hr> and add bottom margin to the header to give the same space that the <hr> is giving. %>
   <hr class="hidden-xs">
   <div class="hidden-xs container-fluid homePageImage">

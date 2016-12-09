@@ -174,7 +174,7 @@ render(){
           </label>
         </div>
       </div>
-      <div className="row text-center testMargin">
+      <div className="row text-center testButton">
         <div className='col-xs-offset-2 col-xs-8'>
           <span className="input-group-btn">
             <button className="btn btn-primary filterButton" type="button" onClick={this.getBeer}>Filter</button>

@@ -51,7 +51,7 @@ class Signup extends React.Component {
     }
 
     signup() {
-        fetch('/api/signup?email=' + this.state.email + '&password=' + this.state.email + '&images_id=' + this.state.images + '&name=' + this.state.name, {
+        fetch('/api/signup?email=' + this.state.email + '&password=' + this.state.password + '&images_id=' + this.state.images + '&name=' + this.state.name, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -95,7 +95,7 @@ class Signup extends React.Component {
                         <input type="password" id="password" name="password" className="form-control" required value={this.state.password} onChange={(e) => this.setState({password:e.target.value})}/>
                       </div>
                       <div className="form-group">
-                        <Link to={'/userprofile'}><button id="signup" type="button" className="btn btn-success btn-block" onClick={this.handleClick}>Sign Up</button></Link>
+                        <Link to={'/login'}><button id="signup" type="button" className="btn btn-success btn-block" onClick={this.handleClick}>Sign Up</button></Link>
                       </div>
                       {/* <div className="form-group">
                           <Link to={'/profile'} className="btn btn-danger btn-block">Cancel </Link>
