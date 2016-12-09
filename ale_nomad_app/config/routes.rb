@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :drinks
 root 'beers#static'
 get '/find_beer' => 'beers#static'
 get '/find_brew' => 'beers#static'
@@ -18,6 +17,7 @@ scope '/api' do
   get '/show/brew' => 'brews#show'
   get '/show/location' => 'geosearch#distance'
 
+
   get '/rate' => 'reviews#create'
   get '/show/ratings' => 'reviews#show'
   get '/myratings' => 'reviews#my_ratings'
@@ -32,7 +32,8 @@ scope '/api' do
 
   resources :categories
   resources :brews
-
+  resources :drinks
+  get '/mydrinks' => 'drinks#my_drinks'
 end
 
 

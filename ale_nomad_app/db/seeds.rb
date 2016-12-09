@@ -11,6 +11,7 @@ end
 
 feedback = brewery_db.locations.all(locality: 'Indianapolis', offset: 50)
 
+
 feedback.each do |x|
   brew = Brew.create!(
   brewerydb_id: x.brewery.id,
@@ -36,15 +37,15 @@ feedback.each do |x|
       category = nil
     end
 
-    brew.beers.create!(
-    beer_name: beer.name,
-    beer_abv: beer.abv,
-    beer_ibu: beer.ibu,
-    category: category,
-    beer_description: beer.description,
-    remote_beer_label_url: beer.labels.try(:large),
-    available: beer.available&.name,
-    year: beer.year
-    )
+      brew.beers.create!(
+      beer_name: beer.name,
+      beer_abv: beer.abv,
+      beer_ibu: beer.ibu,
+      category: category,
+      beer_description: beer.description,
+      remote_beer_label_url: beer.labels.try(:large),
+      available: beer.available&.name,
+      year: beer.year
+      )
   end
 end
