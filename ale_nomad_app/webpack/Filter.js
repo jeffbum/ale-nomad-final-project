@@ -71,21 +71,21 @@ render(){
   })
   return (
     <div>
-      <div className="row text-center testMargin">
-        <p className="searchHeaders">Search by Beer Name or Styles</p>
+      <div className="row text-center">
+        <p className="filterSearchHeader">Search by Beer Name or Styles</p>
         <div className="col-xs-offset-2 col-xs-8 testMargin">
           <div className="input-group">
             <input type="text" className="form-control" placeholder="Search for..."  onChange={this.styleHandler} />
-            <div className="input-group-btn">
+            <div className="input-group-btn filterSearchInput">
               <button className="btn signInButton" type="button" onClick={this.searchResult}>Search</button>
             </div>
           </div>
         </div>
       </div>
-      <div className="row testMargin text-center">
-        <p className="searchHeaders">Filter by Style, ABV, or IBU</p>
+      <div className="row text-center">
+        <p className="filterSearchHeader">Filter by Style, ABV, or IBU</p>
         <div className="col-xs-12">
-          <h3>Style</h3>
+          <h3 className="filterSelectors">Style</h3>
           <label className="radio-inline">
             <input type="radio" name="style"  value="" onClick={this.styleHandler} defaultChecked/>
               Any Style
@@ -118,7 +118,7 @@ render(){
       </div>
       <div className="row testMargin text-center">
         <div className="col-xs-12">
-          <h3>ABV</h3>
+          <h3 className="filterSelectors">ABV</h3>
             <label className="radio-inline">
               <input type="radio" name="abv" id="optionsRadios1" value="0,20" onChange={this.abvHandler} defaultChecked/>
               Any ABV
@@ -147,7 +147,7 @@ render(){
       </div>
       <div className="row testMargin text-center">
         <div className="col-xs-12">
-          <h3>IBU</h3>
+          <h3 className="filterSelectors">IBU</h3>
             <label className="radio-inline">
               <input type="radio" name="ibu" value="0,2500" onChange={this.ibuHandler} defaultChecked/>
               Any IBU
@@ -174,14 +174,14 @@ render(){
           </label>
         </div>
       </div>
-      <div className="row text-center testMargin">
+      <div className="row text-center testButton">
         <div className='col-xs-offset-2 col-xs-8'>
           <span className="input-group-btn">
             <button className="btn btn-primary filterButton" type="button" onClick={this.getBeer}>Filter</button>
           </span>
         </div>
       </div>
-      <p className="text-center testMargin searchHeaders">Results</p>
+      <p className="text-center testMargin filterSearchHeader">Results</p>
       <div className="row">
         {Beers}
       </div>
