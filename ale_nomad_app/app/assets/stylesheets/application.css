@@ -277,7 +277,31 @@ nav ul li a {
     font-size: 25px;
   }
   /*Filter Styling Start*/
-
+  .filterSearchHeader {
+      color: #644536;
+      margin-top: 40px;
+      font-size: 25px;
+  }
+  .filterSearchInput button {
+    background-color: #DC8A3A;
+    color: #644536;
+  }
+  .filterSearchInput button:hover {
+    background-color: #644536;
+    color: #DC8A3A;
+  }
+  .filterSelectors {
+    color: #DC8A3A;
+    font-size: 20px;
+  }
+  .filterSearchInput button {
+    background-color: #DC8A3A;
+    color: #644536;
+  }
+  .filterSearchInput button:hover {
+    background-color: #644536;
+    color: #DC8A3A;
+  }
   /*Filter Styling End*/
 
   .topRowButtons button {

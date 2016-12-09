@@ -29,6 +29,18 @@ class BrewResult extends React.Component {
     render() {
         console.log(this.state.breweryDetails)
         console.log(this.state.beersDetails)
+        var beerSelections = this.state.beersDetails.map((beerDetail, i) =>{
+        return <Link to={'beer/' + beerDetail.id} data={beerDetail} key={i}>
+          <div className="col-sm-3 cardWrap">
+            <div className="col-sm-12">
+                <img height="200" width="200" className="cardImage" src={beerDetail.beer_label=== null? '/img/beer.jpg' : (beerDetail.beer_label)} alt="Beer Profile Pic" />
+                <p className="beerName">Brew: <b>{beerDetail.beer_name}</b></p>
+                <p className="time">ABV: <b>{beerDetail.beer_abv===null? 'None Listed' : (beerDetail.beer_abv)}</b></p>
+                <p className="time">IBU: <b>{beerDetail.beer_ibu===null? 'None Listed' : (beerDetail.beer_ibu)}</b></p>
+            </div>
+          </div>
+        </Link>
+      })
         return <div>
             <div className="container">
                 <div className="row cardWrap">
@@ -42,7 +54,7 @@ class BrewResult extends React.Component {
                         <div>Website: <a>{this.state.breweryDetails.website}</a></div>
                     </div>
                 </div>
-                <div className="row">
+                {/* <div className="row">
                     <div className="col-sm-12">
                     <h1>Brewery Beer Selection</h1>
                         <div className="col-sm-3 cardWrap">
@@ -54,6 +66,9 @@ class BrewResult extends React.Component {
                             </div>
                         </div>
                     </div>
+                </div> */}
+                <div className="row">
+                    {beerSelections}
                 </div>
             </div>
         </div>
