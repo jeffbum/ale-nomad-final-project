@@ -294,11 +294,11 @@ nav ul li a {
     color: #DC8A3A;
     font-size: 20px;
   }
-  .filterSearchInput button {
+  .testButton button {
     background-color: #DC8A3A;
     color: #644536;
   }
-  .filterSearchInput button:hover {
+  .testButton button:hover {
     background-color: #644536;
     color: #DC8A3A;
   }
