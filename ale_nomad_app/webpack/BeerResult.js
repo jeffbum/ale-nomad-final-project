@@ -52,6 +52,7 @@ class BeerResult extends React.Component {
                         <div>Phone: {this.state.brewDetails.phone}</div>
                         <div>Address: {this.state.brewDetails.street_address}, {this.state.brewDetails.postal_code}</div>
                         <div>Website: <a>{this.state.brewDetails.website}</a></div>
+                        <Link to='/userprofile'><button>Drink This Beer!</button></Link>
                     </div>
                 </div>
             </div>

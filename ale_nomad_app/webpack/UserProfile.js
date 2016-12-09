@@ -16,9 +16,23 @@ class UserProfile extends React.Component {
     }
 
     render(){
-        return(
-            <div>Hello World</div>
-        )
+        return <div>
+                    
+                    <br />
+                    <main className="container ">
+                      <div className="row">
+                        <div className="col-xs-3 text-center ">
+                        Hi
+                        </div>
+                        <div className="col-xs-6 column text-center">
+                        Hello
+                        </div>
+                        <div className="col-xs-3 text-center ">
+                        Adios
+                        </div>
+                    </div>
+                    </main>
+            </div>
     }
 }
 
