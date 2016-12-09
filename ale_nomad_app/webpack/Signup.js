@@ -10,7 +10,6 @@ class Signup extends React.Component {
             name: '',
             picture: ''
         }
-        // this.mockResponse = this.mockResponse.bind(this)
         this.signedUpHandler = this.signedUpHandler.bind(this)
         this.handleClick = this.handleClick.bind(this)
         this.signup = this.signup.bind(this)
