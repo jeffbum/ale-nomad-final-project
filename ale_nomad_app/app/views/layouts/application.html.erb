@@ -27,7 +27,7 @@
       <div class="container-fluid homePageImage testMargin">
         <div class="row">
           <div class="col-xs-6 mobileImage">
-            <img class="text-center"src="/img/logoTwo.png" alt="Ale Nomad Logo">
+            <a href="/"><img class="text-center"src="/img/logoTwo.png" alt="Ale Nomad Logo"></a>
           </div>
         </div>
       </div>
@@ -56,12 +56,12 @@
       </div>
     </header>
 <!-- SM Header End -->
-<% unless current_page?('/find_beer') || current_page?('/find_brew') || current_page?('/signup') || current_page?('/login') || current_page?('/userprofile')%>
+<% if current_page?('/') %>
   <%# TODO: Remove this <hr> and add bottom margin to the header to give the same space that the <hr> is giving. %>
   <hr class="hidden-xs">
   <div class="hidden-xs container-fluid homePageImage">
   </div>
-  <div class="container headerContainer hidden-xs">
+  <div class="hidden-xs container headerContainer">
     <div class="row">
       <div class="col-sm-12">
         <p class="woahRadical">Ale Nomad is where socialites, casual drinkers, and connoisseurs come to discover beer and breweries. Stuck in the mud ordering the same Stout? Let Ale Nomad recommend a new brew. Not educated in beer styles like some of your friends? Choose from hundreds of beers to nail down the next best taste that all your friends will thank you for. Even find a new hot spot to drink at. Wherever life takes you let Ale Nomad guide you to the beer. </p>
@@ -86,12 +86,10 @@
     </div>
   </div>
   <hr class="hidden-xs">
-  <% end %>
-  <!-- Content goes here. -->
-  <div id="aleNomad">
+<% else %>
+  <div id="aleNomad"></div>
+<% end %>
 
-  </div>
-  <!-- Scripts go here. -->
   <div class="container">
     <div class="row footer text-center">
       <div class="text-center hidden-xs">

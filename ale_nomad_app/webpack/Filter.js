@@ -26,6 +26,7 @@ class Filter extends React.Component {
     this.setState({
       style: e.target.value
     })
+    console.log(this.state.style)
   }
   ibuHandler(e){
     this.setState({
@@ -46,7 +47,7 @@ class Filter extends React.Component {
 
     .then(response => response.json())
     .then(response => this.setState({beers: response.beers}))
-    .then(response => {console.log(this.state.beers)})
+    .then(response => {console.log(this.state.style)})
   }
   searchResult() {
       fetch('/api/filter?filter[beer_name_cont]=' + this.state.style)
@@ -60,7 +61,7 @@ render(){
     return <Link to={'beer/' + beer.id} data={beer} key={i}>
       <div className="col-sm-3 cardWrap">
         <div className="col-sm-12">
-            <img height="200" width="200" className="cardImage" src={beer.beer_label=== null? '/img/beer.jpg' : (beer.beer_label)} alt="Beer Profile Pic" />
+            <img width="200" className="cardImage" src={beer.beer_label=== null? '/img/beer.jpg' : (beer.beer_label)} alt="Beer Profile Pic" />
             <p className="beerName">Brew: <b>{beer.beer_name}</b></p>
             <p className="time">Brewery: <b>{beer.brew.name}</b></p>
             <p className="time">ABV: <b>{beer.beer_abv}</b></p>
@@ -77,7 +78,7 @@ render(){
           <div className="input-group">
             <input type="text" className="form-control" placeholder="Search for..."  onChange={this.styleHandler} />
             <div className="input-group-btn filterSearchInput">
-              <button className="btn signInButton" type="button" onClick={this.searchResult}>Search</button>
+              <button className="btn" type="button" onClick={this.searchResult}>Search</button>
             </div>
           </div>
         </div>
@@ -86,7 +87,17 @@ render(){
         <p className="filterSearchHeader">Filter by Style, ABV, or IBU</p>
         <div className="col-xs-12">
           <h3 className="filterSelectors">Style</h3>
-          <label className="radio-inline">
+          {/* // TODO: Figure out why this dropdown isn't working and why the radio button rows are. */}
+            <select name="style" className="form-control" onChange={this.styleHandler}>
+                <option value="">Any Style</option>
+                <option value="IPA">IPA</option>
+                <option value="Stout">Stout</option>
+                <option value="Amber">Amber</option>
+                <option value="Lager">Lager</option>
+                <option value="Pilsner">Pilsner</option>
+                <option value="Sour">Sour</option>
+            </select>
+          {/* <label className="radio-inline">
             <input type="radio" name="style"  value="" onClick={this.styleHandler} defaultChecked/>
               Any Style
           </label>
@@ -113,7 +124,7 @@ render(){
           <label className="radio-inline">
             <input type="radio" name="style"  value="Sour" onClick={this.styleHandler}/>
               Sour
-          </label>
+          </label> */}
         </div>
       </div>
       <div className="row testMargin text-center">
@@ -176,12 +187,12 @@ render(){
       </div>
       <div className="row text-center testButton">
         <div className='col-xs-offset-2 col-xs-8'>
-          <span className="input-group-btn">
-            <button className="btn btn-primary filterButton" type="button" onClick={this.getBeer}>Filter</button>
+          <span className="input-group-btn filterSearchInput">
+            <button className="btn filterButton filterButtonSpace" type="button" onClick={this.getBeer}>Filter</button>
           </span>
         </div>
       </div>
-      <p className="text-center testMargin filterSearchHeader">Results</p>
+      <p className="text-center filterSearchHeader">Matching Beers</p>
       <div className="row">
         {Beers}
       </div>
