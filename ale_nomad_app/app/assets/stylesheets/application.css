@@ -127,12 +127,11 @@ nav ul li a {
 .cardWrap {
   background-color: white;
   margin: 10px;
-  height: 430px;
   box-shadow: 4px 6px 20px grey;
   border-radius: 10%;
 }
 .cardWrap img {
-  border-radius: 100%;
+  width: 100%;
 }
 .filterButton {
   width: 400px;
@@ -292,15 +291,10 @@ nav ul li a {
   }
   .filterSelectors {
     color: #DC8A3A;
-    font-size: 20px;
+    font-size: 25px;
   }
-  .testButton button {
-    background-color: #DC8A3A;
-    color: #644536;
-  }
-  .testButton button:hover {
-    background-color: #644536;
-    color: #DC8A3A;
+  .filterButtonSpace {
+    margin-top: 50px;
   }
   /*Filter Styling End*/
 
@@ -386,12 +380,10 @@ nav ul li a {
   .cardWrap {
     background-color: white;
     margin: 10px;
-    height: 430px;
     box-shadow: 4px 6px 20px grey;
-    border-radius: 20%;
+    /*border-radius: 20%;*/
   }
   .cardWrap img {
-    border-radius: 100%;
     width: 100%;
   }
   .filterButton {

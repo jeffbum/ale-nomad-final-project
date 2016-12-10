@@ -52,7 +52,7 @@ render(){
     return <Link to={'brew/' + brew.id} data={brew} key={i}>
         <div className="col-sm-3 cardWrap">
           <div className="col-xs-12">
-            <img height="200" width="250" className="cardImage" src={brew.images=== null? '/img/beer.jpg' : (brew.images)} alt="Beer Profile Pic" />
+            <img width="250" className="cardImage" src={brew.images=== null? '/img/beer.jpg' : (brew.images)} alt="Beer Profile Pic" />
             <p className="beerName">Brewery: {brew.name}</p>
             <p className="time">Phone: {brew.phone===null? 'No # listed' : (brew.phone)}</p>
             <p className="time">Address: {brew.street_address}, {brew.postal_code}</p>
@@ -63,7 +63,7 @@ render(){
   return (
     <div>
       <div className="row text-center">
-        <p className="searchHeaders">Step 1: Enter Zip Code</p>
+        <p className="filterSearchHeader">Step 1: Enter Zip Code</p>
         <div className="col-xs-offset-5 col-xs-7 text-center">
           <div className="input-group">
             <input name="searchInput" type="text" className="form-control" placeholder="Enter zip code..." onChange={this.searchHandler}/>
@@ -71,9 +71,9 @@ render(){
         </div>
       </div>
       <div className="row text-center testMargin">
-        <p className="searchHeaders">Step 2: Select Distance</p>
+        <p className="filterSearchHeader">Step 2: Select Distance</p>
         <div className="col-xs-12">
-          <h3>Location</h3>
+          <h3 className="filterSelectors">Location</h3>
           <label className="radio-inline">
             <input type="radio" name="location"  value="" onClick={this.locationHandler} defaultChecked/>
             Any Location
@@ -100,12 +100,12 @@ render(){
           </label>
         </div>
         <div className="col-sm-12 testMargin">
-          <span className="input-group-btn">
-            <button className="btn btn-primary" type="button" onClick={this.getBrew}>Search</button>
+          <span className="input-group-btn filterSearchInput">
+            <button className="btn filterButton filterButtonSpace" type="button" onClick={this.getBrew}>Search</button>
           </span>
         </div>
       </div>
-      <p className="text-center testMargin searchHeaders">Matches</p>
+      <p className="text-center filterSearchHeader">Matching Breweries</p>
       <div className="row">
         {Brews}
       </div>
