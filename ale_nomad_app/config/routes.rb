@@ -17,7 +17,6 @@ scope '/api' do
   get '/show/brew' => 'brews#show'
   get '/show/location' => 'geosearch#distance'
 
-
   get '/rate' => 'reviews#create'
   get '/show/ratings' => 'reviews#show'
   get '/myratings' => 'reviews#my_ratings'
