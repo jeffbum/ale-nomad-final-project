@@ -70,34 +70,18 @@ render(){
           </div>
         </div>
       </div>
-      <div className="row text-center testMargin">
+      <div className="row text-center">
         <p className="filterSearchHeader">Step 2: Select Distance</p>
-        <div className="col-xs-12">
+        <div className="col-xs-8 col-xs-offset-2">
           <h3 className="filterSelectors">Location</h3>
-          <label className="radio-inline">
-            <input type="radio" name="location"  value="" onClick={this.locationHandler} defaultChecked/>
-            Any Location
-          </label>
-          <label className="radio-inline">
-            <input type="radio" name="location"  value="1" onClick={this.locationHandler}/>
-            1 Mile
-          </label>
-          <label className="radio-inline">
-            <input type="radio" name="location"  value="5" onClick={this.locationHandler} />
-            5 Miles
-          </label>
-          <label className="radio-inline">
-            <input type="radio" name="location"  value="10" onClick={this.locationHandler}/>
-            10 Miles
-          </label>
-          <label className="radio-inline">
-            <input type="radio" name="location"  value="15" onClick={this.locationHandler}/>
-            15 Miles
-          </label>
-          <label className="radio-inline">
-            <input type="radio" name="location"  value="20" onClick={this.locationHandler}/>
-            20 Miles
-          </label>
+            <select name="style" className="form-control" onChange={this.locationHandler}>
+              <option value="">Any Location</option>
+              <option value="1">1 Mile</option>
+              <option value="5">5 Miles</option>
+              <option value="10">10 Miles</option>
+              <option value="15">15 Miles</option>
+              <option value="20">20 Miles</option>
+            </select>
         </div>
         <div className="col-sm-12 testMargin">
           <span className="input-group-btn filterSearchInput">
