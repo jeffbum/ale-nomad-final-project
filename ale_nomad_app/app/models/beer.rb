@@ -13,8 +13,12 @@ class Beer < ApplicationRecord
           :category => :name
         }, :against => [:name, :abv, :ibu]
 
-
-
+      def weekly_beer
+        @weekly_beer = []
+        @weekly_beer << Beer.all
+        @weekly_beer = @weekly_beer.shuffle.sample
+        render json: @weekly_beer
+      end
 
 
 

@@ -6,6 +6,11 @@ class Brew < ApplicationRecord
   paginates_per 50
 
 
-
-
+  def weekly_brew
+    @weekly_brew = []
+    @weekly_brew << Brew.all
+    @weekly_brew = @weekly_brew.shuffle.sample
+    render json: @weekly_brew
+  end
+  
 end
