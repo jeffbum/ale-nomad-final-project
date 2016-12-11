@@ -1,6 +1,5 @@
 class DrinksController < ApplicationController
 
-
   def create
     @drink = Drink.new(drink_params)
       @drink.user = current_user
@@ -10,7 +9,6 @@ class DrinksController < ApplicationController
         render json: @user.errors.full_messages, status: 422
       end
   end
-
   def my_drinks
     @my_drink = current_user.beers.order("created_at DESC")
     render json: @my_drinks
@@ -21,12 +19,10 @@ class DrinksController < ApplicationController
   #     render json: @friend_drinks
   # end
 
-
 private
 
   def drink_params
     params.permit(:beer_id, :user_id)
   end
-
 
 end

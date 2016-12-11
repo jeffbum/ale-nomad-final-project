@@ -1,36 +1,28 @@
 class BeersController < ApplicationController
 
-
     def static
     end
-
     def index
       @beers = Beer.all.order(:beer_name).page params[:page]
       render json: @beers, meta: pagination_dict(@beers)
     end
     #Displays all beer
-
     def show
       @beer = Beer.find(params[:id])
       render json: @beer
     end
-
     def untapshow
       @beer = Untappd::Beer.info(params[:id])
         render json: @beer
     end
-
     def untapsearch
       @beers = Untappd::Beer.search(params[:name])
         render json: @beers
     end
-
-    def instock
+    def venue_instock
       @beers = Untappd::Beer.feed(params[:bid])
       render json: @beers
     end
-
-
     def pagination_dict(object)
       {
         current_page: object.current_page,
@@ -40,7 +32,6 @@ class BeersController < ApplicationController
         total_count: object.total_count
       }
     end
-
     def filter
       @beers = Beer.all
       if params[:search]
@@ -51,7 +42,6 @@ class BeersController < ApplicationController
       @beers = @beers.to_a.uniq
       render json: @beers
     end
-
     def fake
       brewery_db = BreweryDB::Client.new do |config|
         config.api_key = ENV['breweryapikey']
@@ -60,5 +50,4 @@ class BeersController < ApplicationController
       render json: feedback
     end
     # used to test seed results in Postman
-
 end

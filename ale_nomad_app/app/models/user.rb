@@ -17,5 +17,5 @@ class User < ApplicationRecord
     uniqueness: true,
     format: /\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b/
 
-
+    
 end
