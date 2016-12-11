@@ -56,7 +56,7 @@
       </div>
     </header>
 <!-- SM Header End -->
-<% unless current_page?('/find_beer') || current_page?('/find_brew') || current_page?('/signup') || current_page?('/login') || current_page?('/userprofile')%>
+<% unless current_page?('/find_beer') || current_page?('/find_brew') || current_page?('/signup') || current_page?('/login') || current_page?('/userprofile') || current_page?('/brew/:brew_id') || current_page?('/beer/:beer_id')%>
   <%# TODO: Remove this <hr> and add bottom margin to the header to give the same space that the <hr> is giving. %>
   <hr class="hidden-xs">
   <div class="hidden-xs container-fluid homePageImage">

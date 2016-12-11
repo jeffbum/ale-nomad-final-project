@@ -10,6 +10,7 @@ class BeerResult extends React.Component {
             beerDetails: [],
             brewDetails: [],
         }
+        this.postBeer = this.postBeer.bind(this)
     }
 
     componentDidMount(){
@@ -28,6 +29,15 @@ class BeerResult extends React.Component {
             )
     }
 
+    postBeer(){
+        fetch('/drinks?beer_id=' + this.state.beerDetails.id, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+    }
+
     render(){
         console.log(this.state.brewDetails)
         console.log(this.state.beerDetails)
@@ -41,6 +51,8 @@ class BeerResult extends React.Component {
                         <div>Description: {this.state.beerDetails.beer_description}</div>
                         <div>ABV: {this.state.beerDetails.beer_abv}</div>
                         <div>IBU: {this.state.beerDetails.beer_ibu}</div>
+                        <button onClick={this.postBeer}>Drink This Beer!</button>
+
                         </div>
                 </div>
                 <div className="row cardWrap">
@@ -52,7 +64,6 @@ class BeerResult extends React.Component {
                         <div>Phone: {this.state.brewDetails.phone}</div>
                         <div>Address: {this.state.brewDetails.street_address}, {this.state.brewDetails.postal_code}</div>
                         <div>Website: <a>{this.state.brewDetails.website}</a></div>
-                        <Link to='/userprofile'><button>Drink This Beer!</button></Link>
                     </div>
                 </div>
             </div>

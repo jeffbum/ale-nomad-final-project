@@ -14,20 +14,14 @@ import App from './App'
 import Homepage from './Homepage'
 import FindBeer from './FindBeer'
 import FindBrewery from './FindBrewery'
-// import Header from './Header'
-// import Footer from './Footer'
 import Filter from './Filter'
 import BeerResult from './BeerResult'
 import BrewFilter from './BrewFilter'
 import BrewResult from './BrewResult'
 import Signup from './Signup'
 import UserProfile from './UserProfile'
-import LoginPage from './LoginPage'
+import Timeline from './Timeline'
 
-
-
-// TODO: create const path to figure in api token.
-// TODO: session storage
 
 const path = window.location.href.includes('github') ? '/ale_nomad_app/' : '/'
 
@@ -42,7 +36,6 @@ ReactDOM.render(
         <Route path={path} component={App} >
             <IndexRoute component={Homepage} />
             <Route path='signup' component={Signup} />
-                <Route path='login' component={LoginPage} />
                 <Route path='userprofile' component={UserProfile} />
             <Route path='find_beer' component={FindBeer} />
                 <Route path='beer/:beer_id' component={BeerResult} />
