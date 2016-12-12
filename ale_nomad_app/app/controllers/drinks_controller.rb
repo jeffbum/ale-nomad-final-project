@@ -13,7 +13,7 @@ class DrinksController < ApplicationController
   end
   def my_drinks
     @my_drink = current_user.beers.order('created_at DESC')
-    render json: @my_drinks
+    render json: @my_drink
   end
 
   private

@@ -30,12 +30,12 @@ class BeerResult extends React.Component {
     }
 
     postBeer(){
-        fetch('/drinks?api_token=' + sessionStorage.getItem('api-token') + '?beer_id=' + this.state.beerDetails.id, {
+        fetch('/api/drinks?api_token=' + sessionStorage.getItem('api_token') + '&beer_id=' + this.state.beerDetails.id, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            })
+        })
     }
 
     render(){

@@ -18,7 +18,7 @@ class Signup extends React.Component {
 
     signedUpHandler(response) {
         if (typeof response.user != 'undefined') {
-            sessionStorage.setItem('api-token', response.user.api_token)
+            sessionStorage.setItem('api_token', response.user.api_token)
             sessionStorage.setItem('user_id',
                 JSON.stringify(response.user.id))
 
