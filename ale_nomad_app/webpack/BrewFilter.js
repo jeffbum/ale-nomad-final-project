@@ -42,14 +42,14 @@ class BrewFilter extends React.Component {
     fetch('/api/show/location?address=' + this.state.searchInput + '&range=' + this.state.location)
     .then(response => response.json())
     .then(response => this.setState({brews: response.brews}))
-    // .then(whatever => console.log(this.state))
-    //  console.log(response.brews)
+    .then(response => window.scrollTo(0,300))
+
   }
 
 render(){
   console.log(this.state.brews)
   var Brews = this.state.brews.map((brew, i) => {
-    return <Link to={'brew/' + brew.id} data={brew} key={i}>
+    return <Link to={'/brew/' + brew.id} data={brew} key={i}>
         <div className="col-sm-3 cardWrap">
           <div className="col-xs-12">
             <img src={brew.images=== null? '/img/noImage.jpg' : (brew.images)} alt="Beer Profile Pic" />
