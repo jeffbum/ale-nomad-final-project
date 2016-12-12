@@ -1,0 +1,1 @@
+{"errors":[],"warnings":[],"version":"1.13.3","hash":"e89f74535fc297e2d2b9","publicPath":"/webpack/","assetsByChunkName":{"application":"application-a784498ac3f2ad5715ff.js"},"assets":[{"name":"application-a784498ac3f2ad5715ff.js","size":247110,"chunks":[0],"chunkNames":["application"],"emitted":true},{"name":"manifest.json","size":0,"chunks":[],"chunkNames":[]}],"children":[]}
