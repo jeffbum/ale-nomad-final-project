@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%# TODO: put Ale Nomad img in to title tag for a nice little touch %>
   <title>Ale Nomad</title>
   <%= csrf_meta_tags %>
 
@@ -85,43 +84,9 @@
       </div>
     </header>
 <!-- SM Header End -->
-<% unless current_page?('/find_beer') || current_page?('/find_brew') || current_page?('/signup') || current_page?('/login') || current_page?('/userprofile') || current_page?('/brew/:brew_id') || current_page?('/beer/:beer_id')%>
 
-  <%# TODO: Remove this <hr> and add bottom margin to the header to give the same space that the <hr> is giving. %>
-  <hr class="hidden-xs">
-  <div class="hidden-xs container-fluid homePageImage">
-  </div>
-  <div class="hidden-xs container headerContainer">
-    <div class="row">
-      <div class="col-sm-12">
-        <p class="woahRadical">Ale Nomad is where socialites, casual drinkers, and connoisseurs come to discover beer and breweries. Stuck in the mud ordering the same Stout? Let Ale Nomad recommend a new brew. Not educated in beer styles like some of your friends? Choose from hundreds of beers to nail down the next best taste that all your friends will thank you for. Even find a new hot spot to drink at. Wherever life takes you let Ale Nomad guide you to the beer. </p>
-          <hr class="hidden-xs">
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row featuredCatMargin">
-      <div class="col-xs-12 col-sm-5 text-center featuredCats">
-        <p class="featuredCatTitles hidden-xs">Beer</p>
-        <p class="featuredCatDescription hidden-xs">This will be a paragraph about what beer search can do for our users. Want to search beers by style. Click getting started. Want to search for a beer with a specific ABV or IBU. Click to get started.</p>
-        <span><i class="fa fa-search" aria-hidden="true"></i><a href="/find_beer" class="visible-xs hidden-sm hidden-md hidden-lg btn testSize" type="submit">Find A Beer!</a></span>
-        <span><a href="/find_beer" class="hidden-xs btn" type="submit">Find A Beer!</a></span>
-      </div>
-      <div class="col-xs-12 col-sm-5 col-sm-offset-2 text-center featuredCats">
-        <p class="featuredCatTitles hidden-xs">Brewery</p>
-        <p class="featuredCatDescription hidden-xs">This will be a paragraph about what brewery search can do for our users. Want to search beers by style. Click getting started. Want to search for a beer with a specific ABV or IBU. Click to get started.</p>
-        <span><a href="/find_brew" class="visible-xs hidden-sm hidden-md hidden-lg btn testSize" type="submit">Find A Brewery!</a></span>
-        <span><a href="/find_brew" class="hidden-xs btn" type="submit">Find A Brewery!</a></span>
-      </div>
-      <div class="col-xs-12 hidden-sm hidden-md hidden-lg text-center featuredCats">
-        <span><a href="/userprofile" class="visible-xs btn testSize" type="submit">Profile</a></span>
-      </div>
-    </div>
-  </div>
-  <hr class="hidden-xs">
-<% else %>
+
   <div id="aleNomad"></div>
-<% end %>
 
   <div class="container">
     <div class="row footer text-center">
