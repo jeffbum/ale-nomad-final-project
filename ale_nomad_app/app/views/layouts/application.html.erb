@@ -13,22 +13,52 @@
     <link rel="shortcut icon" type="image" sizes="64x64" href="red-devil.ico"/>
     <script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script src="http://localhost:3808/webpack-dev-server.js"></script>
     <%= javascript_include_tag 'application'%>
-
     <link href="https://fonts.googleapis.com/css?family=Tillana" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all'%>
 </head>
 <body>
 <!-- Mobile Header Start -->
     <header class="visible-xs hidden-sm hidden-md hidden-lg">
-      <div class="container-fluid">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header testBackground">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="mobileHeader" href="/"><img src="/img/logoTwo.png" alt="Ale Nomad Logo"></a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">Link</a></li>
+            </ul>
+            <form class="navbar-form navbar-left">
+              <!-- <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div> -->
+              <button type="submit" class="btn btn-default">SignIn</button>
+            </form>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+      <!-- <div class="container-fluid">
         <div class="row">
-          <div class="col-xs-12 text-center">
+          <div class="col-xs-9">
             <a href="/"><h1 class="mobileHeader">Ale Nomad</h1></a>
           </div>
+          <div class="col-xs-3">
+            <button class="btn btn-default pull-right"><a href="signup">Signup</a></button>
+          </div>
         </div>
-      </div>
+      </div> -->
     </header>
 <!-- Mobile Header End -->
 <!-- SM Header Start -->
@@ -54,6 +84,8 @@
       </div>
     </header>
 <!-- SM Header End -->
+
+
   <div id="aleNomad"></div>
 
   <div class="container">

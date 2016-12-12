@@ -1,5 +1,5 @@
 class UserEmailMailer< ActionMailer::Base
-    default :from => 'any_from_address@example.com'
+    default :from => 'Ale-Nomad@ironyard.com'
 
     def send_signup_email(user)
       @user = user
