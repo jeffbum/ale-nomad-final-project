@@ -58,6 +58,15 @@ class Homepage extends React.Component {
                     <p className="featuredCatDescription hidden-xs">This will be a paragraph about what brewery search can do for our users. Want to search beers by style. Click getting started. Want to search for a beer with a specific ABV or IBU. Click to get started.</p>
                     <span><a href="/find_brew" className="hidden-xs btn">Find A Brewery!</a></span>
                   </div>
+<<<<<<< HEAD
+                  <div className="col-xs-12 hidden-sm hidden-md hidden-lg text-center featuredCats">
+                    <span><a href="/userprofile" className="visible-xs btn testSize">Profile</a></span>
+                  </div>
+                  <div className="col-xs-12 hidden-sm hidden-md hidden-lg text-center featuredCats">
+                    <span><a href="/signup" className="visible-xs btn testSize">SignUp</a></span>
+                  </div>
+=======
+>>>>>>> 634eba67b926fc347bdc3fc27b3e036a25e868a8
                 </div>
               </div>
               {/* <hr className="hidden-xs" /> */}
