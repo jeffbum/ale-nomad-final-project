@@ -5,25 +5,67 @@
     <title>Ale Nomad: Beer/brewery of the Day</title>
   </head>
   <body>
-    <h2>Ale NoMad's Beer & Brewery of the Day!</h2>
-    <br/>
-      <h4>Hello,<%= @user.name %>!</h4>
+    <h4>Hello,<%= @user.name %>!</h4>
 
-      <div>
-        <%= @beer.beer_name %>
-        <%= @beer.beer_abv %>
-        <%= @beer.beer_ibu %>
-        <%= @beer.beer_description %>
+    <br/>
+
+      <div align="center">
+        <h3> Beer of the Day:</h3>
+        <p>
+          Beer: <%= @beer.beer_name %>
+        </p>
+
+        <p>
+          Made by: <%= @beer.beer.brew.name %>
+        </p>
+
+        <p>
+          ABV: <%= @beer.beer_abv %>
+        </p>
+
+        <p>
+          IBU: <%= @beer.beer_ibu %>
+        </p>
+        <p>
+          Description: <%= @beer.beer_description %>
+        </p>
+
       </div>
 
-      <
+      <br/>
+
+
+
+      <div align="center">
+          <h3> Brewery of the Day:</h3>
+        <p>
+          Brewery: <%= @brew.name %>
+        </p>
+
+        <p>
+          Web Address: <%= @brew.website %>
+        </p>
+
+        <p>
+          Phone: <%= @brew.phone %>
+        </p>
+
+        <p>
+          Address: <%= @brew.street_address %>, <%= @brew.postal_code %>
+        </p>
+
+        <p>
+        Hours of Operations: <%= @brew.hours_of_operation %>
+        </p>
+      </div>
 
 
     <br/>
-    <p>
-        Wherever life takes you, let <a href="https://ale-nomad.herokuapp.com/">Ale Nomad</a>  guide you to the best beer!
-    </p>
-
+    <div align="center">
+      <p>
+          Wherever life takes you, let <a href="https://ale-nomad.herokuapp.com/">Ale Nomad</a>  guide you to the best beer!
+      </p>
+    </div>
 
 
 
