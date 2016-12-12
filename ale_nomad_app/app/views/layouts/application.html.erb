@@ -19,15 +19,14 @@
 
     <link href="https://fonts.googleapis.com/css?family=Tillana" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all'%>
-
 </head>
 <body>
 <!-- Mobile Header Start -->
     <header class="visible-xs hidden-sm hidden-md hidden-lg">
-      <div class="container-fluid homePageImage testMargin">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-xs-6 mobileImage">
-            <a href="/"><img class="text-center"src="/img/logoTwo.png" alt="Ale Nomad Logo"></a>
+          <div class="col-xs-12 text-center">
+            <a href="/"><h1 class="mobileHeader">Ale Nomad</h1></a>
           </div>
         </div>
       </div>
@@ -40,7 +39,7 @@
           <div class="col-sm-2">
               <a href="/"><img src="/img/logoTwo.png" alt="Ale Nomad Logo"></a>
           </div>
-          <div class="col-sm-8 ">
+          <div class="col-sm-8">
               <nav>
                 <ul>
                   <li><a href="/find_beer">Find Beers</a></li>
@@ -71,17 +70,23 @@
   </div>
   <div class="container">
     <div class="row featuredCatMargin">
-      <div class="col-xs-5 text-center featuredCats">
+      <div class="col-xs-12 col-sm-5 text-center featuredCats">
         <p class="featuredCatTitles hidden-xs">Beer</p>
         <p class="featuredCatDescription hidden-xs">This will be a paragraph about what beer search can do for our users. Want to search beers by style. Click getting started. Want to search for a beer with a specific ABV or IBU. Click to get started.</p>
-        <span><a href="/find_beer" class="visible-xs hidden-sm hidden-md hidden-lg btn btn-block btn-default" type="submit">Find A Beer!</a></span>
-        <span><a href="/find_beer" class="hidden-xs btn btn-default" type="submit">Find A Beer!</a></span>
+        <span><a href="/find_beer" class="visible-xs hidden-sm hidden-md hidden-lg btn testSize" type="submit">Find A Beer!</a></span>
+        <span><a href="/find_beer" class="hidden-xs btn" type="submit">Find A Beer!</a></span>
       </div>
-      <div class="col-xs-5 col-xs-offset-2 text-center featuredCats">
+      <div class="col-xs-12 col-sm-5 col-sm-offset-2 text-center featuredCats">
         <p class="featuredCatTitles hidden-xs">Brewery</p>
         <p class="featuredCatDescription hidden-xs">This will be a paragraph about what brewery search can do for our users. Want to search beers by style. Click getting started. Want to search for a beer with a specific ABV or IBU. Click to get started.</p>
-        <span><a href="/find_brew" class="visible-xs hidden-sm hidden-md hidden-lg btn btn-block btn-default" type="submit">Find A Brewery!</a></span>
-        <span><a href="/find_brew" class="hidden-xs btn btn-default" type="submit">Find A Brewery!</a></span>
+        <span><a href="/find_brew" class="visible-xs hidden-sm hidden-md hidden-lg btn testSize" type="submit">Find A Brewery!</a></span>
+        <span><a href="/find_brew" class="hidden-xs btn" type="submit">Find A Brewery!</a></span>
+      </div>
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg text-center featuredCats">
+        <span><a href="/userprofile" class="visible-xs btn testSize" type="submit">Profile</a></span>
+      </div>
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg text-center featuredCats">
+        <span><a href="signup" class="visible-xs btn testSize" type="submit">SignUp</a></span>
       </div>
     </div>
   </div>

@@ -59,12 +59,13 @@ nav ul li {
 nav ul li a {
   font-size: 25px;
 }
-.mobileImage {
-  margin: auto 0;
+.mobileHeader {
+  font-size: 75px;
 }
-/*.mobileImage img {
-  height: 25vh;
-}*/
+.testSize {
+  font-size: 50px;
+  margin-top: 30px;
+}
 .topRowButtons button {
   float: left;
   font-size: 25px;
@@ -97,9 +98,6 @@ nav ul li a {
   color: #644536;
 }
 /*Styling for the FindBeers and FindBreweries cards on the HomePage*/
-.featuredCats {
-
-}
 .featuredCats a {
   color: #644536;
   background-color: white;
@@ -128,7 +126,7 @@ nav ul li a {
   background-color: white;
   margin: 10px;
   box-shadow: 4px 6px 20px grey;
-  border-radius: 10%;
+  border-radius: 5%;
 }
 .cardWrap img {
   width: 100%;
@@ -137,7 +135,7 @@ nav ul li a {
   width: 400px;
 }
 /*Styling for the search or filter beer results description*/
-.runithOver {
+/*.runithOver {
   overflow: hidden;
   position: relative;
   line-height: 1.25em;
@@ -159,7 +157,7 @@ nav ul li a {
   width: 1em;
   height: 1em;
   margin-top: 0.2em;
-}
+}*/
 /*.mostPopularPosts {
   color: #DC8A3A;
   padding-top: 20px;
@@ -297,7 +295,6 @@ nav ul li a {
     margin-top: 50px;
   }
   /*Filter Styling End*/
-
   .topRowButtons button {
     float: left;
     font-size: 20px;
@@ -375,13 +372,12 @@ nav ul li a {
     margin-bottom: 50px;
     font-size: 18px;
   }
-
   /*Styling for the find_beer and find_brewery page cards that will appear after filtering*/
   .cardWrap {
     background-color: white;
     margin: 10px;
     box-shadow: 4px 6px 20px grey;
-    /*border-radius: 20%;*/
+    /*border-radius: 5%;*/
   }
   .cardWrap img {
     width: 100%;
@@ -390,7 +386,7 @@ nav ul li a {
     width: 400px;
   }
   /*Styling for the search or filter beer results description*/
-  .runithOver {
+  /*.runithOver {
     overflow: hidden;
     position: relative;
     line-height: 1.25em;
@@ -412,7 +408,7 @@ nav ul li a {
     width: 1em;
     height: 1em;
     margin-top: 0.2em;
-  }
+  }*/
   /*.mostPopularPosts {
     color: #DC8A3A;
     padding-top: 20px;

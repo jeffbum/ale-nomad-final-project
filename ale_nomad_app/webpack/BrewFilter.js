@@ -52,7 +52,7 @@ render(){
     return <Link to={'brew/' + brew.id} data={brew} key={i}>
         <div className="col-sm-3 cardWrap">
           <div className="col-xs-12">
-            <img width="250" className="cardImage" src={brew.images=== null? '/img/beer.jpg' : (brew.images)} alt="Beer Profile Pic" />
+            <img src={brew.images=== null? '/img/noImage.jpg' : (brew.images)} alt="Beer Profile Pic" />
             <p className="beerName">Brewery: {brew.name}</p>
             <p className="time">Phone: {brew.phone===null? 'No # listed' : (brew.phone)}</p>
             <p className="time">Address: {brew.street_address}, {brew.postal_code}</p>

@@ -61,7 +61,7 @@ render(){
     return <Link to={'beer/' + beer.id} data={beer} key={i}>
       <div className="col-sm-3 cardWrap">
         <div className="col-sm-12">
-            <img width="200" className="cardImage" src={beer.beer_label=== null? '/img/beer.jpg' : (beer.beer_label)} alt="Beer Profile Pic" />
+            <img width="200" src={beer.beer_label=== null? '/img/noImage.jpg' : (beer.beer_label)} alt="Beer Profile Pic" />
             <p className="beerName">Brew: <b>{beer.beer_name}</b></p>
             <p className="time">Brewery: <b>{beer.brew.name}</b></p>
             <p className="time">ABV: <b>{beer.beer_abv}</b></p>
