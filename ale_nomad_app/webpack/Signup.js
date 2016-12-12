@@ -8,7 +8,7 @@ class Signup extends React.Component {
             email: '',
             password: '',
             name: '',
-            picture: ''
+            images: ''
         }
         this.signedUpHandler = this.signedUpHandler.bind(this)
         this.handleClick = this.handleClick.bind(this)
@@ -27,13 +27,12 @@ class Signup extends React.Component {
     signedUpHandler(response) {
         if (typeof response.user != 'undefined') {
             sessionStorage.setItem('ale-nomad-api-token', response.user.api_token)
-            sessionStorage.setItem('ale-nomad-user',
-                JSON.stringify(response.user))
-            this.setState({
-                user: response.user
-            })
+            sessionStorage.setItem('user_id',
+                JSON.stringify(response.user.id))
+            
+            window.location.href = "/userprofile"
             // TODO: understand what was going on in the browserhistory push
-            // browserHistory.push(sharedState().path + 'chirp')
+            // browserHistory.push(chirp')
         }
         else {
             response.forEach(function(error) {
@@ -82,8 +81,8 @@ class Signup extends React.Component {
                         <input type="text" id="name" name="name" className="form-control" required value={this.state.name} onChange={(e) => this.setState({name:e.target.value})}/>
                       </div>
                       <div className="form-group">
-                        <label htmlFor="avatar">Avatar</label>
-                        <input type="file" id="picture" name="picture" className="form-control" required onChange={(e) => this.setState({picture:e.target.files[0]})}/>
+                        <label htmlFor="images">Avatar</label>
+                        <input type="file" id="images" name="images" className="form-control" required onChange={(e) => this.setState({images:e.target.files[0]})}/>
                       </div>
                       <div className="form-group">
                         <label htmlFor="email">Email</label>

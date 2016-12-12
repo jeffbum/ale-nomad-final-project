@@ -47,7 +47,8 @@ class Filter extends React.Component {
 
     .then(response => response.json())
     .then(response => this.setState({beers: response.beers}))
-    .then(response => {console.log(this.state.style)})
+    .then(response => {console.log(this.state.beers)})
+    .then(response => window.scrollTo(0,600))
   }
   searchResult() {
       fetch('/api/filter?filter[beer_name_cont]=' + this.state.style)
@@ -58,10 +59,10 @@ class Filter extends React.Component {
 render(){
   console.log(this.state.beers)
   var Beers = this.state.beers.map((beer, i) =>{
-    return <Link to={'beer/' + beer.id} data={beer} key={i}>
+    return <Link to={'/beer/' + beer.id} data={beer} key={i}>
       <div className="col-sm-3 cardWrap">
         <div className="col-sm-12">
-            <img width="200" className="cardImage" src={beer.beer_label=== null? '/img/beer.jpg' : (beer.beer_label)} alt="Beer Profile Pic" />
+            <img width="200" src={beer.beer_label=== null? '/img/noImage.jpg' : (beer.beer_label)} alt="Beer Profile Pic" />
             <p className="beerName">Brew: <b>{beer.beer_name}</b></p>
             <p className="time">Brewery: <b>{beer.brew.name}</b></p>
             <p className="time">ABV: <b>{beer.beer_abv}</b></p>
