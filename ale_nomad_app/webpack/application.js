@@ -20,20 +20,17 @@ import BrewFilter from './BrewFilter'
 import BrewResult from './BrewResult'
 import Signup from './Signup'
 import UserProfile from './UserProfile'
-import Timeline from './Timeline'
 
 
-const path = window.location.href.includes('github') ? '/ale_nomad_app/' : '/'
 
 
 // predefining path so we dont have to put in the slash everytime (also in case you want to run locally through GitHub)
 // document.addEventListener('DOMContentLoaded', function() {
-
 ReactDOM.render(
-
     // TODO: determing paths and component names (also, if we need more routes)
     <Router history={browserHistory}>
-        <Route path={path} component={App} >
+        {/* <Route path="/" component={Homepage}> */}
+        <Route path='/' component={App} >
             <IndexRoute component={Homepage} />
             <Route path='signup' component={Signup} />
                 <Route path='userprofile' component={UserProfile} />

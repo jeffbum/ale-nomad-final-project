@@ -1,7 +1,5 @@
 import React from 'react'
-import { Link, browserHistory} from 'react-router'
-
-import Timeline from './Timeline'
+import { Link, browserHistory } from 'react-router'
 
 class UserProfile extends React.Component {
     constructor(props) {
@@ -9,30 +7,23 @@ class UserProfile extends React.Component {
         this.state = {
             name: '',
             email:'',
-            // image: ''
+            images: ''
         }
     }
     componentDidMount() {
-        var login = sessionStorage.getItem('ale-nomad-api-token');
-        if (!login) {
-            // browserHistory.push('/')
-            window.location.href('/')
-        }
-        else {
+
             fetch('/api/users/' + sessionStorage.getItem('user_id'))
             .then(response => response.json())
-            .then( response => this.setState({
+            .then(response => this.setState({
                 name: response.user.name,
                 email: response.user.email,
-                image: response.user.image,
-
+                images: response.user.images,
             }))
-        }
+            .then(response => console.log(this.state))
     }
 
     render(){
         return <div>
-
                     <br />
                     <main className="container ">
                       <div className="row">
@@ -40,10 +31,10 @@ class UserProfile extends React.Component {
                         {this.state.name}
                         </div>
                         <div className="col-xs-6 column text-center">
-                            <Timeline />
+                            {this.state.email}
                         </div>
                         <div className="col-xs-3 text-center ">
-                            {/* {this.state.image} */}
+                            <img src={this.state.images} />
 
                         </div>
                     </div>
