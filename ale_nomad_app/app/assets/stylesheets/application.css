@@ -23,39 +23,84 @@ body {
   background-image: url('/img/cheap_diagonal_fabric.png');
   font-family: 'Tillana', cursive;
 }
-.testBackground {
+.navBackground {
   background-color: #644536;
   border: none;
-}
-.testBackground img {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.mobileHeader {
-  margin-left: 10px;
-  margin-bottom: 70px;
   color: #eea45c;
+  width: 100%;
 }
-.mobileHeader a h1:hover {
-  text-decoration: none;
+.navBackground img {
+  padding-top: 10px;
+  padding-bottom: 15px;
 }
-.testSize {
+.hamButton {
+  border: none;
+  background-color: #eea45c;
+}
+.hamButton:hover {
+  border: 1px solid #eea45c;
+  background-color: #644536;
+}
+.hamburgerClick {
+  background-color: #eea45c;
+  border: none;
+}
+.hamburgerClick li a {
+  color: #644536;
+}
+.mobileSignInBorder {
+  border-bottom: none;
+}
+.mobileSignIn button {
+  background-color: #eea45c;
+  color: #644536;
+  border: 2px solid #644536;
+}
+.mobileSignIn button:hover {
+  background-color: #644536;
+  color: #eea45c;
+  border: 2px solid #644536;
+}
+.mobileButtonSize {
   font-size: 50px;
   margin-bottom: 50px;
 }
 /*Styling for HomePage Buttons*/
-.featuredCats a {
+.mobileFeaturedCats a {
   color: #644536;
   background-color: #eea45c;
   border: 5px solid #644536;
   box-shadow: 10px 10px 50px black;
 }
-.featuredCats a:hover {
+.mobileFeaturedCats a:hover {
   color: #eea45c;
   background-color: #644536;
   box-shadow: 10px 10px 50px black;
   border: 8px solid #644536;
 }
+
+/*Styling for the Filter feature before cards appear*/
+.filterSearchHeader {
+    color: #644536;
+    margin-top: 40px;
+    font-size: 35px;
+}
+.filterSearchInput button {
+  background-color: #DC8A3A;
+  color: #644536;
+}
+.filterSearchInput button:hover {
+  background-color: #644536;
+  color: #DC8A3A;
+}
+.filterSelectors {
+  color: #DC8A3A;
+  font-size: 30px;
+}
+.filterButtonSpace {
+  margin-top: 50px;
+}
+
 /*Styling for the find_beer and find_brewery page cards that will appear after filtering*/
 .cardWrap {
   background-color: white;
@@ -69,61 +114,12 @@ body {
 .filterButton {
   width: 400px;
 }
-.footer {
-  margin-top: 30px;
-  height: 30px;
+/*.mobileFooter {
+  position: absolute;
+  bottom: 0;
+  background-color: #644536;
+  height: 60px;
   width: 100%;
-}
-.pictureRow {
-  display: flex;
-  flex-direction: column;
-}
-.pictures {
-  /*display: flex;*/
-  align-items: flex-end;
-  height: 200px;
-  background-size: cover;
-  /*background-position: center;*/
-  flex: 1;
-  margin-top: 20px;
-}
-
-.pictures h3 {
-  padding-left: 20px;
-  flex: 1;
-  color: white;
-}
-
-.pic1 {
-  background-image: url('/img/craft.jpg');
-}
-.pic1:hover h3 {
-  color: #DC8A3A;
-}
-
-.pic2 {
-  background-image: url('/img/craft.jpg');
-}
-.pic2:hover h3 {
-  color: #DC8A3A;
-}
-
-.pic3 {
-  background-image: url('/img/craft.jpg');
-}
-.pic3:hover h3 {
-  color: #DC8A3A;
-}
-
-.pic4 {
-  background-image: url('/img/craft.jpg');
-}
-.pic4:hover h3 {
-  color: #DC8A3A;
-}
-/*.mobileRepeat img {
-  background-repeat: no-repeat;
-  background-size: cover;
 }*/
 /*Mobile version styling end*/
 
@@ -132,9 +128,6 @@ body {
 
 /*Beginning of SM screen size styling*/
 @media screen and (min-width: 768px) {
-  /*.pictureRow {
-    flex-direction: row;
-  }*/
   * {
     box-sizing: border-box;
   }
@@ -144,19 +137,12 @@ body {
     padding-bottom: 50px;
     font-family: 'Tillana', cursive;
   }
-  a {
-    color: #DC8A3A;
-  }
-  a:hover {
-    text-decoration: none;
-    color: #644536;
-  }
   li a {
     color: #DC8A3A;
   }
   li a:hover {
     text-decoration: none;
-    color: #644536;
+    color: white;
   }
   header {
     width: 100%;
@@ -178,6 +164,14 @@ body {
   }
   nav ul li a {
     font-size: 25px;
+  }
+  .desktopBkg {
+    background-color: #644536;
+    padding-bottom: 30px;
+  }
+  .nameLogo {
+    font-size: 75px;
+    margin-top: 54px;
   }
   /*Filter Styling Start*/
   .filterSearchHeader {
@@ -205,7 +199,7 @@ body {
     float: left;
     font-size: 20px;
     margin-top: 54px;
-    background-image: url('/img/cheap_diagonal_fabric.png');
+    background-color: #644536;
     color: #DC8A3A;
     border: 2px solid #DC8A3A;
   }
@@ -215,13 +209,25 @@ body {
     color: white;
     border: 2px solid #DC8A3A;
   }
+  .topRowButtons a {
+    color: #DC8A3A;
+  }
+  .topRowButtons a:hover {
+    color: #644536;
+    text-decoration: none;
+  }
   /*Styling for the HomePage full width image below the header*/
   .homePageImage {
-    height: 60vh;
+    height: 50vh;
     background-image: url('/img/betterBanner.jpg');
     background-size: cover;
     background-position: center;
     box-shadow: 4px 10px 50px grey;
+  }
+  .homePageImage h1 {
+    font-size: 5vw;
+    margin: 170px;
+    color: white;
   }
   /*Styling for the text box below the HomePage full width image*/
   .woahRadical {
@@ -281,7 +287,6 @@ body {
   /*Styling for the find_beer and find_brewery page cards that will appear after filtering*/
   .cardWrap {
     background-color: white;
-    margin: 10px;
     box-shadow: 4px 6px 20px grey;
     /*border-radius: 5%;*/
   }
@@ -291,81 +296,20 @@ body {
   .filterButton {
     width: 400px;
   }
-  /*Styling for the search or filter beer results description*/
-  /*.runithOver {
-    overflow: hidden;
-    position: relative;
-    line-height: 1.25em;
-    max-height: 120px;
-    text-align: justify;
-    margin-right: -1em;
-    padding-right: 1em;
-  }
-  .runithOver::before {
-    content: '...';
-    position: absolute;
-    right: 0;
+  .footer {
+    background-color: #644536;
+    padding-top: 25px;
+    height: 100px;
+    width: 100%;
     bottom: 0;
   }
-  .runithOver::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    width: 1em;
-    height: 1em;
-    margin-top: 0.2em;
-  }*/
-  /*.mostPopularPosts {
+  .footer a {
+    font-size: 20px;
     color: #DC8A3A;
-    padding-top: 20px;
-    font-size: 30px;
-  }*/
-  .footer {
-    margin-top: 30px;
-    height: 30px;
-    width: 100%;
   }
-  .pictureRow {
-    display: flex;
-    flex-direction: column;
-  }
-  .pictures {
-    /*display: flex;*/
-    align-items: flex-end;
-    height: 200px;
-    background-size: cover;
-    /*background-position: center;*/
-    flex: 1;
-    margin-top: 20px;
-  }
-  .pictures h3 {
-    padding-left: 20px;
-    flex: 1;
+  .footer a:hover {
+    text-decoration: none;
     color: white;
-  }
-  .pic1 {
-    background-image: url('/img/craft.jpg');
-  }
-  .pic1:hover h3 {
-    color: #DC8A3A;
-  }
-  .pic2 {
-    background-image: url('/img/craft.jpg');
-  }
-  .pic2:hover h3 {
-    color: #DC8A3A;
-  }
-  .pic3 {
-    background-image: url('/img/craft.jpg');
-  }
-  .pic3:hover h3 {
-    color: #DC8A3A;
-  }
-  .pic4 {
-    background-image: url('/img/craft.jpg');
-  }
-  .pic4:hover h3 {
-    color: #DC8A3A;
   }
 }
 /*SM Screen Size Styling End*/

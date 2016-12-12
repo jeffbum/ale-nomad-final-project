@@ -60,7 +60,7 @@ render(){
   console.log(this.state.beers)
   var Beers = this.state.beers.map((beer, i) =>{
     return <Link to={'/beer/' + beer.id} data={beer} key={i}>
-      <div className="col-sm-3 cardWrap">
+      <div className="col-sm-4 cardWrap">
         <div className="col-sm-12">
             <img width="200" src={beer.beer_label=== null? '/img/noImage.jpg' : (beer.beer_label)} alt="Beer Profile Pic" />
             <p className="beerName">Brew: <b>{beer.beer_name}</b></p>
