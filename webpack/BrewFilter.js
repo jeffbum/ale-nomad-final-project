@@ -80,7 +80,7 @@ render(){
               <option value="5">5 Miles</option>
               <option value="10">10 Miles</option>
               <option value="15">15 Miles</option>
-              <option value="20">20 Miles</option>
+              <option value="20">20 Hi Miles</option>
             </select>
         </div>
         <div className="col-xs-10 col-xs-offset-1 testMargin">
