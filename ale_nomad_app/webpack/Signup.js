@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, browserHistory} from 'react-router'
+import { Link, browserHistory } from 'react-router'
 
 class Signup extends React.Component {
     constructor(props) {
@@ -15,24 +15,16 @@ class Signup extends React.Component {
         this.signup = this.signup.bind(this)
     }
 
-    componentDidMount() {
-
-    }
-
-    componentWillUnmount() {
-
-    }
-
 
     signedUpHandler(response) {
         if (typeof response.user != 'undefined') {
-            sessionStorage.setItem('ale-nomad-api-token', response.user.api_token)
+            sessionStorage.setItem('api_token', response.user.api_token)
             sessionStorage.setItem('user_id',
                 JSON.stringify(response.user.id))
-            
-            window.location.href = "/userprofile"
-            // TODO: understand what was going on in the browserhistory push
-            // browserHistory.push(chirp')
+
+            // window.location.href = "/userprofile"
+            browserHistory.push('/userprofile')
+
         }
         else {
             response.forEach(function(error) {
@@ -82,7 +74,7 @@ class Signup extends React.Component {
                       </div>
                       <div className="form-group">
                         <label htmlFor="images">Avatar</label>
-                        <input type="file" id="images" name="images" className="form-control" required onChange={(e) => this.setState({images:e.target.files[0]})}/>
+                        <input type="file" id="images" name="images" className="form-control"  onChange={(e) => this.setState({images:e.target.file[0]})}/>
                       </div>
                       <div className="form-group">
                         <label htmlFor="email">Email</label>
@@ -93,11 +85,8 @@ class Signup extends React.Component {
                         <input type="password" id="password" name="password" className="form-control" required value={this.state.password} onChange={(e) => this.setState({password:e.target.value})}/>
                       </div>
                       <div className="form-group">
-                        <Link to={'/login'}><button id="signup" type="button" className="btn btn-success btn-block" onClick={this.handleClick}>Sign Up</button></Link>
+                        <button id="signup" type="button" className="btn btn-success btn-block" onClick={this.handleClick}>Sign Up</button>
                       </div>
-                      {/* <div className="form-group">
-                          <Link to={'/profile'} className="btn btn-danger btn-block">Cancel </Link>
-                      </div> */}
                 </div>
         )
     }
