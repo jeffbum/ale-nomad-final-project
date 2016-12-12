@@ -24,10 +24,9 @@
 <!-- Mobile Header Start -->
     <header class="visible-xs hidden-sm hidden-md hidden-lg">
       <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header testBackground">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <div class="container-fluid navBackground">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle hamButton" data-toggle="collapse" data-target="#hamburger" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -35,36 +34,30 @@
             </button>
             <a class="mobileHeader" href="/"><img src="/img/logoTwo.png" alt="Ale Nomad Logo"></a>
           </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="collapse navbar-collapse hamburgerClick" id="hamburger">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">Link</a></li>
+                <li><a href="/find_beer">Find Beers</a></li>
+                <li><a href="/find_brew">Find Breweries</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Meet the Developer<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="https://github.com/jeffbum">Jeff Bumgardner</a></li>
+                      <li><a href="https://github.com/briangmcmillan">Brian McMillan</a></li>
+                      <li><a href="https://github.com/Keilsmit">Keith Smith</a></li>
+                    </ul>
+                </li>
             </ul>
-            <form class="navbar-form navbar-left">
-              <!-- <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-              </div> -->
-              <button type="submit" class="btn btn-default">SignIn</button>
+            <form class="navbar-form navbar-left mobileSignInBorder mobileSignIn">
+              <button class="btn">SignIn</button>
             </form>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
-      <!-- <div class="container-fluid">
-        <div class="row">
-          <div class="col-xs-9">
-            <a href="/"><h1 class="mobileHeader">Ale Nomad</h1></a>
-          </div>
-          <div class="col-xs-3">
-            <button class="btn btn-default pull-right"><a href="signup">Signup</a></button>
           </div>
         </div>
-      </div> -->
+      </nav>
     </header>
 <!-- Mobile Header End -->
-<!-- SM Header Start -->
+<!-- Desktop Header Start -->
     <header class="hidden-xs">
-      <div class="container">
+      <div class="container-fluid desktopBkg">
         <div class="row">
           <div class="col-sm-2">
               <a href="/"><img src="/img/logoTwo.png" alt="Ale Nomad Logo"></a>
@@ -79,17 +72,17 @@
               </nav>
           </div>
           <div class="col-sm-2 topRowButtons">
-            <button class="btn btn-default pull-right"><a href="signup">Signup</a></button>
+            <button class="btn pull-right"><a href="signup">Signup</a></button>
           </div>
         </div>
       </div>
     </header>
-<!-- SM Header End -->
+<!-- Desktop Header End -->
 <% unless current_page?('/find_beer') || current_page?('/find_brew') || current_page?('/signup') || current_page?('/login') || current_page?('/userprofile') || current_page?('/brew/:brew_id') || current_page?('/beer/:beer_id')%>
 
   <%# TODO: Remove this <hr> and add bottom margin to the header to give the same space that the <hr> is giving. %>
-  <hr class="hidden-xs">
-  <div class="hidden-xs container-fluid homePageImage">
+  <div class="hidden-xs container-fluid homePageImage text-center">
+    <h1>Welcome to Ale Nomad!</h1>
   </div>
   <div class="hidden-xs container headerContainer">
     <div class="row">
@@ -101,30 +94,42 @@
   </div>
   <div class="container">
     <div class="row featuredCatMargin">
-      <div class="col-xs-12 col-sm-5 text-center featuredCats">
+      <!-- Mobile Buttons Start -->
+      <div class="col-xs-12 mobileFeaturedCats">
+        <span><a href="/find_beer" class="visible-xs hidden-sm hidden-md hidden-lg btn mobileButtonSize" >Find A Beer!</a></span>
+      </div>
+      <div class="col-xs-12 mobileFeaturedCats">
+        <span><a href="/find_brew" class="visible-xs hidden-sm hidden-md hidden-lg btn mobileButtonSize" >Find A Brewery!</a></span>
+      </div>
+      <div class="col-xs-12 mobileFeaturedCats">
+        <span><a href="/userprofile" class="visible-xs btn mobileButtonSize" >Profile</a></span>
+      </div>
+      <!-- Mobile Buttons End -->
+      <!-- Desktop Buttons Start -->
+      <div class="col-sm-5 text-center featuredCats">
         <p class="featuredCatTitles hidden-xs">Beer</p>
         <p class="featuredCatDescription hidden-xs">This will be a paragraph about what beer search can do for our users. Want to search beers by style. Click getting started. Want to search for a beer with a specific ABV or IBU. Click to get started.</p>
-        <span><i class="fa fa-search" aria-hidden="true"></i><a href="/find_beer" class="visible-xs hidden-sm hidden-md hidden-lg btn testSize" type="submit">Find A Beer!</a></span>
-        <span><a href="/find_beer" class="hidden-xs btn" type="submit">Find A Beer!</a></span>
+        <span><a href="/find_beer" class="hidden-xs btn">Find A Beer!</a></span>
       </div>
-      <div class="col-xs-12 col-sm-5 col-sm-offset-2 text-center featuredCats">
+      <div class="col-sm-5 col-sm-offset-2 text-center featuredCats">
         <p class="featuredCatTitles hidden-xs">Brewery</p>
         <p class="featuredCatDescription hidden-xs">This will be a paragraph about what brewery search can do for our users. Want to search beers by style. Click getting started. Want to search for a beer with a specific ABV or IBU. Click to get started.</p>
-        <span><a href="/find_brew" class="visible-xs hidden-sm hidden-md hidden-lg btn testSize" type="submit">Find A Brewery!</a></span>
-        <span><a href="/find_brew" class="hidden-xs btn" type="submit">Find A Brewery!</a></span>
+        <span><a href="/find_brew" class="hidden-xs btn">Find A Brewery!</a></span>
       </div>
-      <div class="col-xs-12 hidden-sm hidden-md hidden-lg text-center featuredCats">
-        <span><a href="/userprofile" class="visible-xs btn testSize" type="submit">Profile</a></span>
-      </div>
+      <!-- Desktop Buttons End -->
     </div>
   </div>
-  <hr class="hidden-xs">
 <% else %>
   <div id="aleNomad"></div>
 <% end %>
 
-  <div class="container">
-    <div class="row footer text-center">
+  <!-- Mobile Footer Start -->
+  <div class="container-fluid visible-xs mobileFooter">
+  </div>
+  <!-- Mobile Footer End -->
+  <!-- Desktop Footer Start -->
+  <div class="container footer">
+    <div class="row text-center">
       <div class="text-center hidden-xs">
         <strong>The Developers</strong>
       </div>
@@ -141,6 +146,7 @@
       </div>
     </div>
   </div>
+  <!-- Desktop Footer End -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <%= javascript_include_tag *webpack_asset_paths("application") %>
 </body>
