@@ -50,7 +50,7 @@ render(){
   console.log(this.state.brews)
   var Brews = this.state.brews.map((brew, i) => {
     return <Link to={'/brew/' + brew.id} data={brew} key={i}>
-        <div className="col-sm-3 cardWrap">
+        <div className="col-xs-3 cardWrap">
           <div className="col-xs-12">
             <img src={brew.images=== null? '/img/noImage.jpg' : (brew.images)} alt="Beer Profile Pic" />
             <p className="beerName">Brewery: {brew.name}</p>
@@ -72,7 +72,7 @@ render(){
       </div>
       <div className="row text-center">
         <p className="filterSearchHeader">Step 2: Select Distance</p>
-        <div className="col-xs-8 col-xs-offset-2">
+        <div className="col-xs-6 col-xs-offset-3">
           <h3 className="filterSelectors">Location</h3>
             <select name="style" className="form-control" onChange={this.locationHandler}>
               <option value="">Any Location</option>
@@ -80,10 +80,10 @@ render(){
               <option value="5">5 Miles</option>
               <option value="10">10 Miles</option>
               <option value="15">15 Miles</option>
-              <option value="20">20 Miles</option>
+              <option value="20">20 Hi Miles</option>
             </select>
         </div>
-        <div className="col-sm-12 testMargin">
+        <div className="col-xs-10 col-xs-offset-1 testMargin">
           <span className="input-group-btn filterSearchInput">
             <button className="btn filterButton filterButtonSpace" type="button" onClick={this.getBrew}>Search</button>
           </span>

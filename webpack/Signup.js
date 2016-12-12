@@ -92,7 +92,7 @@ class Signup extends React.Component {
                         <label htmlFor="images">Avatar</label>
                         <input type="file" id="images" name="images" className="form-control"  onChange={(e) => this.setState({images:e.target.files[0]})}/>
                       </div>
-                      <div className="form-group">
+                      <div className="form-group">  
                         <label htmlFor="email">Email</label>
                         <input type="email" id="email" name="email" className="form-control" required value={this.state.email} onChange={(e) => this.setState({email:e.target.value})}/>
                       </div>
