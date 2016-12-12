@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
   def forbid_login
     if logged_in?
-      render json: ["You must be logged in"], status: :forbiddenend
+      render json: ["You must be logged in"], status: :forbidden
     end
   end
 
