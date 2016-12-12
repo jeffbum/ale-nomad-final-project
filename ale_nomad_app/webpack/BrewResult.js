@@ -33,7 +33,7 @@ class BrewResult extends React.Component {
         return <Link to={'beer/' + beerDetail.id} data={beerDetail} key={i}>
           <div className="col-sm-3 cardWrap">
             <div className="col-sm-12">
-                <img height="200" width="200" className="cardImage" src={beerDetail.beer_label=== null? '/img/beer.jpg' : (beerDetail.beer_label)} alt="Beer Profile Pic" />
+                <img width="200" src={beerDetail.beer_label=== null? '/img/noImage.jpg' : (beerDetail.beer_label)} alt="Beer Profile Pic" />
                 <p className="beerName">Brew: <b>{beerDetail.beer_name}</b></p>
                 <p className="time">ABV: <b>{beerDetail.beer_abv===null? 'None Listed' : (beerDetail.beer_abv)}</b></p>
                 <p className="time">IBU: <b>{beerDetail.beer_ibu===null? 'None Listed' : (beerDetail.beer_ibu)}</b></p>
@@ -46,7 +46,7 @@ class BrewResult extends React.Component {
                 <div className="row cardWrap">
                     <div className="col-sm-12">
                         <h1>Brewery Details</h1>
-                        <img height="200" width="300" className="cardImage" src={this.state.breweryDetails.images=== null? '/img/beer.jpg' : (this.state.breweryDetails.images)} alt="Brewery Profile Pic"/>
+                        <img width="300" src={this.state.breweryDetails.images=== null? '/img/noImage.jpg' : (this.state.breweryDetails.images)} alt="Brewery Profile Pic"/>
                         <div>Brewery: {this.state.breweryDetails.name}</div>
                         <div>Hours:{this.state.breweryDetails.hours_of_operation}</div>
                         <div>Phone: {this.state.breweryDetails.phone}</div>
