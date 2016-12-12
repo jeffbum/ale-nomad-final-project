@@ -60,8 +60,8 @@ render(){
   console.log(this.state.beers)
   var Beers = this.state.beers.map((beer, i) =>{
     return <Link to={'/beer/' + beer.id} data={beer} key={i}>
-      <div className="col-xs-3 cardWrap">
-        <div className="col-xs-12">
+      <div className="col-sm-4">
+        <div className="cardWrap">
             <img width="200" src={beer.beer_label=== null? '/img/noImage.jpg' : (beer.beer_label)} alt="Beer Profile Pic" />
             <p className="beerName">Brew: <b>{beer.beer_name}</b></p>
             <p className="time">Brewery: <b>{beer.brew.name}</b></p>
@@ -130,7 +130,11 @@ render(){
       </div>
       <p className="text-center filterSearchHeader">Matching Beers</p>
       <div className="row">
-        {Beers}
+        <div className="col-sm-offset-1 col-sm-10">
+          <div className="row testBorder">
+            {Beers}
+          </div>
+        </div>
       </div>
     </div>
     )
