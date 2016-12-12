@@ -13,18 +13,17 @@ class Signup extends React.Component {
         this.signedUpHandler = this.signedUpHandler.bind(this)
         this.handleClick = this.handleClick.bind(this)
         this.signup = this.signup.bind(this)
+        this.login = this.login.bind(this)
     }
 
 
     signedUpHandler(response) {
+
         if (typeof response.user != 'undefined') {
             sessionStorage.setItem('api_token', response.user.api_token)
             sessionStorage.setItem('user_id',
                 JSON.stringify(response.user.id))
-
-            // window.location.href = "/userprofile"
-            browserHistory.push('/userprofile')
-
+            this.login()
         }
         else {
             response.forEach(function(error) {
@@ -35,13 +34,30 @@ class Signup extends React.Component {
             })
         }
     }
+    login(){
+        fetch('/api/login?email=' + this.state.email + '&password=' + this.state.password, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(function(response) {
+          if(response.ok) {
+            return response.json()
+          } else {
+            throw 'Network response was not ok.'
+          }
+        })
+        browserHistory.push('/userprofile')
+
+    }
 
     handleClick() {
         this.signup()
     }
 
     signup() {
-        fetch('/api/signup?email=' + this.state.email + '&password=' + this.state.password + '&images_id=' + this.state.images + '&name=' + this.state.name, {
+        fetch('/api/signup?email=' + this.state.email + '&password=' + this.state.password + '&images=' + this.state.images + '&name=' + this.state.name, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -74,7 +90,7 @@ class Signup extends React.Component {
                       </div>
                       <div className="form-group">
                         <label htmlFor="images">Avatar</label>
-                        <input type="file" id="images" name="images" className="form-control"  onChange={(e) => this.setState({images:e.target.file[0]})}/>
+                        <input type="file" id="images" name="images" className="form-control"  onChange={(e) => this.setState({images:e.target.files[0]})}/>
                       </div>
                       <div className="form-group">
                         <label htmlFor="email">Email</label>
@@ -86,6 +102,7 @@ class Signup extends React.Component {
                       </div>
                       <div className="form-group">
                         <button id="signup" type="button" className="btn btn-success btn-block" onClick={this.handleClick}>Sign Up</button>
+                        <button id="login" type="button" className="btn btn-success btn-block" onClick={this.login}>Log In</button>
                       </div>
                 </div>
         )

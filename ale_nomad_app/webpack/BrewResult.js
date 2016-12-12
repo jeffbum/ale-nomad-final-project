@@ -11,7 +11,6 @@ class BrewResult extends React.Component {
         }
     }
     componentDidMount(){
-        // console.log(this.props.routeParams)
         fetch('/api/show/brew?id=' + this.props.routeParams.brew_id, {
                 method: 'GET',
                 headers: {
@@ -54,19 +53,6 @@ class BrewResult extends React.Component {
                         <div>Website: <a>{this.state.breweryDetails.website}</a></div>
                     </div>
                 </div>
-                {/* <div className="row">
-                    <div className="col-sm-12">
-                    <h1>Brewery Beer Selection</h1>
-                        <div className="col-sm-3 cardWrap">
-                            <div className="col-sm-12">
-                            <img height="200" width="200" className="cardImage" src={this.state.beersDetails.beer_label=== null? '/img/beer.jpg' : (this.state.beersDetails.beer_label)} alt="Beer Profile Pic" />
-                            <p>Brew: <b>{this.state.beersDetails.beer_name}</b></p>
-                            <p>ABV: <b>{this.state.beersDetails.beer_abv}</b></p>
-                            <p>IBU: <b>{this.state.beersDetails.beer_ibu}</b></p>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
                 <div className="row">
                     {beerSelections}
                 </div>
