@@ -105,12 +105,17 @@ body {
 /*Styling for the find_beer and find_brewery page cards that will appear after filtering*/
 .cardWrap {
   background-color: white;
-  margin: 10px;
+  /*margin: 10px;*/
   box-shadow: 4px 6px 20px grey;
   border-radius: 3%;
+  height: 425px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  text-align: center;
 }
 .cardWrap img {
   width: 100%;
+  max-width: 230px;
 }
 .cardWrap p {
   color: #DC8A3A;
