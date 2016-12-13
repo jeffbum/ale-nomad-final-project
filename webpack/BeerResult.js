@@ -11,8 +11,10 @@ class BeerResult extends React.Component {
         this.state = {
             beerDetails: [],
             brewDetails: [],
+            addToFavoritesBtn: 'Add To Favorites',
             rating: 1
         }
+        this.addToFavorites = this.addToFavorites.bind(this)
         this.postBeer = this.postBeer.bind(this)
         this.postReview = this.postReview.bind(this)
         this.onStarClick = this.onStarClick.bind(this)
@@ -44,7 +46,14 @@ class BeerResult extends React.Component {
                     'Content-Type': 'application/json'
                 }
         })
+        this.addToFavorites()
         this.postReview()
+    }
+
+    addToFavorites() {
+        this.setState({
+            addToFavoritesBtn: 'Favorited'
+        })
     }
 
     postReview(){
@@ -79,7 +88,7 @@ class BeerResult extends React.Component {
                             onStarClick={this.onStarClick}
                         />
                         <div className="col-xs-4 col-xs-offset-4 favBeer">
-                            <button onClick={this.postBeer}>Add to Favorites</button>
+                            <button onClick={this.postBeer}>{this.state.addToFavoritesBtn}</button>
                         </div>
                     </div>
                 </div>

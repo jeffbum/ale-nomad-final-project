@@ -131,7 +131,7 @@ render(){
       <p className="text-center filterSearchHeader">Matching Beers</p>
       <div className="row">
         <div className="col-sm-offset-1 col-sm-10">
-          <div className="row testBorder">
+          <div className="row">
             {Beers}
           </div>
         </div>
