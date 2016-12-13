@@ -42,22 +42,22 @@ class BeerResult extends React.Component {
         console.log(this.state.brewDetails)
         console.log(this.state.beerDetails)
         return <div>
-            <div className="container testBorder">
-                <div className="row testBorder">
-                    <div className="col-xs-10 cardWrap text-center">
+            <div className="container">
+                <div className="row">
+                    <div className="cardWrapFilterLg text-center">
                         <h1>Beer Details</h1>
-                        <img src={this.state.beerDetails.beer_label=== null? '/img/noImage.jpg' : (this.state.beerDetails.beer_label)} alt="Beer Label Picture" />
+                        <img width="400" src={this.state.beerDetails.beer_label=== null? '/img/noImage.jpg' : (this.state.beerDetails.beer_label)} alt="Beer Label Picture" />
                         <p>Brew: {this.state.beerDetails.beer_name}</p>
-                        <p>Description: {this.state.beerDetails.beer_description}</p>
+                        <p>Description: {this.state.beerDetails.beer_description=== null? 'This Brewery still needs to come up with a catchy description.' : (this.state.beerDetails.beer_description)}</p>
                         <p>ABV: {this.state.beerDetails.beer_abv}</p>
                         <p>IBU: {this.state.beerDetails.beer_ibu}</p>
-                        <div className="col-xs-4 col-xs-offset-4">
-                            <button className='' onClick={this.postBeer}>Add to Favorites</button>
+                        <div className="col-xs-4 col-xs-offset-4 favBeer">
+                            <button onClick={this.postBeer}>Add to Favorites</button>
                         </div>
                     </div>
                 </div>
-                <div className="row testBorder">
-                    <div className="col-xs-9 cardWrap text-center">
+                <div className="row">
+                    <div className="cardWrapBrewFilter text-center">
                     <h1>Brewery Details</h1>
                         <img src={this.state.brewDetails.images=== null? '/img/noImage.jpg' : (this.state.brewDetails.images)} alt="Brewery Logo" />
                         <p>Brewery: {this.state.brewDetails.name}</p>
