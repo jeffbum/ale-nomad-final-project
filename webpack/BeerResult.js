@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router'
+import StarRatingComponent from 'react-star-rating-component'
+
 
 // TODO: comment code so others can read it.
 class BeerResult extends React.Component {
@@ -9,8 +11,10 @@ class BeerResult extends React.Component {
         this.state = {
             beerDetails: [],
             brewDetails: [],
+            rating: 1
         }
         this.postBeer = this.postBeer.bind(this)
+        this.onStarClick = this.onStarClick.bind(this)
     }
 
     componentDidMount(){
@@ -28,6 +32,9 @@ class BeerResult extends React.Component {
                 })
             )
     }
+    onStarClick(nextValue, prevValue, name) {
+        this.setState({rating: nextValue});
+    }
 
     postBeer(){
         fetch('/api/drinks?api_token=' + sessionStorage.getItem('api_token') + '&beer_id=' + this.state.beerDetails.id, {
@@ -41,6 +48,8 @@ class BeerResult extends React.Component {
     render(){
         console.log(this.state.brewDetails)
         console.log(this.state.beerDetails)
+        console.log(this.state.rating)
+        const { rating } = this.state.rating
         return <div>
             <div className="container">
                 <div className="row">
@@ -50,7 +59,14 @@ class BeerResult extends React.Component {
                         <p>Brew: {this.state.beerDetails.beer_name}</p>
                         <p>Description: {this.state.beerDetails.beer_description=== null? 'This Brewery still needs to come up with a catchy description.' : (this.state.beerDetails.beer_description)}</p>
                         <p>ABV: {this.state.beerDetails.beer_abv}</p>
-                        <p>IBU: {this.state.beerDetails.beer_ibu}</p>
+                        <p>IBU: {this.state.beerDetails.beer_ibu}</p><br />
+                        <h2>Rate this Beer: {rating}</h2>
+                        <StarRatingComponent
+                            name="rate1"
+                            starCount={5}
+                            value={rating}
+                            onStarClick={this.onStarClick}
+                        />
                         <div className="col-xs-4 col-xs-offset-4 favBeer">
                             <button onClick={this.postBeer}>Add to Favorites</button>
                         </div>
