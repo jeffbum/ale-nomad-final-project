@@ -19,6 +19,7 @@ import BeerResult from './BeerResult'
 import BrewFilter from './BrewFilter'
 import BrewResult from './BrewResult'
 import Signup from './Signup'
+import Login from './Login'
 import UserProfile from './UserProfile'
 
 
@@ -29,10 +30,10 @@ import UserProfile from './UserProfile'
 ReactDOM.render(
     // TODO: determing paths and component names (also, if we need more routes)
     <Router history={browserHistory}>
-        {/* <Route path="/" component={Homepage}> */}
         <Route path='/' component={App} >
             <IndexRoute component={Homepage} />
             <Route path='signup' component={Signup} />
+                <Route path='login' component={Login} />
                 <Route path='userprofile' component={UserProfile} />
             <Route path='find_beer' component={FindBeer} />
                 <Route path='beer/:beer_id' component={BeerResult} />
