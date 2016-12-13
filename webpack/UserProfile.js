@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, browserHistory } from 'react-router'
-import StarRatingComponent from 'react-star-rating-component';
+import ReactStars from 'react-stars'
+
 
 
 class UserProfile extends React.Component {
@@ -12,11 +13,13 @@ class UserProfile extends React.Component {
             images: '',
             password: '',
             myDrinks: [],
+            rating: 1
         }
         this.onStarClick = this.onStarClick.bind(this)
+        // this.getReview = this.getReview.bind(this)
     }
     onStarClick(nextValue, prevValue, name) {
-        this.setState({rating: nextValue});
+        this.setState({rating: nextValue})
     }
     componentDidMount() {
 
@@ -40,7 +43,6 @@ class UserProfile extends React.Component {
         .then(response => response.json())
         .then(response => this.setState({
             myDrinks: response.beers,
-            visitedBrews: response.beers.brews
         }))
         .then(response => console.log(this.state.myDrinks))
     }
@@ -53,17 +55,10 @@ class UserProfile extends React.Component {
             {myDrink.beer_name}
             {myDrink.brew.established}
             {myDrink.category.name}
-            <h2>Rating from state: {rating}</h2>
-              <StarRatingComponent
-                  name="rate2"
-                  editing={false}
-                  renderStarIcon={() => <span>&#x2606;</span>}
-                  starCount={5}
-                  value={rating}
-              />
+            <ReactStars count={myDrink.reviews[0].rating} edit={false} size={24} color1={'#ffd700'} />
         </div>
     </Link>
-    const { rating } = myDrink.reviews.length
+
     })
         return (
         <div className="container ">

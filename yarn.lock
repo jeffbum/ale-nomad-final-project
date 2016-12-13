@@ -851,7 +851,7 @@ chokidar@^1.0.0:
   optionalDependencies:
     fsevents "^1.0.0"
 
-classnames@^2.2.5:
+classnames@^2.2.0, classnames@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
@@ -2352,7 +2352,18 @@ react-router@^2.6.0:
     loose-envify "^1.2.0"
     warning "^3.0.0"
 
-react@^15.2.1:
+react-star-rating-component@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/react-star-rating-component/-/react-star-rating-component-1.2.2.tgz#ded2d4fd78c14459808eb46d894dc892a903473e"
+  dependencies:
+    classnames "^2.2.0"
+    react "^15.3.1"
+
+react-stars@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-stars/-/react-stars-2.1.0.tgz#b3fdd63c888b86fbf634fc15abbed2ffb7db07b1"
+
+react@^15.3.1, react@^15.4.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.4.1.tgz#498e918602677a3983cd0fd206dfe700389a0dd6"
   dependencies:

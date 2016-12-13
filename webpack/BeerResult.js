@@ -14,6 +14,7 @@ class BeerResult extends React.Component {
             rating: 1
         }
         this.postBeer = this.postBeer.bind(this)
+        this.postReview = this.postReview.bind(this)
         this.onStarClick = this.onStarClick.bind(this)
     }
 
@@ -38,6 +39,16 @@ class BeerResult extends React.Component {
 
     postBeer(){
         fetch('/api/drinks?api_token=' + sessionStorage.getItem('api_token') + '&beer_id=' + this.state.beerDetails.id, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+        })
+        this.postReview()
+    }
+    
+    postReview(){
+        fetch('/api/rate?rating=' + this.state.rating + '&beer_id=' + this.state.beerDetails.id + '&api_token=' + sessionStorage.getItem('api_token'), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
