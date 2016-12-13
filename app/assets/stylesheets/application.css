@@ -112,6 +112,7 @@ body {
   overflow: hidden;
   margin-bottom: 20px;
   text-align: center;
+  /*overflow-wrap: break-word;*/
 }
 .cardWrapFilterLg {
   background-color: white;
@@ -306,9 +307,10 @@ body {
   }
   /*Featured Beer/Brewery Search when you hover over it */
   .featuredCats a {
-    color: #644536;
-    background-color: #eea45c;
-    border: 2px solid #644536;
+    font-size: 15px;
+    color: #eea45c;
+    background-color: #644536;
+    border: 2px solid #eea45c;
   }
   /*Featured Beer/Brewery Search when you hover over it */
   .featuredCats:hover {
@@ -353,6 +355,7 @@ body {
     height: 100px;
     width: 100%;
     bottom: 0;
+    position: fixed;
   }
   .footer a {
     font-size: 18px;
