@@ -86,37 +86,40 @@ class Signup extends React.Component {
 
     render() {
         return (
-            <div className="well">
-                    <h2>Sign Up</h2>
+            <div>
+                <div className="container">
+                    <h2 className="">Sign Up</h2>
                     <br/>
-                    <div id="errors"></div>
                     <br/>
-                      <div className="form-group">
+                    <div className="form-group">
                         <label htmlFor="name">Name</label>
                         <input type="text" id="name" name="name" className="form-control" required value={this.state.name} onChange={(e) => this.setState({name:e.target.value})}/>
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="images">Avatar</label>
-                        <input type="file" id="images" name="images" className="form-control"  onChange={(e) =>{
-                            this.setState({images:e.target.files[0]})
-                            console.log(e.target.files[0])
-                        }}/>
-
-                      </div>
-                      <div className="form-group">
+                    </div>
+                    <div className="form-group">
                         <label htmlFor="email">Email</label>
                         <input type="email" id="email" name="email" className="form-control" required value={this.state.email} onChange={(e) => this.setState({email:e.target.value})}/>
-                      </div>
-                      <div className="form-group">
+                    </div>
+                    <div className="form-group">
                         <label htmlFor="password">Password</label>
                         <input type="password" id="password" name="password" className="form-control" required value={this.state.password} onChange={(e) => this.setState({password:e.target.value})}/>
-                      </div>
-                      <div className="form-group">
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="images">Avatar</label>
+                        <input type="file" id="images" name="images" onChange={(e) =>{
+                                this.setState({images:e.target.files[0]})
+                                console.log(e.target.files[0])
+                            }}/>
+                    </div>
+                    <div className="form-group text-center">
                         <button id="signup" type="button" className="btn btn-success btn-block" onClick={this.handleClick}>Sign Up
-                        </button>
-                        <Link to='/login'><button id="login" type="button" className="btn btn-success btn-block" >Log In</button></Link>
-                      </div>
+                            </button>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <span>Already have an account? </span><Link to='/login'><button id="login" type="button" className="btn btn-success center-block" >Log In</button></Link>
+                    </div>
                 </div>
+            </div>
         )
     }
 }
