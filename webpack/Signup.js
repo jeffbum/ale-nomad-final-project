@@ -48,6 +48,9 @@ class Signup extends React.Component {
             throw 'Network response was not ok.'
           }
         })
+        .catch((error) => {
+          console.log('There has been a problem with your login fetch operation: ' + error.message)
+        })
         browserHistory.push('/userprofile')
 
     }
@@ -57,11 +60,15 @@ class Signup extends React.Component {
     }
 
     signup() {
-        fetch('/api/signup?email=' + this.state.email + '&password=' + this.state.password + '&images=' + this.state.images + '&name=' + this.state.name, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
+        console.log(this.state.images)
+        var data = new FormData()
+            data.append('email', this.state.email)
+            data.append('password', this.state.password)
+            data.append('name', this.state.name)
+            data.append('images', this.state.images)
+        fetch('/api/signup', {
+            body: data,
+            method: 'POST'
         })
         .then(function(response) {
           if(response.ok) {
@@ -72,7 +79,7 @@ class Signup extends React.Component {
         })
         .then(this.signedUpHandler)
         .catch(function(error) {
-          console.log('There has been a problem with your fetch operation: ' + error.message)
+          console.log('There has been a problem with your signup fetch operation: ' + error.message)
         })
     }
 
@@ -90,9 +97,13 @@ class Signup extends React.Component {
                       </div>
                       <div className="form-group">
                         <label htmlFor="images">Avatar</label>
-                        <input type="file" id="images" name="images" className="form-control"  onChange={(e) => this.setState({images:e.target.files[0]})}/>
+                        <input type="file" id="images" name="images" className="form-control"  onChange={(e) =>{
+                            this.setState({images:e.target.files[0]})
+                            console.log(e.target.files[0])
+                        }}/>
+
                       </div>
-                      <div className="form-group">  
+                      <div className="form-group">
                         <label htmlFor="email">Email</label>
                         <input type="email" id="email" name="email" className="form-control" required value={this.state.email} onChange={(e) => this.setState({email:e.target.value})}/>
                       </div>
