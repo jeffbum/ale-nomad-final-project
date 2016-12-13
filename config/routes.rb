@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     get '/show/brew' => 'brews#show'
     get '/show/location' => 'geosearch#distance'
 
-    get '/rate' => 'reviews#create'
+    post '/rate' => 'reviews#create'
     get '/show/ratings' => 'reviews#show'
     get '/myratings' => 'reviews#my_ratings'
     # no current use/cut due to time

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, browserHistory } from 'react-router'
-// import Moment from 'moment'
+import ReactStars from 'react-stars'
 
 class UserProfile extends React.Component {
     constructor(props) {
@@ -11,8 +11,13 @@ class UserProfile extends React.Component {
             images: '',
             password: '',
             myDrinks: [],
-            visitedBrews: []
+            rating: 1
         }
+        this.onStarClick = this.onStarClick.bind(this)
+        // this.getReview = this.getReview.bind(this)
+    }
+    onStarClick(nextValue, prevValue, name) {
+        this.setState({rating: nextValue})
     }
     componentDidMount() {
             fetch('/api/users/' + sessionStorage.getItem('user_id'),  {
@@ -35,10 +40,8 @@ class UserProfile extends React.Component {
         .then(response => response.json())
         .then(response => this.setState({
             myDrinks: response.beers,
-            visitedBrews: response.beers.brew
         }))
         .then(response => console.log(this.state.myDrinks))
-        .then(response => console.log(this.state.images))
     }
 
     render(){
@@ -51,6 +54,7 @@ class UserProfile extends React.Component {
                     <p>Beer: {myDrink.beer_name}</p>
                     <p>ABV: {myDrink.beer_abv}</p>
                     <p>IBU: {myDrink.beer_ibu}</p>
+                    <ReactStars count={myDrink.reviews[0].rating} edit={false} size={24} color1={'#ffd700'} />
                     {/* <p>IBU: {date}</p> */}
                 </div>
             </div>
