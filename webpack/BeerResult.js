@@ -46,7 +46,7 @@ class BeerResult extends React.Component {
         })
         this.postReview()
     }
-    
+
     postReview(){
         fetch('/api/rate?rating=' + this.state.rating + '&beer_id=' + this.state.beerDetails.id + '&api_token=' + sessionStorage.getItem('api_token'), {
                 method: 'POST',
