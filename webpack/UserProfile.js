@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link, browserHistory } from 'react-router'
+import StarRatingComponent from 'react-star-rating-component';
+
 
 class UserProfile extends React.Component {
     constructor(props) {
@@ -10,8 +12,11 @@ class UserProfile extends React.Component {
             images: '',
             password: '',
             myDrinks: [],
-            visitedBrews: []
         }
+        this.onStarClick = this.onStarClick.bind(this)
+    }
+    onStarClick(nextValue, prevValue, name) {
+        this.setState({rating: nextValue});
     }
     componentDidMount() {
 
@@ -35,19 +40,30 @@ class UserProfile extends React.Component {
         .then(response => response.json())
         .then(response => this.setState({
             myDrinks: response.beers,
-            visitedBrews: response.beers.brew
+            visitedBrews: response.beers.brews
         }))
         .then(response => console.log(this.state.myDrinks))
-        .then(response => console.log(this.state.images))
     }
 
     render(){
+
         var MyDrinks = this.state.myDrinks.map((myDrink, i) => {
         return <Link to={'/beer/' + myDrink.id} data={myDrink} key={i}>
         <div className="row">
             {myDrink.beer_name}
+            {myDrink.brew.established}
+            {myDrink.category.name}
+            <h2>Rating from state: {rating}</h2>
+              <StarRatingComponent
+                  name="rate2"
+                  editing={false}
+                  renderStarIcon={() => <span>&#x2606;</span>}
+                  starCount={5}
+                  value={rating}
+              />
         </div>
     </Link>
+    const { rating } = myDrink.reviews.length
     })
         return (
         <div className="container ">
