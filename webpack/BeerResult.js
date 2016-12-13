@@ -12,7 +12,7 @@ class BeerResult extends React.Component {
             beerDetails: [],
             brewDetails: [],
             addToFavoritesBtn: 'Add To Favorites',
-            rating: 1    
+            rating: 1
         }
         this.addToFavorites = this.addToFavorites.bind(this)
         this.postBeer = this.postBeer.bind(this)
@@ -49,11 +49,13 @@ class BeerResult extends React.Component {
         this.addToFavorites()
         this.postReview()
     }
+
     addToFavorites() {
         this.setState({
             addToFavoritesBtn: 'Favorited'
         })
-    
+    }
+
     postReview(){
         fetch('/api/rate?rating=' + this.state.rating + '&beer_id=' + this.state.beerDetails.id + '&api_token=' + sessionStorage.getItem('api_token'), {
                 method: 'POST',
