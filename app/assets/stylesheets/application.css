@@ -103,26 +103,67 @@ body {
   width: 200px;
 }
 /*Styling for the find_beer and find_brewery page cards that will appear after filtering*/
-.cardWrap {
+.cardWrapFilter {
   background-color: white;
-  /*margin: 10px;*/
+  margin: 10px;
   box-shadow: 4px 6px 20px grey;
   border-radius: 3%;
-  height: 425px;
+  height: 420px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  text-align: center;
+  /*overflow-wrap: break-word;*/
+}
+.cardWrapFilterLg {
+  background-color: white;
+  margin: 10px;
+  box-shadow: 4px 6px 20px grey;
+  border-radius: 3%;
+  height: auto;
   overflow: hidden;
   margin-bottom: 20px;
   text-align: center;
 }
-.cardWrap img {
+.cardWrapBrewFilter {
+  background-color: white;
+  margin: 10px;
+  box-shadow: 4px 6px 20px grey;
+  border-radius: 3%;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.cardWrapFilter img {
   width: 100%;
   max-width: 230px;
 }
-.cardWrap p {
+.cardWrapBrewFilter img {
+  width: 100%;
+  max-width: 230px;
+}
+.cardWrapFilter p {
   color: #DC8A3A;
   font-size: 18px;
 }
-.testBorder {
-  border: 1px solid red;
+.cardWrapFilterLg p {
+  color: #DC8A3A;
+  font-size: 18px;
+}
+.cardWrapBrewFilter p {
+  color: #DC8A3A;
+  font-size: 18px;
+}
+.favBeer button {
+  font-size: 25px;
+  border: none;
+  background-color: #DC8A3A;
+  color: #644536;
+}
+.favBeer button:hover {
+  border: none;
+  background-color: #644536;
+  color: #DC8A3A;
 }
 
 /*.mobileFooter {
@@ -266,9 +307,10 @@ body {
   }
   /*Featured Beer/Brewery Search when you hover over it */
   .featuredCats a {
-    color: #644536;
-    background-color: #eea45c;
-    border: 2px solid #644536;
+    font-size: 15px;
+    color: #eea45c;
+    background-color: #644536;
+    border: 2px solid #eea45c;
   }
   /*Featured Beer/Brewery Search when you hover over it */
   .featuredCats:hover {
@@ -313,6 +355,7 @@ body {
     height: 100px;
     width: 100%;
     bottom: 0;
+    position: fixed;
   }
   .footer a {
     font-size: 18px;

@@ -61,12 +61,12 @@ render(){
   var Beers = this.state.beers.map((beer, i) =>{
     return <Link to={'/beer/' + beer.id} data={beer} key={i}>
       <div className="col-sm-4">
-        <div className="cardWrap">
-            <img width="200" src={beer.beer_label=== null? '/img/noImage.jpg' : (beer.beer_label)} alt="Beer Profile Pic" />
-            <p className="beerName">Brew: <b>{beer.beer_name}</b></p>
-            <p className="time">Brewery: <b>{beer.brew.name}</b></p>
-            <p className="time">ABV: <b>{beer.beer_abv}</b></p>
-            <p className="time">IBU: <b>{beer.beer_ibu}</b></p>
+        <div className="cardWrapFilter">
+            <img src={beer.beer_label=== null? '/img/noImage.jpg' : (beer.beer_label)} alt="Beer Profile Pic" />
+            <p>Brew: {beer.beer_name}</p>
+            <p>Brewery: {beer.brew.name}</p>
+            <p>ABV: {beer.beer_abv}</p>
+            <p>IBU: {beer.beer_ibu}</p>
         </div>
       </div>
     </Link>

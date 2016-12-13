@@ -64,9 +64,9 @@ class Homepage extends React.Component {
                   <div className="col-xs-12 hidden-sm hidden-md hidden-lg text-center featuredCats">
                     <span><a href="/signup" className="visible-xs btn testSize">SignUp</a></span>
                   </div>
+
                 </div>
               </div>
-              {/* <hr className="hidden-xs" /> */}
             </div>
         )
     }
