@@ -1,10 +1,12 @@
 class ReviewsController < ApplicationController
+
   def create
-    @review = current_user.review.new(new_review_params)
+    @review = Review.new(new_review_params)
+    @review.user = current_user
     if @review.save
       render json: @review
     else
-      render json: @user.errors.full_messages, status: 422
+      render json: @review.user.errors.full_messages, status: 422
     end
   end
 

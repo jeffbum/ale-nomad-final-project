@@ -8,9 +8,10 @@ class DrinksController < ApplicationController
     if @drink.save
       render json: @drink
     else
-      render json: @user.errors.full_messages, status: 422
+      render json: @drink.user.errors.full_messages, status: 422
     end
   end
+
   def my_drinks
     @my_drink = current_user.beers.order('created_at DESC')
     render json: @my_drink
