@@ -31,9 +31,9 @@ class BrewResult extends React.Component {
         console.log(this.state.beersDetails)
         var beerSelections = this.state.beersDetails.map((beerDetail, i) =>{
         return <Link to={'beer/' + beerDetail.id} data={beerDetail} key={i}>
-          <div className="col-sm-3 cardWrap">
-            <div className="col-sm-12">
-                <img width="200" src={beerDetail.beer_label=== null? '/img/noImage.jpg' : (beerDetail.beer_label)} alt="Beer Profile Pic" />
+          <div className="col-sm-3">
+            <div className="cardWrapFilter">
+                <img src={beerDetail.beer_label=== null? '/img/noImage.jpg' : (beerDetail.beer_label)} alt="Beer Profile Pic" />
                 <p className="beerName">Brew: <b>{beerDetail.beer_name}</b></p>
                 <p className="time">ABV: <b>{beerDetail.beer_abv===null? 'None Listed' : (beerDetail.beer_abv)}</b></p>
                 <p className="time">IBU: <b>{beerDetail.beer_ibu===null? 'None Listed' : (beerDetail.beer_ibu)}</b></p>
@@ -43,8 +43,8 @@ class BrewResult extends React.Component {
       })
         return <div>
             <div className="container">
-                <div className="row cardWrap">
-                    <div className="col-sm-12">
+                <div className="row">
+                    <div className="cardWrapBrewFilter">
                         <h1>Brewery Details</h1>
                         <img width="300" src={this.state.breweryDetails.images=== null? '/img/noImage.jpg' : (this.state.breweryDetails.images)} alt="Brewery Profile Pic"/>
                         <div>Brewery: {this.state.breweryDetails.name}</div>
