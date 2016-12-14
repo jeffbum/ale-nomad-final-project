@@ -1,9 +1,8 @@
 class Review < ApplicationRecord
-  validates :rating, :user_id, :beer_id presence: true
+  validates_presence_of :rating, :user_id, :beer_id
 
   belongs_to :user
   belongs_to :beer
-
 
   def self.timeline(user)
     following_ids = user.followees(User).pluck(:id)
