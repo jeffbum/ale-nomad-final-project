@@ -79,7 +79,7 @@ class Signup extends React.Component {
         })
         .then(this.signedUpHandler)
         .catch(function(error) {
-          console.log('There has been a problem with your signup fetch operation: ' + error.message)
+        console.log('There has been a problem with your signup fetch operation: ' + error.message)
         })
     }
 
