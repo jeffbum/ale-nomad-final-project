@@ -11,7 +11,7 @@ class BeerResult extends React.Component {
         this.state = {
             beerDetails: [],
             brewDetails: [],
-            addToFavoritesBtn: 'Add To Favorites',
+            addToFavoritesBtn: 'Drink This Beer',
             rating: 1
         }
         this.addToFavorites = this.addToFavorites.bind(this)
@@ -52,7 +52,7 @@ class BeerResult extends React.Component {
 
     addToFavorites() {
         this.setState({
-            addToFavoritesBtn: 'Favorited'
+            addToFavoritesBtn: 'Drink Again!'
         })
     }
 
@@ -80,7 +80,7 @@ class BeerResult extends React.Component {
                         <p>Description: {this.state.beerDetails.beer_description=== null? 'This Brewery still needs to come up with a catchy description.' : (this.state.beerDetails.beer_description)}</p>
                         <p>ABV: {this.state.beerDetails.beer_abv}</p>
                         <p>IBU: {this.state.beerDetails.beer_ibu}</p><br />
-                        <h2>Rate this Beer: {rating}</h2>
+                        <p>Rate this Beer: {rating}</p>
                         <StarRatingComponent
                             name="rate1"
                             starCount={5}
