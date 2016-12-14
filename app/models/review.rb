@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  validates :rating, :user_id, presence: true
+  validates :rating, :user_id, :beer_id presence: true
 
   belongs_to :user
   belongs_to :beer

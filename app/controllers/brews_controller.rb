@@ -1,16 +1,14 @@
 class BrewsController < ApplicationController
 
-
       def static
       end
-      #Static Method for FrontEnd Team
+      #Static Method
 
       def index
         @brews = Brew.all.order(:name).page params[:page]
         render json: @brews, meta: pagination_dict(@brews)
       end
       #Displays all beer
-
 
       def pagination_dict(object)
         {
@@ -21,12 +19,9 @@ class BrewsController < ApplicationController
           total_count: object.total_count
         }
       end
-
+      # pagination for brew.all and beer.all_rolled back usage due to time
       def show
         @brew = Brew.find(params[:id])
         render json: @brew
       end
-
-
-
 end

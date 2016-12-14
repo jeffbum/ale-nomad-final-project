@@ -6,13 +6,12 @@ class BeersController < ApplicationController
     @beers = Beer.all.order(:beer_name).page params[:page]
     render json: @beers, meta: pagination_dict(@beers)
   end
-
   # Displays all beer
   def show
     @beer = Beer.find(params[:id])
     render json: @beer
   end
-
+  # find a beer by beer_id
   def pagination_dict(object)
     {
       current_page: object.current_page,
@@ -31,7 +30,7 @@ class BeersController < ApplicationController
     @beers = @beers.to_a.uniq
     render json: @beers
   end
-
+  # filter beers,brews and style
   def fake
     brewery_db = BreweryDB::Client.new do |config|
       config.api_key = ENV['breweryapikey']
@@ -39,5 +38,5 @@ class BeersController < ApplicationController
     feedback = brewery_db.locations.all(locality: 'Indianapolis', offset: 50)
     render json: feedback
   end
-  # used to test seed results in Postman
+  # used to test/trouble shoot seed results in Postman
 end

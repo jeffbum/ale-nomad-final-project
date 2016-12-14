@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
+  before_action :require_login, only: [:create, :update]
 
   def create
-    @review = Review.new(new_review_params)
+    @review = Review.new(review_params)
     @review.user = current_user
     if @review.save
       render json: @review
@@ -17,11 +18,11 @@ class ReviewsController < ApplicationController
 
   def update
     @review = Review.find_by(token: params[:token])
-    @review.update!(update_review_params)
+    @review.update!(review_params)
     if @review.save
       render json: @review
     else
-      render json: @review.errors
+      render json: @review.errors.full_messages, status: 422
     end
   end
 
@@ -32,11 +33,7 @@ class ReviewsController < ApplicationController
 
   private
 
-  def new_review_params
+  def review_params
     params.permit(:rating, :beer_id)
-  end
-
-  def update_review_params
-    params.permit(:rating)
   end
 end
