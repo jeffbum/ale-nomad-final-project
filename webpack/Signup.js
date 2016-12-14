@@ -8,7 +8,8 @@ class Signup extends React.Component {
             email: '',
             password: '',
             name: '',
-            images: ''
+            images: '',
+            LoggedIn: false
         }
         this.signedUpHandler = this.signedUpHandler.bind(this)
         this.handleClick = this.handleClick.bind(this)
@@ -23,6 +24,9 @@ class Signup extends React.Component {
             sessionStorage.setItem('api_token', response.user.api_token)
             sessionStorage.setItem('user_id',
                 JSON.stringify(response.user.id))
+            this.setState({
+                Loggedin: true
+            })
             this.login()
         }
         else {
@@ -31,6 +35,9 @@ class Signup extends React.Component {
                 errorDiv.classList.add('alert', 'alert-danger')
                 errorDiv.innerHTML = error
                 document.querySelector('#errors').appendChild(errorDiv)
+            })
+            this.setState({
+                Loggedin: false
             })
         }
     }
@@ -50,6 +57,9 @@ class Signup extends React.Component {
         })
         .catch((error) => {
           console.log('There has been a problem with your login fetch operation: ' + error.message)
+        })
+        this.setState({
+            Loggedin: true
         })
         browserHistory.push('/userprofile')
 
@@ -104,7 +114,7 @@ class Signup extends React.Component {
                         <input type="password" id="password" name="password" className="form-control" required value={this.state.password} onChange={(e) => this.setState({password:e.target.value})}/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="images">Avatar</label>
+                        <label htmlFor="images">Picture</label>
                         <input type="file" id="images" name="images" onChange={(e) =>{
                                 this.setState({images:e.target.files[0]})
                                 console.log(e.target.files[0])

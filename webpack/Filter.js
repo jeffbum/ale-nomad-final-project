@@ -132,6 +132,8 @@ render(){
       <div className="row">
         <div className="col-sm-offset-1 col-sm-10">
           <div className="row">
+              {Beers === undefined &&
+              <h3>No Beers match that criteria. Please choose different filter settings!</h3>}
             {Beers}
           </div>
         </div>
