@@ -64,15 +64,15 @@ render(){
     <div>
       <div className="row text-center">
         <p className="filterSearchHeader">Step 1: Enter Zip Code</p>
-          <div className="col-xs-4 col-xs-offset-4">
+          <div className="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
             <div className="form-group">
-              <input name="searchInput" type="text" className="form-control" placeholder="Enter zip code...." onChange={this.searchHandler}/>
+              <input name="searchInput" type="text" className="form-control" placeholder="Enter zip code.." onChange={this.searchHandler}/>
             </div>
           </div>
       </div>
       <div className="row text-center">
         <p className="filterSearchHeader">Step 2: Select Distance</p>
-        <div className="col-xs-6 col-xs-offset-3">
+        <div className="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
           <h3 className="filterSelectors">Location</h3>
             <select name="style" className="form-control" onChange={this.locationHandler}>
               <option value="">Any Location</option>
@@ -80,7 +80,7 @@ render(){
               <option value="5">5 Miles</option>
               <option value="10">10 Miles</option>
               <option value="15">15 Miles</option>
-              <option value="20">20 Hi Miles</option>
+              <option value="20">20 Miles</option>
             </select>
         </div>
         <div className="col-xs-10 col-xs-offset-1 testMargin">
