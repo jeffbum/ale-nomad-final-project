@@ -93,11 +93,11 @@ class BeerResult extends React.Component {
                         <p>ABV: {this.state.beerDetails.beer_abv}</p>
                         <p>IBU: {this.state.beerDetails.beer_ibu}</p><br />
                         {this.state.loggedIn ? <div>
-                            <h2>Rate this Beer: {rating}</h2>
-                             <StarRatingComponent name="rate1" starCount={5} value={rating} onStarClick={this.onStarClick} /></div> : <div></div>}
-                        <div className="col-xs-4 col-xs-offset-4 favBeer">
-                            <button onClick={this.postBeer}>{this.state.addToFavoritesBtn}</button>
-                        </div>
+                            <h2>Rate this Beer: <StarRatingComponent name="rate1" starCount={5} value={rating} onStarClick={this.onStarClick} /></h2>
+                             <div className="col-xs-4 col-xs-offset-4 favBeer">
+                                 <button onClick={this.postBeer}>{this.state.addToFavoritesBtn}</button>
+                             </div></div> : <div><Link to='/login'>Login to rate this beer!</Link></div>}
+
                     </div>
                 </div>
                 <div className="row">
