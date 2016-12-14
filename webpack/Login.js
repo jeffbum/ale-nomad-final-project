@@ -47,7 +47,7 @@ class Login extends React.Component {
                 document.querySelector('#errors').appendChild(errorDiv)
             })
         }
-        browserHistory.push('/userprofile')
+        browserHistory.push('/find_beer')
     }
 
 
