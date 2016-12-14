@@ -50,7 +50,7 @@ class BrewResult extends React.Component {
                         <div>Hours:{this.state.breweryDetails.hours_of_operation}</div>
                         <div>Phone: {this.state.breweryDetails.phone}</div>
                         <div>Address: {this.state.breweryDetails.street_address}, {this.state.breweryDetails.postal_code}</div>
-                        <div>Website: <a>{this.state.breweryDetails.website}</a></div>
+                        <div>Website: <a href={this.state.breweryDetails.website} target="_blank">{this.state.breweryDetails.website}</a></div>
                     </div>
                 </div>
                 <div className="row">
