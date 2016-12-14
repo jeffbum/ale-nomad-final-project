@@ -9,6 +9,7 @@ class Login extends React.Component {
             password: ''
         }
         this.login = this.login.bind(this)
+        this.loggedInHandler = this.loggedInHandler.bind(this)
     }
     login(){
         fetch('/api/login?email=' + this.state.email + '&password=' + this.state.password, {
@@ -24,11 +25,29 @@ class Login extends React.Component {
             throw 'Network response was not ok.'
           }
         })
+        .then(this.loggedInHandler)
         .catch((error) => {
           console.log('There has been a problem with your login fetch operation: ' + error.message)
-        })
-        browserHistory.push('/userprofile')
 
+        })
+    }
+
+    loggedInHandler(response) {
+        console.log(response)
+        if (typeof response.user != 'undefined') {
+            sessionStorage.setItem('api_token', response.user.api_token)
+            sessionStorage.setItem('user_id',
+                JSON.stringify(response.user.id))
+        }
+        else {
+            response.forEach(function(error) {
+                var errorDiv = document.createElement('div')
+                errorDiv.classList.add('alert', 'alert-danger')
+                errorDiv.innerHTML = error
+                document.querySelector('#errors').appendChild(errorDiv)
+            })
+        }
+        browserHistory.push('/userprofile')
     }
 
 
