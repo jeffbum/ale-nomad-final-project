@@ -23,6 +23,7 @@ gem 'ransack'
 gem 'webpack-rails'
 gem 'kaminari'
 gem 'devise'
+gem ‘sendgrid-ruby’
 
 gem 'omniauth'
 gem 'omniauth-facebook'
