@@ -11,11 +11,10 @@ class BeerResult extends React.Component {
         this.state = {
             beerDetails: [],
             brewDetails: [],
-            addToFavoritesBtn: 'Add To Favorites',
+            addToFavoritesBtn: 'Drink This Beer',
             rating: 1,
             loggedIn: sessionStorage.getItem('api_token'),
             showStars: false
-
         }
         this.addToFavorites = this.addToFavorites.bind(this)
         this.postBeer = this.postBeer.bind(this)
@@ -65,7 +64,7 @@ class BeerResult extends React.Component {
 
     addToFavorites() {
         this.setState({
-            addToFavoritesBtn: 'Favorited'
+            addToFavoritesBtn: 'Drink Again!'
         })
     }
 
