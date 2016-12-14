@@ -55,12 +55,12 @@ body {
 .mobileLogInBorder {
   border-bottom: none;
 }
-.mobileLogIn button {
+.mobileLogIn a.btn {
   background-color: #eea45c;
   color: #644536;
   border: 2px solid #644536;
 }
-.mobileLogIn button:hover {
+.mobileLogIn a.btn:hover {
   background-color: #644536;
   color: #eea45c;
   border: 2px solid #644536;
@@ -245,7 +245,8 @@ body {
     margin-top: 50px;
   }
   /*Filter Styling End*/
-  .topRowButtons button {
+  .topRowButtons button,
+  .topRowButtons a.btn {
     float: left;
     font-size: 20px;
     margin-top: 54px;
@@ -253,7 +254,8 @@ body {
     color: #DC8A3A;
     border: 2px solid #DC8A3A;
   }
-  .topRowButtons button:hover {
+  .topRowButtons button:hover,
+  .topRowButtons a.btn:hover {
     background-image: url();
     background-color: #DC8A3A;
     color: white;
