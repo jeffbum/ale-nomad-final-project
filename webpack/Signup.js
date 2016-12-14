@@ -49,7 +49,7 @@ class Signup extends React.Component {
           }
         })
         .then(this.signedUpHandler)
-        .then(browserHistory.push('/userprofile'))
+        .then(browserHistory.push('/homepage'))
         .catch((error) => {
           console.log('There has been a problem with your login fetch operation: ' + error.message)
         })
