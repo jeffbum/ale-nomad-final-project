@@ -64,11 +64,11 @@ render(){
     <div>
       <div className="row text-center">
         <p className="filterSearchHeader">Step 1: Enter Zip Code</p>
-        <div className="col-xs-offset-5 col-xs-7 text-center">
-          <div className="input-group">
-            <input name="searchInput" type="text" className="form-control" placeholder="Enter zip code..." onChange={this.searchHandler}/>
+          <div className="col-xs-4 col-xs-offset-4">
+            <div className="form-group">
+              <input name="searchInput" type="text" className="form-control" placeholder="Enter zip code...." onChange={this.searchHandler}/>
+            </div>
           </div>
-        </div>
       </div>
       <div className="row text-center">
         <p className="filterSearchHeader">Step 2: Select Distance</p>

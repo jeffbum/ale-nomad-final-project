@@ -92,6 +92,9 @@ body {
   background-color: #DC8A3A;
   color: #644536;
 }
+.test {
+  border: 1px solid red;
+}
 .filterSearchInput button:hover {
   background-color: #644536;
   color: #DC8A3A;
@@ -105,6 +108,12 @@ body {
 }
 .filterButton {
   width: 200px;
+}
+.test {
+  border: 1px solid red;
+}
+#brewFilterInput {
+  justify-content: center;
 }
 /*Styling for the find_beer and find_brewery page cards that will appear after filtering*/
 .cardWrapFilter {
