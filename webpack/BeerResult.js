@@ -12,16 +12,19 @@ class BeerResult extends React.Component {
             beerDetails: [],
             brewDetails: [],
             addToFavoritesBtn: 'Drink This Beer',
-            rating: 1
+            rating: 1,
+            loggedIn: sessionStorage.getItem('api_token'),
+            showStars: false
         }
         this.addToFavorites = this.addToFavorites.bind(this)
         this.postBeer = this.postBeer.bind(this)
         this.postReview = this.postReview.bind(this)
         this.onStarClick = this.onStarClick.bind(this)
+        this.loggedInHandler = this.loggedInHandler.bind(this)
     }
 
     componentDidMount(){
-        fetch('/api/show/beer?id=' + this.props.routeParams.beer_id, {
+            fetch('/api/show/beer?id=' + this.props.routeParams.beer_id, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -31,10 +34,19 @@ class BeerResult extends React.Component {
             .then(response =>
                 this.setState({
                     beerDetails: response.beer,
-                    brewDetails: response.beer.brew
-                })
-            )
+                    brewDetails: response.beer.brew,
+                }))
+            .then(this.loggedInHandler)
     }
+
+    loggedInHandler(){
+        if (this.state.loggedIn != undefined){
+            this.setState({ showStars: true})
+        } else {
+            this.setState({ showStars: false})
+        }
+    }
+
     onStarClick(nextValue, prevValue, name) {
         this.setState({rating: nextValue});
     }
@@ -80,13 +92,9 @@ class BeerResult extends React.Component {
                         <p>Description: {this.state.beerDetails.beer_description=== null? 'This Brewery still needs to come up with a catchy description.' : (this.state.beerDetails.beer_description)}</p>
                         <p>ABV: {this.state.beerDetails.beer_abv}</p>
                         <p>IBU: {this.state.beerDetails.beer_ibu}</p><br />
-                        <p>Rate this Beer: {rating}</p>
-                        <StarRatingComponent
-                            name="rate1"
-                            starCount={5}
-                            value={rating}
-                            onStarClick={this.onStarClick}
-                        />
+                        {this.state.loggedIn ? <div>
+                            <h2>Rate this Beer: {rating}</h2>
+                             <StarRatingComponent name="rate1" starCount={5} value={rating} onStarClick={this.onStarClick} /></div> : <div></div>}
                         <div className="col-xs-4 col-xs-offset-4 favBeer">
                             <button onClick={this.postBeer}>{this.state.addToFavoritesBtn}</button>
                         </div>

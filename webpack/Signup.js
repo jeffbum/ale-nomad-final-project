@@ -48,8 +48,7 @@ class Signup extends React.Component {
             throw 'Network response was not ok.'
           }
         })
-        .then(this.signedUpHandler)
-        .then(browserHistory.push('/homepage'))
+        .then(browserHistory.push('/'))
         .catch((error) => {
           console.log('There has been a problem with your login fetch operation: ' + error.message)
         })
