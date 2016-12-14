@@ -185,8 +185,6 @@ body {
   }
   body {
     background-image: url("/img/cheap_diagonal_fabric.png");
-    padding-top: 0px;
-    padding-bottom: 50px;
     font-family: 'Tillana', cursive;
   }
   li a {
@@ -270,15 +268,15 @@ body {
   }
   /*Styling for the HomePage full width image below the header*/
   .homePageImage {
-    height: 50vh;
+    height: 35vw;
     background-image: url('/img/betterBanner.jpg');
     background-size: cover;
     background-position: center;
     box-shadow: 4px 10px 50px grey;
   }
   .homePageImage h1 {
-    font-size: 5vw;
-    margin: 180px;
+    font-size: 4.5vw;
+    margin: 152px;
     color: white;
   }
   /*Styling for the text box below the HomePage full width image*/
@@ -352,7 +350,7 @@ body {
   .footer {
     background-color: #644536;
     padding-top: 25px;
-    height: 100px;
+    height: 270px;
     width: 100%;
   }
   .footer a {
