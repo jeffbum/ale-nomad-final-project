@@ -69,6 +69,8 @@ class UserProfile extends React.Component {
                 </div>
                 <div className="col-xs-9">
                     <h1 className="text-center">Your Favorites</h1>
+                    {MyDrinks == 0 &&
+                    <h1>Like a beer? Favorite it in the Find Beers Section!</h1>}
                     {MyDrinks}
                 </div>
             </div>
