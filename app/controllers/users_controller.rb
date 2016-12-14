@@ -1,15 +1,17 @@
 class UsersController < ApplicationController
 
   before_action :require_login, only: [:my_reviews, :follow, :followees]
-
+  # requires user to sign in before the leaving reviews(rating),etc
   def show
     @user = User.find(params[:id])
     render json: @user
   end
+  # Find a User by id
   def all
     @user = User.all
     render json: @user, scope: current_user, scope_name: :current_user
   end
+  # All users_had to cut social due to time
   def log_in
     @user = User.find_by(email: params[:email]).try(:authenticate, params[:password])
       if @user.present?
@@ -37,7 +39,7 @@ class UsersController < ApplicationController
     @followees = current_user.followees(User)
     render json: @followees
   end
-
+  # Had to cut social due to time_not in use
   private
 
    def user_params
