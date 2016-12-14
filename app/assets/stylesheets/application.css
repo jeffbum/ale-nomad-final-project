@@ -37,10 +37,6 @@ body {
   border: none;
   background-color: #eea45c;
 }
-.hamButton:hover {
-  border: 1px solid #eea45c;
-  background-color: #644536;
-}
 .hamburgerClick {
   background-color: #eea45c;
   border: none;
@@ -48,21 +44,29 @@ body {
 .hamburgerClick li a {
   color: #644536;
 }
-.mobileSignInBorder {
+.hamburgerClick li a:hover {
+  color: #644536;
+  background-color: #eea45c;
+}
+.hamburgerClick li ul {
+  color: #644536;
+  background-color: #eea45c;
+}
+.mobileLogInBorder {
   border-bottom: none;
 }
-.mobileSignIn button {
+.mobileLogIn button {
   background-color: #eea45c;
   color: #644536;
   border: 2px solid #644536;
 }
-.mobileSignIn button:hover {
+.mobileLogIn button:hover {
   background-color: #644536;
   color: #eea45c;
   border: 2px solid #644536;
 }
 .mobileButtonSize {
-  font-size: 50px;
+  font-size: 38px;
   margin-bottom: 50px;
 }
 /*Styling for HomePage Buttons*/
@@ -82,7 +86,7 @@ body {
 .filterSearchHeader {
     color: #644536;
     margin-top: 40px;
-    font-size: 35px;
+    font-size: 7vw;
 }
 .filterSearchInput button {
   background-color: #DC8A3A;
@@ -168,11 +172,11 @@ body {
   border-radius: 50%;
 }
 
-.mobileFooter {
+/*.mobileFooter {
   background-color: #644536;
-  height: 100px;
+  height: 140px;
   width: 100%;
-}
+}*/
 /*Mobile version styling end*/
 
 
@@ -218,10 +222,6 @@ body {
   .desktopBkg {
     background-color: #644536;
     padding-bottom: 30px;
-  }
-  .nameLogo {
-    font-size: 75px;
-    margin-top: 54px;
   }
   /*Filter Styling Start*/
   .filterSearchHeader {
@@ -275,17 +275,17 @@ body {
     box-shadow: 4px 10px 50px grey;
   }
   .homePageImage h1 {
-    font-size: 4.5vw;
-    margin: 152px;
+    font-size: 7vw;
+    margin-top: 15vw;
     color: white;
   }
   /*Styling for the text box below the HomePage full width image*/
   .woahRadical {
     border-left: 5px solid #DC8A3A;
     padding-left: 15px;
-    font-size: 3.7vh;
+    font-size: 2.5vw;
     font-weight: 500;
-    margin: 80px;
+    margin: 135px;
     color: #644536;
   }
   /*Styling for the FindBeers and FindBreweries cards on the HomePage*/
@@ -297,7 +297,7 @@ body {
   .featuredCats {
     background-color: #eea45c;
     color: #644536;
-    height: 37vh;
+    height: 325px;
     box-shadow: 4px 6px 20px grey;
     border-radius: 15%;
     display: flex;
@@ -349,7 +349,7 @@ body {
   }
   .footer {
     background-color: #644536;
-    padding-top: 25px;
+    padding-top: 115px;
     height: 270px;
     width: 100%;
   }
@@ -369,7 +369,7 @@ body {
   .featuredCats {
     background-color: #eea45c;
     color: #644536;
-    height: 34vh;
+    height: 300px;
     box-shadow: 4px 6px 20px grey;
     border-radius: 15%;
     display: flex;
@@ -383,7 +383,7 @@ body {
   .featuredCats {
     background-color: #eea45c;
     color: #644536;
-    height: 31.5vh;
+    height: 275px;
     box-shadow: 4px 6px 20px grey;
     border-radius: 15%;
     display: flex;
