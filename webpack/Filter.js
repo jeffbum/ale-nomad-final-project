@@ -10,6 +10,7 @@ class Filter extends React.Component {
     super(props)
     this.state = {
       beers: [],
+      nomatches: false,
       style: '',
       abv: '0,20',
       ibu: '0,2500'
@@ -46,7 +47,14 @@ class Filter extends React.Component {
     fetch('/api/filter?filter[beer_name_cont]=' + this.state.style + '&filter[beer_abv_gteq]=' + splitValue[0] + '&filter[beer_abv_lt]=' + splitValue[1] + '&filter[beer_ibu_gteq]=' + splitComma[0] + '&filter[beer_ibu_lt]=' + splitComma[1])
 
     .then(response => response.json())
-    .then(response => this.setState({beers: response.beers}))
+    .then(response => {
+      if (typeof response.beers != 'undefined') {
+        this.setState({beers: response.beers, nomatches: false})
+      }
+      else {
+        this.setState({beers: [], nomatches: true})
+      }
+    })
     .then(response => {console.log(this.state.beers)})
     .then(response => window.scrollTo(0,600))
   }
@@ -132,9 +140,9 @@ render(){
       <div className="row">
         <div className="col-sm-offset-1 col-sm-10">
           <div className="row">
-              {Beers === undefined &&
-              <h3>No Beers match that criteria. Please choose different filter settings!</h3>}
-            {Beers}
+              {this.state.nomatches || Beers.length > 0?'':<h5 className='text-center'>Start searching for beers to drink!</h5>}
+              {this.state.nomatches?<h3>No Beers match that criteria. Please choose different filter settings!</h3>:''}
+              {Beers}
           </div>
         </div>
       </div>
