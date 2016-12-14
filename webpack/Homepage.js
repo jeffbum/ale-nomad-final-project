@@ -50,12 +50,12 @@ class Homepage extends React.Component {
                     </div>
                   <div className="col-sm-5 text-center featuredCats">
                     <p className="featuredCatTitles hidden-xs">Beer</p>
-                    <p className="featuredCatDescription hidden-xs">This will be a paragraph about what beer search can do for our users. Want to search beers by style. Click getting started. Want to search for a beer with a specific ABV or IBU. Click to get started.</p>
+                    <p className="featuredCatDescription hidden-xs">Want to search for a specifc beer by name, style, abv, or ibu? Click below and get started! You will be able to search over 900 beers for the taste that fits you best. Once you drink one, add it to your profile to remember what you had!</p>
                     <span><a href="/find_beer" className="hidden-xs btn">Find A Beer!</a></span>
                   </div>
                   <div className="col-sm-5 col-sm-offset-2 text-center featuredCats">
                     <p className="featuredCatTitles hidden-xs">Brewery</p>
-                    <p className="featuredCatDescription hidden-xs">This will be a paragraph about what brewery search can do for our users. Want to search beers by style. Click getting started. Want to search for a beer with a specific ABV or IBU. Click to get started.</p>
+                    <p className="featuredCatDescription hidden-xs">Want to search for a specifc Brewery close to you? Click below and get started! You will be able to search all of the breweries that are located within 20 miles. Once you locate one, have a beer and add it to your profile to remember!</p>
                     <span><a href="/find_brew" className="hidden-xs btn">Find A Brewery!</a></span>
                   </div>
                 </div>

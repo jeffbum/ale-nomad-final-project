@@ -109,12 +109,7 @@ body {
 .filterButton {
   width: 200px;
 }
-.test {
-  border: 1px solid red;
-}
-#brewFilterInput {
-  justify-content: center;
-}
+
 /*Styling for the find_beer and find_brewery page cards that will appear after filtering*/
 .cardWrapFilter {
   background-color: white;
@@ -141,7 +136,7 @@ body {
   margin: 10px;
   box-shadow: 4px 6px 20px grey;
   border-radius: 3%;
-  height: 300px;
+  height: 350px;
   overflow: hidden;
   margin-bottom: 20px;
   text-align: center;
@@ -180,12 +175,6 @@ body {
 .profileImage img {
   border-radius: 50%;
 }
-
-/*.mobileFooter {
-  background-color: #644536;
-  height: 140px;
-  width: 100%;
-}*/
 /*Mobile version styling end*/
 
 
@@ -308,7 +297,7 @@ body {
   .featuredCats {
     background-color: #eea45c;
     color: #644536;
-    height: 325px;
+    height: 340px;
     box-shadow: 4px 6px 20px grey;
     border-radius: 15%;
     display: flex;
@@ -380,7 +369,7 @@ body {
   .featuredCats {
     background-color: #eea45c;
     color: #644536;
-    height: 300px;
+    height: 315px;
     box-shadow: 4px 6px 20px grey;
     border-radius: 15%;
     display: flex;
@@ -394,7 +383,7 @@ body {
   .featuredCats {
     background-color: #eea45c;
     color: #644536;
-    height: 275px;
+    height: 290px;
     box-shadow: 4px 6px 20px grey;
     border-radius: 15%;
     display: flex;
