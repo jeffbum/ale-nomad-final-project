@@ -50,15 +50,26 @@ window.logout = function() {
     window.location.href = '/'
 }
 
-if (sessionStorage.getItem('api_token')) {
-    document.querySelectorAll('.loginLogout').forEach(function(loginLogout) {
-        loginLogout.innerHTML = '<a href="javascript:logout()" class="btn">Logout</a>'
-    })
-}
-else {
-    document.querySelectorAll('.loginLogout').forEach(function(loginLogout) {
-        loginLogout.innerHTML = '<a href="/login" class="btn">Login</a>'
-    })
-}
+    if (sessionStorage.getItem('api_token')) {
+        document.querySelectorAll('.loginLogout').forEach(function(loginLogout) {
+            loginLogout.innerHTML = '<a href="javascript:logout()" class="btn">Logout</a>'
+        })
+    }
+    else {
+        document.querySelectorAll('.loginLogout').forEach(function(loginLogout) {
+            loginLogout.innerHTML = '<a href="/login" class="btn">Login</a>'
+        })
+    }
 
-// })
+
+//for profile show/hide
+    if (sessionStorage.getItem('api_token')) {
+        document.querySelectorAll('.profileLink').forEach(function(profileLink) {
+            profileLink.innerHTML = '<li><a href="/userprofile">Profile</a></li>'
+        })
+    }
+    else {
+        document.querySelectorAll('.profileLink').forEach(function(profileLink) {
+            profileLink.innerHTML = ''
+        })
+    }
