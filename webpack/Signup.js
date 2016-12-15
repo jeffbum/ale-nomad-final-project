@@ -111,13 +111,15 @@ class Signup extends React.Component {
                                 console.log(e.target.files[0])
                             }}/>
                     </div>
-                    <div className="form-group text-center">
-                        <button id="signup" type="button" className="btn btn-success btn-block" onClick={this.handleClick}>Sign Up
+                    <div className="form-group text-center logInLg">
+                        <button id="signup" type="button" className="btn btn-block" onClick={this.handleClick}>Sign Up
                             </button>
                         <br/>
                         <br/>
                         <br/>
-                        <span>Already have an account? </span><Link to='/login'><button id="login" type="button" className="btn btn-success center-block" >Log In</button></Link>
+                        <div className="logInSm">
+                            <span>Already have an account? </span><Link to='/login'><button id="login" type="button" className="btn center-block">Log In</button></Link>
+                        </div>
                     </div>
                 </div>
             </div>

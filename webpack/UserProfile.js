@@ -55,7 +55,7 @@ class UserProfile extends React.Component {
                     <p>ABV: {myDrink.beer_abv}</p>
                     <p>IBU: {myDrink.beer_ibu}</p>
                     <ReactStars count={myDrink.reviews[0].rating} edit={false} size={24} color1={'#ffd700'} />
-                    <p>Drank on: {moment(myDrink.reviews[0].created_at).fromNow()}</p>
+                    <p>Drank: {moment(myDrink.reviews[0].created_at).fromNow()}</p>
                 </div>
             </div>
         </Link>

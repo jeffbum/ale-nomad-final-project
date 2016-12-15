@@ -84,19 +84,41 @@ class BeerResult extends React.Component {
         return <div>
             <div className="container">
                 <div className="row">
-                    <div className="cardWrapFilterLg text-center">
-                        <h1>Beer Details</h1>
-                        <img width="400" src={this.state.beerDetails.beer_label=== null? '/img/noImage.jpg' : (this.state.beerDetails.beer_label)} alt="Beer Label Picture" />
-                        <p>Brew: {this.state.beerDetails.beer_name}</p>
-                        <p>Description: {this.state.beerDetails.beer_description=== null? 'This Brewery still needs to come up with a catchy description.' : (this.state.beerDetails.beer_description)}</p>
-                        <p>ABV: {this.state.beerDetails.beer_abv}</p>
-                        <p>IBU: {this.state.beerDetails.beer_ibu}</p><br />
-                        {this.state.loggedIn ? <div>
-                            <h2>Rate this Beer: <StarRatingComponent name="rate1" starCount={5} value={rating} onStarClick={this.onStarClick} /></h2>
-                             <div className="col-xs-4 col-xs-offset-4 favBeer">
-                                 <button onClick={this.postBeer}>{this.state.addToFavoritesBtn}</button>
-                             </div></div> : <div><Link to='/login'>Login to rate this beer!</Link></div>}
+                    <div className="visible-xs hidden-sm hidden-md hidden-lg">
+                        <div className="cardWrapFilterLg text-center">
+                            <h1>Beer Details</h1>
+                            <img width="400" src={this.state.beerDetails.beer_label=== null? '/img/noImage.jpg' : (this.state.beerDetails.beer_label)} alt="Beer Label Picture" />
+                            <p>Brew: {this.state.beerDetails.beer_name}</p>
+                            <p>Description: {this.state.beerDetails.beer_description=== null? 'This Brewery still needs to come up with a catchy description.' : (this.state.beerDetails.beer_description)}</p>
+                            <p>ABV: {this.state.beerDetails.beer_abv}</p>
+                            <p>IBU: {this.state.beerDetails.beer_ibu}</p><br />
+                            {this.state.loggedIn ? <div>
+                                <h2><StarRatingComponent name="rate1" starCount={5} value={rating} onStarClick={this.onStarClick} /></h2>
+                                <br/>
+                                 <div className="col-xs-8 col-xs-offset-2 favBeer">
+                                     <button className="btn" onClick={this.postBeer}>{this.state.addToFavoritesBtn}</button>
+                                 </div>
+                                 </div> : <div><Link to='/login'>Login to rate this beer!</Link></div>}
 
+                        </div>
+                    </div>
+                    <div className="hidden-xs">
+                        <div className="cardWrapFilterLg text-center">
+                            <h1>Beer Details</h1>
+                            <img width="400" src={this.state.beerDetails.beer_label=== null? '/img/noImage.jpg' : (this.state.beerDetails.beer_label)} alt="Beer Label Picture" />
+                            <p>Brew: {this.state.beerDetails.beer_name}</p>
+                            <p>Description: {this.state.beerDetails.beer_description=== null? 'This Brewery still needs to come up with a catchy description.' : (this.state.beerDetails.beer_description)}</p>
+                            <p>ABV: {this.state.beerDetails.beer_abv}</p>
+                            <p>IBU: {this.state.beerDetails.beer_ibu}</p><br />
+                            {this.state.loggedIn ? <div>
+                                <h2>Rate this Beer: <StarRatingComponent name="rate1" starCount={5} value={rating} onStarClick={this.onStarClick} /></h2>
+                                <br/>
+                                 <div className="col-xs-8 col-xs-offset-2 favBeer">
+                                     <button className="btn" onClick={this.postBeer}>{this.state.addToFavoritesBtn}</button>
+                                 </div>
+                                 </div> : <div><Link to='/login'>Login to rate this beer!</Link></div>}
+
+                        </div>
                     </div>
                 </div>
                 <div className="row">
