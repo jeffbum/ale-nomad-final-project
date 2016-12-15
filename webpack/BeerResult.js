@@ -129,7 +129,7 @@ class BeerResult extends React.Component {
                         <p>Hours: {this.state.brewDetails.hours_of_operation}</p>
                         <p>Phone: {this.state.brewDetails.phone}</p>
                         <p>Address: {this.state.brewDetails.street_address}, {this.state.brewDetails.postal_code}</p>
-                        <p>Website: <a>{this.state.brewDetails.website}</a></p>
+                        <p>Website: <a href={this.state.breweryDetails.website} target="_blank">{this.state.breweryDetails.website}</a></p>
                     </div>
                 </div>
             </div>
