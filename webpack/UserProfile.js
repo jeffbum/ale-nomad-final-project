@@ -68,9 +68,9 @@ class UserProfile extends React.Component {
                     <img src={this.state.images} />
                 </div>
                 <div className="col-xs-7 col-sm-9">
-                    <h1 className="text-center">What You Have Drank</h1>
+                    <h1 className="text-center">Beers you Drank</h1>
                     {MyDrinks == 0 &&
-                    <h1 className="text-center">Go choose a drink!</h1>}
+                    <h1 className="text-center">Choose a drink!</h1>}
                     {MyDrinks}
                 </div>
             </div>
