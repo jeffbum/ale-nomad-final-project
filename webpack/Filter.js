@@ -3,7 +3,6 @@ import { Link } from 'react-router'
 import BeerResult from './BeerResult'
 
 
-// TODO: comment code so others can read it.
 
 class Filter extends React.Component {
   constructor(props){
@@ -22,7 +21,6 @@ class Filter extends React.Component {
     this.searchResult = this.searchResult.bind(this)
   }
 
-  // TODO: explain why I split into three handlers from one.
   styleHandler(e){
     this.setState({
       style: e.target.value
@@ -39,7 +37,6 @@ class Filter extends React.Component {
       abv: e.target.value
     })
   }
-// TODO: explain the split Value and splitComma variables and why they were necessary
   getBeer(){
     var splitValue = this.state.abv.split(',')
     var splitComma = this.state.ibu.split(',')

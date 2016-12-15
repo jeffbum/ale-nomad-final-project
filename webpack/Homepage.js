@@ -1,12 +1,8 @@
 //react imports
 import React from 'react'
 import { Link } from 'react-router'
-// import Filter from './Filter'
 import Signup from './Signup'
 
-
-// TODO: layout page
-// TODO: api call
 
 class Homepage extends React.Component {
     constructor(props) {
@@ -14,13 +10,6 @@ class Homepage extends React.Component {
         this.state = {
 
         }
-    }
-    componentDidMount() {
-
-    }
-
-    componentWillUnmount() {
-
     }
 
     render(){

@@ -4,7 +4,6 @@ import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router'
 import StarRatingComponent from 'react-star-rating-component'
 
 
-// TODO: comment code so others can read it.
 class BeerResult extends React.Component {
     constructor(props){
         super(props)

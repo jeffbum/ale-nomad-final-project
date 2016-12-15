@@ -47,7 +47,7 @@ class Login extends React.Component {
                 document.querySelector('#errors').appendChild(errorDiv)
             })
         }
-        browserHistory.push('/find_beer')
+        window.location.href('/find_beer')
     }
 
 

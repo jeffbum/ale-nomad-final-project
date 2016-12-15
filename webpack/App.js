@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router'
-import alt from './lib/alt'
 
 
 class App extends React.Component {
@@ -10,7 +9,6 @@ class App extends React.Component {
     }
 
     render() {
-        // return <div>Hi!</div>
         return <div>{this.props.children}</div>
     }
 }

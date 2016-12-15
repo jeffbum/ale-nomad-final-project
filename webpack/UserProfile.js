@@ -15,7 +15,6 @@ class UserProfile extends React.Component {
             rating: 1
         }
         this.onStarClick = this.onStarClick.bind(this)
-        // this.getReview = this.getReview.bind(this)
     }
     onStarClick(nextValue, prevValue, name) {
         this.setState({rating: nextValue})

@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-// import BeerResult from './BeerResult'
 import BrewResult from './BrewResult'
-// import alt from './lib/alt'
-// import BeerStore from './stores/BeerStore'
-// import BeerActions from './actions/BeerActions'
+
 
 
 class BrewFilter extends React.Component {
