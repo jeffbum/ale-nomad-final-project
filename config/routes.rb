@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
 
   root 'beers#static'
-  get '/find_beer' => 'beers#static'
-  get '/find_brew' => 'beers#static'
-  get '/find_abv' => 'beers#static'
-  get '/find_ibu' => 'beers#static'
 
   scope '/api' do
     post '/users/:id/follow' => 'users#follow'

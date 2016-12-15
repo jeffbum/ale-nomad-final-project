@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
 
-
   private
 
   def current_user
@@ -26,8 +25,5 @@ class ApplicationController < ActionController::Base
       render json: ["You must be logged in"], status: :forbidden
     end
   end
-
-
-
 
 end

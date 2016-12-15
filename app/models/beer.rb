@@ -22,18 +22,4 @@ class Beer < ApplicationRecord
     end
   end
 
-  def untapshow
-    @beer = Untappd::Beer.info(params[:id])
-    render json: @beer
-  end
-  # not in use_due to limited time
-  def untapsearch
-    @beers = Untappd::Beer.search(params[:name])
-    render json: @beers
-  end
-  #not in use_due to limited time
-  def venue_instock
-    @beers = Untappd::Beer.feed(params[:bid])
-    render json: @beers
-  end
 end
