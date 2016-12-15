@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, browserHistory } from 'react-router'
 import ReactStars from 'react-stars'
+import moment from 'moment'
 
 class UserProfile extends React.Component {
     constructor(props) {
@@ -55,7 +56,7 @@ class UserProfile extends React.Component {
                     <p>ABV: {myDrink.beer_abv}</p>
                     <p>IBU: {myDrink.beer_ibu}</p>
                     <ReactStars count={myDrink.reviews[0].rating} edit={false} size={24} color1={'#ffd700'} />
-                    {/* <p>IBU: {date}</p> */}
+                    <p>Drank: {moment(myDrink.reviews[0].created_at).fromNow()}</p>
                 </div>
             </div>
         </Link>

@@ -66,12 +66,14 @@ class Login extends React.Component {
                       <label htmlFor="password">Password</label>
                       <input type="password" id="password" name="password" className="form-control" required value={this.state.password} onChange={(e) => this.setState({password:e.target.value})}/>
                     </div>
-                    <div className="form-group text-center">
-                        <button id="login" type="button" className="btn btn-success btn-block" onClick={this.login}>Log In</button>
+                    <div className="form-group text-center logInLg">
+                        <button id="login" type="button" className="btn btn-block" onClick={this.login}>Log In</button>
                         <br/>
                         <br/>
                         <br/>
-                        <span>Dont have an account? </span><Link to='/signup'><button id="signup" type="button" className="btn btn-success center-block">Sign Up</button></Link>
+                        <div className="logInSm">
+                            <span>Dont have an account? </span><Link to='/signup'><button id="signup" type="button" className="btn center-block">Sign Up</button></Link>
+                        </div>
                     </div>
                 </div>
             </div>
