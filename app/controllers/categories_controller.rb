@@ -4,5 +4,4 @@ class CategoriesController < ApplicationController
     @category = Catagory.find_by(id: params[:id])
     render json: @category
   end
-
 end

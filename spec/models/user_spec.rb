@@ -1,32 +1,27 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  before :each do
-    @user = User.new "name", "email", "password", "image"
+
+  it "is valid with valid attributes" do
+    expect(User.new(name: "Matt",
+                    email: "matt@example.com",
+                    password: "1234567",
+                    images_id: "image"
+          )).to be_valid
   end
 
-  describe "#sign_up" do
-
-    it "returns a new user object" do
-      @user.should(be_an_instance_of(User))
-    end
-
-    it "should require name,email,password params and return user object" do
-      lambda(User.new "email", "password").should raise_error ArgumentError
-
-    end
-
-  describe "#email"
-    it "should return the correct email address for the user" do
-      @user.email should == "email"
-    end
-
-    #
-    # it "should return the correct name for the user" do
-    #   @user.name should eql "name"
-    # end
-    #
-    # it
-
+  it "is not valid without a email" do
+    expect(User.new(name: "Matt",
+                    email: nil,
+                    password: "1234567",
+                    images_id: "image"
+          )).to_not be_valid
+  end
+  it "is not valid without a password" do
+    expect(User.new(name: "Matt",
+                    email: "matt@example.com",
+                    password: nil,
+                    images_id: "image"
+          )).to_not be_valid
   end
 end
