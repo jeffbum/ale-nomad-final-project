@@ -106,7 +106,7 @@ class BeerResult extends React.Component {
                     <div className="cardWrapBrewFilter text-center">
                     <h1>Brewery Details</h1>
                         <img src={this.state.brewDetails.images=== null? '/img/noImage.jpg' : (this.state.brewDetails.images)} alt="Brewery Logo" />
-                        <p>Brewery: {this.state.brewDetails.name}</p>
+                        <Link to ={'/brew/' + this.state.brewDetails.id}><p>Brewery: {this.state.brewDetails.name}</p></Link>
                         <p>Hours: {this.state.brewDetails.hours_of_operation}</p>
                         <p>Phone: {this.state.brewDetails.phone}</p>
                         <p>Address: {this.state.brewDetails.street_address}, {this.state.brewDetails.postal_code}</p>
