@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, browserHistory } from 'react-router'
 import ReactStars from 'react-stars'
+import moment from 'moment'
 
 class UserProfile extends React.Component {
     constructor(props) {
@@ -55,14 +56,14 @@ class UserProfile extends React.Component {
                     <p>ABV: {myDrink.beer_abv}</p>
                     <p>IBU: {myDrink.beer_ibu}</p>
                     <ReactStars count={myDrink.reviews[0].rating} edit={false} size={24} color1={'#ffd700'} />
-                    {/* <p>IBU: {date}</p> */}
+                    <p>Drank: {moment(myDrink.reviews[0].created_at).fromNow()}</p>
                 </div>
             </div>
         </Link>
     })
         return (
         <div className="container">
-            <div className="row">
+            <div className="row profileHeaders">
                 <div className="col-xs-5 col-sm-3 profileImage">
                     <h1>Hi {this.state.name}!</h1>
                     <img src={this.state.images} />
@@ -70,7 +71,7 @@ class UserProfile extends React.Component {
                 <div className="col-xs-7 col-sm-9">
                     <h1 className="text-center">Beers you Drank</h1>
                     {MyDrinks == 0 &&
-                    <h1 className="text-center">Choose a drink!</h1>}
+                    <h1 className="text-center">Choose a drink and add!</h1>}
                     {MyDrinks}
                 </div>
             </div>

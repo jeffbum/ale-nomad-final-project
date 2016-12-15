@@ -108,7 +108,7 @@ render(){
         </div>
         <div className="col-xs-4">
           <h3 className="filterSelectors">ABV</h3>
-          <select name="abv" className="form-control" onChange={this.abvHandler}>
+          <select name="abv" className="form-control filterInputs" onChange={this.abvHandler}>
               <option value="0,20">Any ABV</option>
               <option value="0,4">Less than 4%</option>
               <option value="4,6">4 - 6%</option>
@@ -119,7 +119,7 @@ render(){
         </div>
         <div className="col-xs-4">
           <h3 className="filterSelectors">IBU</h3>
-          <select name="abv" className="form-control" onChange={this.ibuHandler}>
+          <select name="abv" className="form-control filterInputs" onChange={this.ibuHandler}>
               <option value="0,2500">Any IBU</option>
               <option value="0,40">Less than 40</option>
               <option value="40,60">40 - 60</option>
