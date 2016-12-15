@@ -86,14 +86,11 @@ body {
 .filterSearchHeader {
     color: #644536;
     margin-top: 40px;
-    font-size: 7vw;
+    font-size: 5vw;
 }
 .filterSearchInput button {
   background-color: #DC8A3A;
   color: #644536;
-}
-.test {
-  border: 1px solid red;
 }
 .filterSearchInput button:hover {
   background-color: #644536;
@@ -101,7 +98,7 @@ body {
 }
 .filterSelectors {
   color: #DC8A3A;
-  font-size: 30px;
+  font-size: 25px;
 }
 .filterButtonSpace {
   margin-top: 50px;
@@ -174,6 +171,9 @@ body {
 }
 .profileImage img {
   border-radius: 50%;
+}
+.profileHeaders h1 {
+  color: #DC8A3A;
 }
 /*Mobile version styling end*/
 
