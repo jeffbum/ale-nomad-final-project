@@ -13,5 +13,4 @@ class GeosearchController < ApplicationController
 
 
 
-
 end
