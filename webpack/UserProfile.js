@@ -62,7 +62,7 @@ class UserProfile extends React.Component {
     })
         return (
         <div className="container">
-            <div className="row">
+            <div className="row profileHeaders">
                 <div className="col-xs-5 col-sm-3 profileImage">
                     <h1>Hi {this.state.name}!</h1>
                     <img src={this.state.images} />
@@ -70,7 +70,7 @@ class UserProfile extends React.Component {
                 <div className="col-xs-7 col-sm-9">
                     <h1 className="text-center">Beers you Drank</h1>
                     {MyDrinks == 0 &&
-                    <h1 className="text-center">Choose a drink!</h1>}
+                    <h1 className="text-center">Choose a drink and add!</h1>}
                     {MyDrinks}
                 </div>
             </div>
