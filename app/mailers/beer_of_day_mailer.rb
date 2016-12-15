@@ -1,5 +1,4 @@
 class BeerOfDayMailer < ApplicationMailer
-  default :from => 'Ale-Nomad@ironyard.com'
 
   def beer_of_the_day(user, beer, brew)
     @user = user
