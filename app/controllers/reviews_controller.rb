@@ -27,8 +27,8 @@ class ReviewsController < ApplicationController
   end
 
   def my_ratings
-    @my_ratings = current_user.reviews.order('created_at DESC')
-    render json: @my_ratings
+    @myratings = current_user.Review.order('created_at DESC')
+    render json: @myratings
   end
 
   private
